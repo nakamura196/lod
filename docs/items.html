@@ -98,10 +98,11 @@ var total = 0;
   $.ajax({
     type : "POST",
     //url : "//arctest08.dl.itc.u-tokyo.ac.jp/sparql",
-    url : "//www.metabridge.jp/sparql/?lu=OsugFWNAxhhZSjMeyUBh",
+    url : "//www.metabridge.jp/api/sparql/G0000138mb",
     data : {
       query : query,
-      format : "json"
+      format : "json",
+      lu : "OsugFWNAxhhZSjMeyUBh"
     },
     success : function(data) {
 
