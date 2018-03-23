@@ -7,10 +7,10 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"/>
 
-  <title>Application Sample</title>
+  <title>LOD Applications</title>
   <style>
   body{
     word-wrap : break-word;
@@ -20,10 +20,6 @@
 </head>
 
 <body>
-
-  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-    <h5 class="my-0 mr-md-auto font-weight-normal"><a href="index.html">Application Sample</a></h5>
-  </div>
 
   <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h1 class="display-4">IIIF Manifests</h1>
@@ -83,14 +79,12 @@
 
 
   <script
-  src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  src="//code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-
-
-  <script src="https://code.highcharts.com/highcharts.js"></script>
 
   <script>
 
@@ -114,14 +108,12 @@
     });
 
     getCollections()
-    showNodes()
+    search()
 
   });
 
   function getCollections(){
-    var query = " PREFIX dcterms: <http://purl.org/dc/terms/> ";
-
-    query += " select distinct * ";
+    var query = " select distinct * ";
     query += " where { ";
     query += " ?s dcterms:title ?title . ";
     query += " ?s dcterms:publisher ?pub . ";
@@ -134,43 +126,45 @@
     query += " } ";
 
     $.ajax({
-      type : "POST",
-      url : "https://dydra.com/ut-archives-repo/lod/sparql",
-      data : {
+      url:'https://dydra.com/ut-archives-repo/lod/sparql',
+      type:'POST',
+      data:{
         query : query,
         format : "json"
-      },
-      success : function(data) {
-
-        var result = data.results.bindings;
-
-        for (var i = 0; i < result.length; i++) {
-          var obj = result[i];
-
-          var pub = obj.pub.value;
-
-          var option = $("<option>");
-          $("#collection").append(option);
-          option.append(pub);
-
-          if (pub == collection){
-            option.attr("selected","selected");
-          }
-        }
-
-      },
-      error : function(data) {
-        alert(data.statusText);
       }
+    })
+    // Ajaxリクエストが成功した時発動
+    .done( (data) => {
+      var result = data.results.bindings;
+
+      for (var i = 0; i < result.length; i++) {
+        var obj = result[i];
+
+        var pub = obj.pub.value;
+
+        var option = $("<option>");
+        $("#collection").append(option);
+        option.append(pub);
+
+        if (pub == collection){
+          option.attr("selected","selected");
+        }
+      }
+    })
+    // Ajaxリクエストが失敗した時発動
+    .fail( (data) => {
+      alert(data.statusText);
+    })
+    // Ajaxリクエストが成功・失敗どちらでも発動
+    .always( (data) => {
+
     });
   }
 
 
-  function showNodes() {
+  function search() {
 
-    var query = " PREFIX dcterms: <http://purl.org/dc/terms/> ";
-
-    query += " select distinct * ";
+    var query = " select distinct * ";
     query += " where { ";
 
     query += " ?s dcterms:title ?title . ";
@@ -190,160 +184,164 @@
     query += " } ";
 
     $.ajax({
-      type : "POST",
-      url : "https://dydra.com/ut-archives-repo/lod/sparql",
-      data : {
+      url:'https://dydra.com/ut-archives-repo/lod/sparql',
+      type:'POST',
+      data:{
         query : query,
         format : "json"
-      },
-      success : function(data) {
+      }
+    })
+    // Ajaxリクエストが成功した時発動
+    .done( (data) => {
+      var result = data.results.bindings;
 
-        var result = data.results.bindings;
+      var tbody = $("#resourceListBody");
 
-        var tbody = $("#resourceListBody");
+      for (var i = 0; i < result.length; i++) {
+        var obj = result[i];
 
-        for (var i = 0; i < result.length; i++) {
-          var obj = result[i];
+        var title = obj.title.value;
 
-          var title = obj.title.value;
+        var tr = $("<tr>");
+        tbody.append(tr);
 
-          var tr = $("<tr>");
-          tbody.append(tr);
+        var td = $("<td>");
+        tr.append(td);
 
-          var td = $("<td>");
-          tr.append(td);
-
-          //サムネイル
-          td = $("<td>");
-          tr.append(td);
-          if (obj.thumb) {
-            var img = $("<img>");
-            td.append(img);
-            img.attr("src", obj.thumb.value)
-            img.attr("width", "100px")
-          }
-
-          //タイトル + ポータル
-          td = $("<td>");
-          tr.append(td);
-
-          var a = $("<a>");
-          td.append(a);
-          a.append(title);
-          a.attr("href", obj.relation.value);
-          a.attr("target", "_blank");
-
-
-          //Manifest
-          td = $("<td>");
-          tr.append(td);
-
-          var a = $("<a>");
-          td.append(a)
-          a.attr("href", "http://da.dl.itc.u-tokyo.ac.jp/mirador/?manifest="+obj.ref.value);
-          a.attr("target", "_blank");
-
+        //サムネイル
+        td = $("<td>");
+        tr.append(td);
+        if (obj.thumb) {
           var img = $("<img>");
-          a.append(img)
-          img.attr("src", "https://iiif.dl.itc.u-tokyo.ac.jp/images/mirador.png")
-
-          td.append(" ");
-
-          var a = $("<a>");
-          td.append(a)
-          a.attr("href", "http://da.dl.itc.u-tokyo.ac.jp/uv/?manifest="+obj.ref.value);
-          a.attr("target", "_blank");
-
-          var img = $("<img>");
-          a.append(img)
-          img.attr("src", "https://iiif.dl.itc.u-tokyo.ac.jp/images/uv.png")
-
-          /*
-          td.append(" ");
-
-          var a = $("<a>");
-          td.append(a)
-          a.attr("href", "http://codh.rois.ac.jp/software/iiif-curation-viewer/demo/?manifest="+obj.ref.value);
-          a.attr("target", "_blank");
-
-          var img = $("<img>");
-          a.append(img)
-          img.attr("src", "http://codh.rois.ac.jp/favicon-32.ico")
-
-          */
-
-          td.append(" ");
-
-          var a = $("<a>");
-          td.append(a)
-          a.attr("href", obj.ref.value);
-          a.attr("target", "_blank");
-
-          var img = $("<img>");
-          a.append(img)
-          img.attr("src", "https://iiif.dl.itc.u-tokyo.ac.jp/images/iiif.png")
-
-          //デジタルアーカイブ
-          td = $("<td>");
-          tr.append(td);
-          var a = $("<a>");
-          td.append(a)
-          a.attr("href", obj.part.value);
-          a.append(obj.pub.value)
-          a.attr("target", "_blank");
-
-          //権利
-          td = $("<td>");
-          tr.append(td);
-          var a = $("<a>");
-          td.append(a)
-          a.attr("href", obj.right.value);
-          a.append(obj.right.value)
-          a.attr("target", "_blank");
-
+          td.append(img);
+          img.attr("src", obj.thumb.value)
+          img.attr("width", "100px")
         }
 
-        // DataTable
-        var table = $('#table').DataTable({
-          "iDisplayLength" : 25,
-          "order" : [ [ 4, "asc" ] ],
+        //タイトル + ポータル
+        td = $("<td>");
+        tr.append(td);
 
-          "autoWidth" : false,
-          "columnDefs" : [ {
-            "width" : "5%",
-            "targets" : 0
-          }, {
-            "width" : "15%",
-            "targets" : 1
-          }, {
-            "width" : "20%",
-            "targets" : 2
-          }, {
-            "width" : "20%",
-            "targets" : 3
-          }, {
-            "width" : "20%",
-            "targets" : 4
-          }, {
-            "width" : "20%",
-            "targets" : 5
-          }]
+        var a = $("<a>");
+        td.append(a);
+        a.append(title);
+        a.attr("href", obj.relation.value);
+        a.attr("target", "_blank");
 
-        });
 
-        table.on('order.dt search.dt', function() {
-          table.column(0, {
-            search : 'applied',
-            order : 'applied'
-          }).nodes().each(function(cell, i) {
-            cell.innerHTML = i + 1;
-          });
-        }).draw();
+        //Manifest
+        td = $("<td>");
+        tr.append(td);
 
-      },
-      error : function(data) {
-        alert(data.statusText);
+        var a = $("<a>");
+        td.append(a)
+        a.attr("href", "http://da.dl.itc.u-tokyo.ac.jp/mirador/?manifest="+obj.ref.value);
+        a.attr("target", "_blank");
+
+        var img = $("<img>");
+        a.append(img)
+        img.attr("src", "https://iiif.dl.itc.u-tokyo.ac.jp/images/mirador.png")
+
+        td.append(" ");
+
+        var a = $("<a>");
+        td.append(a)
+        a.attr("href", "http://da.dl.itc.u-tokyo.ac.jp/uv/?manifest="+obj.ref.value);
+        a.attr("target", "_blank");
+
+        var img = $("<img>");
+        a.append(img)
+        img.attr("src", "https://iiif.dl.itc.u-tokyo.ac.jp/images/uv.png")
+
+        /*
+        td.append(" ");
+
+        var a = $("<a>");
+        td.append(a)
+        a.attr("href", "http://codh.rois.ac.jp/software/iiif-curation-viewer/demo/?manifest="+obj.ref.value);
+        a.attr("target", "_blank");
+
+        var img = $("<img>");
+        a.append(img)
+        img.attr("src", "http://codh.rois.ac.jp/favicon-32.ico")
+
+        */
+
+        td.append(" ");
+
+        var a = $("<a>");
+        td.append(a)
+        a.attr("href", obj.ref.value);
+        a.attr("target", "_blank");
+
+        var img = $("<img>");
+        a.append(img)
+        img.attr("src", "https://iiif.dl.itc.u-tokyo.ac.jp/images/iiif.png")
+
+        //デジタルアーカイブ
+        td = $("<td>");
+        tr.append(td);
+        var a = $("<a>");
+        td.append(a)
+        a.attr("href", obj.part.value);
+        a.append(obj.pub.value)
+        a.attr("target", "_blank");
+
+        //権利
+        td = $("<td>");
+        tr.append(td);
+        var a = $("<a>");
+        td.append(a)
+        a.attr("href", obj.right.value);
+        a.append(obj.right.value)
+        a.attr("target", "_blank");
+
       }
+
+      // DataTable
+      var table = $('#table').DataTable({
+        "iDisplayLength" : 25,
+        "order" : [ [ 4, "asc" ] ],
+
+        "autoWidth" : false,
+        "columnDefs" : [ {
+          "width" : "5%",
+          "targets" : 0
+        }, {
+          "width" : "15%",
+          "targets" : 1
+        }, {
+          "width" : "20%",
+          "targets" : 2
+        }, {
+          "width" : "20%",
+          "targets" : 3
+        }, {
+          "width" : "20%",
+          "targets" : 4
+        }, {
+          "width" : "20%",
+          "targets" : 5
+        }]
+
+      });
+
+      table.on('order.dt search.dt', function() {
+        table.column(0, {
+          search : 'applied',
+          order : 'applied'
+        }).nodes().each(function(cell, i) {
+          cell.innerHTML = i + 1;
+        });
+      }).draw();
+    })
+    // Ajaxリクエストが失敗した時発動
+    .fail( (data) => {
+      alert(data.statusText);
+    })
+    // Ajaxリクエストが成功・失敗どちらでも発動
+    .always( (data) => {
+
     });
   }
 </script>
