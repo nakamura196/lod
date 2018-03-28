@@ -27,6 +27,10 @@
 
   <div class="container">
 
+    <div class="text-center" id="loading">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
+    </div>
+
     <form>
 
       <div class="form-group row">
@@ -341,7 +345,7 @@
     })
     // Ajaxリクエストが成功・失敗どちらでも発動
     .always( (data) => {
-
+      $("#loading").empty()
     });
   }
 </script>
