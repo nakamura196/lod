@@ -8,6 +8,18 @@
   <meta name="author" content="">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+  <style>
+  .white-popup {
+    position: relative;
+    background: #FFF;
+    padding: 20px;
+    width: auto;
+    max-width: 500px;
+    margin: 20px auto;
+  }
+  </style>
 
   <title>LOD Applications</title>
 
@@ -23,6 +35,11 @@
 
     <div class="text-center" id="loading">
       <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
+    </div>
+
+    <div id="test-modal" class="white-popup mfp-hide">
+      <div id="container3"></div>
+      <p><a class="popup-modal-dismiss btn btn-sm btn-outline-secondary" href="#">Close</a></p>
     </div>
 
     <div id="container2"></div>
@@ -46,7 +63,16 @@
 
   <script src="//code.highcharts.com/highcharts.js"></script>
 
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+
   <script>
+
+  $(function () {
+    $(document).on('click', '.popup-modal-dismiss', function (e) {
+      e.preventDefault();
+      $.magnificPopup.close();
+    });
+  });
 
   jQuery(document).ready(function() {
 
@@ -136,7 +162,19 @@
 
           series: {
             point: {
+              events: {click: function(){
+                var id = this.series.data.indexOf(this);
+                var item = items[id]
+                var date = Highcharts.dateFormat('%Y-%m-%d', item[0]);
 
+                searchByDate(date);
+
+                $.magnificPopup.open({
+                  items: {src: '#test-modal'},
+                  type: 'inline',
+                  modal: true,
+                }, 0);
+              }}
             }
           },
           area: {
@@ -180,6 +218,84 @@
       $("#loading").empty()
     });
 
+  }
+
+  function searchByDate(date){
+    var query = " PREFIX o: <http://omeka.org/s/vocabs/o#> ";
+    query += " select distinct ?pub (count(?pub) AS ?c) ";
+    query += " where { ";
+
+    query += " ?s dcterms:publisher ?pub . ";
+    query += " ?s o:created ?created . ";
+    query += " filter (xsd:date(?created) = '"+date+"'^^xsd:date) . ";
+
+    query += " } group by ?pub ";
+
+    var array = new Array();
+
+    $.ajax({
+      url:'https://dydra.com/ut-archives-repo/lod/sparql',
+      type:'POST',
+      data:{
+        query : query,
+        format : "json"
+      }
+    })
+    // Ajaxリクエストが成功した時発動
+    .done( (data) => {
+      var result = data.results.bindings;
+      var tmp = new Array();
+
+      for (var i = 0; i < result.length; i++) {
+        var obj = result[i];
+
+        var pub = obj.pub.value;
+        var c = Number(obj.c.value);
+
+        var item = new Object();
+        item.name = pub;
+        item.y = c;
+        tmp.push(item)
+      }
+
+      // Build the chart
+      Highcharts.chart('container3', {
+        chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false,
+          type: 'pie'
+        },
+        title: {
+          text: ''
+        },
+        tooltip: {
+          valueSuffix: ' items'
+        },
+        plotOptions: {
+          pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+              enabled: false
+            },
+            showInLegend: true
+          }
+        },
+        series: [{
+          name: '',
+          colorByPoint: true,
+          data: tmp
+        }]
+      });
+    })
+    // Ajaxリクエストが失敗した時発動
+    .fail( (data) => {
+      alert(data.statusText);
+    })
+    // Ajaxリクエストが成功・失敗どちらでも発動
+    .always( (data) => {
+    });
   }
 </script>
 </body>
