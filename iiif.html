@@ -117,7 +117,7 @@
   });
 
   function getCollections(){
-    var query = " select distinct * ";
+    var query = " select distinct ?pub ";
     query += " where { ";
     query += " ?s dcterms:title ?title . ";
     query += " ?s dcterms:publisher ?pub . ";
