@@ -1,0 +1,927 @@
+{
+    "@id": "https://nakamura196.github.io/lod/universe.json",
+    "@context": "http://iiif.io/api/presentation/2/context.json",
+    "manifests": [
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/7/manifest",
+            "label": "明・弘治十八年八月二十日勅命",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/8/manifest",
+            "label": "百鬼夜行図",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/9/manifest",
+            "label": "『三十六歌撰』絵巻",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/10/manifest",
+            "label": "甲州法度之次第",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/11/manifest",
+            "label": "紀州熊野浦諸鯨之圖",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/13/manifest",
+            "label": "直江状",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/14/manifest",
+            "label": "写真帖『東京帝國大學』明治33年(1900)年版",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/15/manifest",
+            "label": "写真帖『東京帝國大學』明治37年(1904)年版",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/15728/manifest",
+            "label": "中宗実録 第11帙 第1冊 巻94庚子35年(1540)10月-辛丑36年(1541)3月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/15809/manifest",
+            "label": "中宗実録 第5帙 第3冊 巻66己丑24年(1529)8月-12月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/15882/manifest",
+            "label": "成宗実録 第1帙 第1冊 巻52乙未6年(1475)2月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/15917/manifest",
+            "label": "成宗実録 第2帙 第2冊 巻81丁酉8年(1477)6月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/15936/manifest",
+            "label": "成宗実録 第2帙 第1冊 巻76丁酉8年(1477)2月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/15951/manifest",
+            "label": "中宗実録 第11帙 第2冊 巻96辛丑36年(1541)8月-11月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/16032/manifest",
+            "label": "成宗実録 第1帙 第1冊 巻55乙未6年(1475)5月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/16055/manifest",
+            "label": "宣祖実録 第2帙 第4冊 巻11丁丑10年(1577)",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/16067/manifest",
+            "label": "中宗実録 第12帙 第2冊 巻103甲辰39年(1544)5月-6月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/16128/manifest",
+            "label": "中宗実録 第1帙 第1冊 巻2丁卯2年(1507)正月-4月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/16206/manifest",
+            "label": "中宗実録 第12帙 第2冊 巻102甲辰39年(1544)2月-4月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/16294/manifest",
+            "label": "成宗実録 第1帙 第2冊 巻60乙未6年(1475)10月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/16313/manifest",
+            "label": "中宗実録 第8帙 第3冊 巻84丁酉32年(1537)3月-4月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/16392/manifest",
+            "label": "成宗実録 第2帙 第3冊 巻83丁酉8年(1477)8月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/16422/manifest",
+            "label": "中宗実録 第6帙 第2冊 巻69庚寅25年(1530)8月-11月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/16491/manifest",
+            "label": "中宗実録 第8帙 第2冊 巻82丙申31年(1536)6月-11月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/16555/manifest",
+            "label": "中宗実録 第3帙 第2冊 巻52甲申19年(1524)10月-乙酉20年(1525)正月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/16622/manifest",
+            "label": "宣祖実録 第1帙 第3冊 巻6壬申5年(1572)",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/16652/manifest",
+            "label": "中宗実録 第6帙 第1冊 巻67庚寅25年(1530)正月-3月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/16716/manifest",
+            "label": "成宗実録 第1帙 第2冊 巻62乙未6年(1475)12月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/16730/manifest",
+            "label": "中宗実録 第2帙 第1冊 巻19癸酉8年(1513)10月-甲戌9年(1514)正月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/16795/manifest",
+            "label": "成宗実録 第1帙 第3冊 巻64丙申7年(1476)2月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/16823/manifest",
+            "label": "成宗実録 第2帙 第1冊 巻71丙申7年(1476)9月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/16831/manifest",
+            "label": "中宗実録 第9帙 第2冊 巻87戊戌33年(1538)2月-7月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/16898/manifest",
+            "label": "成宗実録 第2帙 第1冊 巻75丁酉8年(1477)正月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/16934/manifest",
+            "label": "成宗実録 第1帙 第2冊 巻61乙未6年(1475)11月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/16948/manifest",
+            "label": "中宗実録 第4帙 第3冊 巻60丁亥22年(1527)12月-戊子23年(1528)3月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17027/manifest",
+            "label": "成宗実録 第3帙 第3冊 巻103己亥10年(1479)4月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17052/manifest",
+            "label": "中宗実録 第2帙 第1冊 巻20甲戌9年(1514)2月-9月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17118/manifest",
+            "label": "中宗実録 第5帙 第1冊 巻62戊子23年(1528)7月-8月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17184/manifest",
+            "label": "中宗実録 第7帙 第3冊 巻77甲午29年(1534)閏2月-8月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17249/manifest",
+            "label": "成宗実録 第1帙 第2冊 巻63丙申7年(1476)正月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17277/manifest",
+            "label": "成宗実録 第3帙 第2冊 巻93戊戌9年(1478)6月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17302/manifest",
+            "label": "成宗実録 第3帙 第2冊 巻99戊戌9年(1478)12月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17326/manifest",
+            "label": "中宗実録 第5帙 第3冊 巻65己丑24年(1529)2月-7月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17418/manifest",
+            "label": "成宗実録 第1帙 第3冊 巻65丙申7年(1476)3月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17442/manifest",
+            "label": "成宗実録 第3帙 第2冊 巻97戊戌9年(1478)10月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17457/manifest",
+            "label": "中宗実録 第10帙 第3冊 巻92己亥34年(1539)10月-庚子35年(1540)2月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17535/manifest",
+            "label": "宣祖実録 第1帙 第1冊 巻2戊辰元年(1568)",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17568/manifest",
+            "label": "成宗実録 第1帙 第2冊 巻58乙未6年(1475)8月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17587/manifest",
+            "label": "中宗実録 第5帙 第2冊 巻63戊子23年(1528)9月-10月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17658/manifest",
+            "label": "中宗実録 第11帙 第2冊 巻97辛丑36年(1541)12月-壬寅37年(1542)3月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17731/manifest",
+            "label": "成宗実録 第2帙 第3冊 巻86丁酉8年(1477)11月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17754/manifest",
+            "label": "成宗実録 第3帙 第1冊 巻88戊戌9年(1478)正月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17780/manifest",
+            "label": "成宗実録 第3帙 第1冊 巻92戊戌9年(1478)5月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17808/manifest",
+            "label": "成宗実録 第3帙 第2冊 巻98戊戌9年(1478)11月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17842/manifest",
+            "label": "中宗実録 第8帙 第1冊 巻79乙未30年(1535)正月-6月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17909/manifest",
+            "label": "成宗実録 第3帙 第3冊 巻105己亥10年(1479)6月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/17937/manifest",
+            "label": "宣祖実録 第2帙 第1冊 巻7癸酉6年(1573)",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/18010/manifest",
+            "label": "成宗実録 第2帙 第2冊 巻78丁酉8年(1477)3月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/18029/manifest",
+            "label": "成宗実録 第2帙 第2冊 巻77丁酉8年(1477)閏2月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/18055/manifest",
+            "label": "成宗実録 第2帙 第2冊 巻80丁酉8年(1477)5月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/18067/manifest",
+            "label": "成宗実録 第2帙 第2冊 巻82丁酉8年(1477)7月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/18100/manifest",
+            "label": "宣祖実録 第3帙 第1冊 巻14庚辰13年(1580)",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/18125/manifest",
+            "label": "成宗実録 第1帙 第1冊 巻53乙未6年(1475)3月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/18138/manifest",
+            "label": "中宗実録 第1帙 第1冊 巻1丙寅元年(1506)9月-12月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/18218/manifest",
+            "label": "中宗実録 第10帙 第3冊 巻93庚子35年(1540)3月-9月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/18295/manifest",
+            "label": "中宗実録 第8帙 第1冊 巻80乙未30年(1535)7月-12月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/18367/manifest",
+            "label": "中宗実録 第7帙 第3冊 巻78甲午29年(1534)9月-12月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/18429/manifest",
+            "label": "中宗実録 第7帙 第2冊 巻75癸巳28年(1533)6月-8月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/18500/manifest",
+            "label": "中宗実録 第5帙 第2冊 巻64戊子23年(1528)閏10月-己丑24年(1529)正月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/18572/manifest",
+            "label": "成宗実録 第1帙 第2冊 巻57乙未6年(1475)7月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/18593/manifest",
+            "label": "中宗実録 第4帙 第1冊 巻55乙酉20年(1525)8月-11月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/18662/manifest",
+            "label": "中宗実録 第3帙 第2冊 巻51甲申19年(1524)6月-9月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/18726/manifest",
+            "label": "中宗実録 第7帙 第2冊 巻76癸巳28年(1533)9月-甲午29年(1534)2月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/18797/manifest",
+            "label": "中宗実録 第9帙 第1冊 巻85丁酉32年(1537)5月-10月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/18902/manifest",
+            "label": "中宗実録 第6帙 第3冊 巻71辛卯26年(1531)6月-10月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/18959/manifest",
+            "label": "中宗実録 第6帙 第1冊 巻68庚寅25年(1530)4月-7月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19028/manifest",
+            "label": "成宗実録 第3帙 第3冊 巻106己亥10年(1479)7月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19053/manifest",
+            "label": "成宗実録 第1帙 第1冊 巻54乙未6年(1475)4月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19071/manifest",
+            "label": "宣祖実録 第1帙 第3冊 巻4庚午3年(1570)",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19097/manifest",
+            "label": "中宗実録 第4帙 第2冊 巻58丙戌21年(1526)12月-丁亥22年(1527)4月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19163/manifest",
+            "label": "中宗実録 第7帙 第1冊 巻73壬辰27年(1532)4月-癸巳28年(1533)2月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19228/manifest",
+            "label": "中宗実録 第9帙 第2冊 巻86丁酉32年(1537)11月-戊戌33年(1538)正月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19306/manifest",
+            "label": "成宗実録 第1帙 第3冊 巻66丙申7年(1476)4月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19324/manifest",
+            "label": "中宗実録 第12帙 第3冊 巻104甲辰39年(1544)7月-9月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19394/manifest",
+            "label": "成宗実録 第3帙 第1冊 巻89戊戌9年(1478)2月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19420/manifest",
+            "label": "成宗実録 第2帙 第1冊 巻72丙申7年(1476)10月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19440/manifest",
+            "label": "成宗実録 第1帙 第3冊 巻68丙申7年(1476)6月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19459/manifest",
+            "label": "成宗実録 第2帙 第2冊 巻79丁酉8年(1477)4月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19483/manifest",
+            "label": "成宗実録 第1帙 第1冊 巻51乙未6年(1475)正月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19512/manifest",
+            "label": "成宗実録 第3帙 第3冊 巻107己亥10年(1479)8月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19538/manifest",
+            "label": "中宗実録 第8帙 第2冊 巻81丙申31年(1536)正月-5月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19610/manifest",
+            "label": "宣祖実録 第2帙 第2冊 巻8甲戌7年(1574)",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19682/manifest",
+            "label": "成宗実録 第2帙 第1冊 巻74丙申7年(1476)12月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19697/manifest",
+            "label": "成宗実録 第3帙 第1冊 巻90戊戌9年(1478)3月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19714/manifest",
+            "label": "中宗実録 第3帙 第1冊 巻49癸未18年(1523)8月-12月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19776/manifest",
+            "label": "成宗実録 第3帙 第3冊 巻104己亥10年(1479)5月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19798/manifest",
+            "label": "宣祖実録 第2帙 第3冊 巻9乙亥8年(1575)",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19838/manifest",
+            "label": "中宗実録 第6帙 第2冊 巻70庚寅25年(1530)12月-辛卯26年(1531)5月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19907/manifest",
+            "label": "宣祖実録 第2帙 第4冊 巻12戊寅11年(1578)",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19921/manifest",
+            "label": "宣祖実録 第3帙 第1冊 巻16壬午15年(1582)",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19929/manifest",
+            "label": "成宗実録 第3帙 第3冊 巻102己亥10年(1479)3月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19945/manifest",
+            "label": "成宗実録 第2帙 第1冊 巻70丙申7年(1476)8月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/19971/manifest",
+            "label": "中宗実録 第7帙 第1冊 巻74癸巳28年(1533)3月-5月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/20045/manifest",
+            "label": "成宗実録 第3帙 第2冊 巻95戊戌9年(1478)8月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/20075/manifest",
+            "label": "中宗実録 第3帙 第3冊 巻54乙酉20年(1525)4月-7月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/20152/manifest",
+            "label": "中宗実録 第6帙 第3冊 巻72辛卯26年(1531)11月-壬辰27年(1532)3月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/20223/manifest",
+            "label": "成宗実録 第3帙 第2冊 巻96戊戌9年(1478)9月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/20240/manifest",
+            "label": "中宗実録 第8帙 第3冊 巻83丙申31年(1536)12月-丁酉32年(1537)2月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/20314/manifest",
+            "label": "中宗実録 第12帙 第1冊 巻101癸卯38年(1543)7月-甲辰39年(1544)正月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/20394/manifest",
+            "label": "中宗実録 第3帙 第1冊 巻50甲申19年(1524)正月-5月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/20462/manifest",
+            "label": "成宗実録 第3帙 第2冊 巻94戊戌9年(1478)7月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/20494/manifest",
+            "label": "宣祖実録 第1帙 第1冊 巻1目録、序、丁卯即位年(1567)7月-12月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/20525/manifest",
+            "label": "成宗実録 第1帙 第3冊 巻69丙申7年(1476)7月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/20556/manifest",
+            "label": "成宗実録 第3帙 第3冊 巻100己亥10年(1479)正月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/20571/manifest",
+            "label": "中宗実録 第10帙 第1冊 巻88戊戌33年(1538)8月-10月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/20639/manifest",
+            "label": "中宗実録 第10帙 第2冊 巻91己亥34年(1539)6月-9月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/20723/manifest",
+            "label": "宣祖実録 第2帙 第4冊 巻10丙子9年(1576)",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/20743/manifest",
+            "label": "中宗実録 第5帙 第1冊 巻61戊子23年(1528)4月-6月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/20815/manifest",
+            "label": "中宗実録 第10帙 第2冊 巻90己亥34年(1539)4月-5月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/20894/manifest",
+            "label": "成宗実録 第2帙 第3冊 巻87丁酉8年(1477)12月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/20912/manifest",
+            "label": "宣祖実録 第1帙 第2冊 巻3己巳2年(1569)",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/20961/manifest",
+            "label": "中宗実録 第4帙 第1冊 巻56乙酉20年(1525)12月-丙戌21年(1526)4月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21032/manifest",
+            "label": "中宗実録 第4帙 第2冊 巻57丙戌21年(1526)5月-11月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21101/manifest",
+            "label": "成宗実録 第2帙 第1冊 巻73丙申7年(1476)11月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21112/manifest",
+            "label": "中宗実録 第10帙 第1冊 巻89戊戌33年(1538)11月-己亥34年(1539)3月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21185/manifest",
+            "label": "中宗実録 第3帙 第3冊 巻53乙酉20年(1525)2月-3月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21250/manifest",
+            "label": "成宗実録 第1帙 第3冊 巻67丙申7年(1476)5月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21275/manifest",
+            "label": "宣祖実録 第2帙 第4冊 巻13己卯12年(1579)",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21287/manifest",
+            "label": "中宗実録 第11帙 第1冊 巻95辛丑36年(1541)4月-7月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21371/manifest",
+            "label": "宣祖実録 第1帙 第3冊 巻5辛未4年(1571)",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21382/manifest",
+            "label": "中宗実録 第4帙 第3冊 巻59丁亥22年(1527)5月-11月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21460/manifest",
+            "label": "成宗実録 第1帙 第2冊 巻59乙未6年(1475)9月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21501/manifest",
+            "label": "成宗実録 第1帙 第1冊 巻56乙未6年(1475)6月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21521/manifest",
+            "label": "成宗実録 第3帙 第1冊 巻91戊戌9年(1478)4月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21575/manifest",
+            "label": "成宗実録 第3帙 第3冊 巻101己亥10年(1479)2月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21587/manifest",
+            "label": "中宗実録 第12帙 第1冊 巻100癸卯38年(1543)正月-6月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21667/manifest",
+            "label": "中宗実録 第12帙 第3冊 巻105甲辰39年(1544)10月-12月、纂修官",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21740/manifest",
+            "label": "成宗実録 第2帙 第3冊 巻84丁酉8年(1477)9月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21772/manifest",
+            "label": "宣祖実録 第3帙 第1冊 巻15辛巳14年(1581)",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21797/manifest",
+            "label": "成宗実録 第2帙 第3冊 巻85丁酉8年(1477)10月",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21824/manifest",
+            "label": "松乃栄",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21830/manifest",
+            "label": "救世主像",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21833/manifest",
+            "label": "大坂町中江出寺請状諸宗寺々五人組判形帳",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21834/manifest",
+            "label": "御前落居記録",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21835/manifest",
+            "label": "御前落居奉書",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22131/manifest",
+            "label": "パーシィ・ビッシュ・シェリー草稿",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22132/manifest",
+            "label": "パーシィ・ビッシュ・シェリー草稿付属資料（手紙）_01",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22133/manifest",
+            "label": "パーシィ・ビッシュ・シェリー草稿付属資料（手紙）_02",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22146/manifest",
+            "label": "Auslandsrecht : Blätter für Industrie und Handel : Organ des Instituts für ausländisches Recht beim Reichsverband der deutschen Industrie",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22372/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 1",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22373/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 2",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22374/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 3",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22375/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 4",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22376/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 5",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22377/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 6",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22378/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 7",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22379/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 8",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22380/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 9",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22381/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 10",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22382/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 11",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22383/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 12",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22384/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 13",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22385/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 14",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22386/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 15",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22387/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 16",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22388/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 17",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22389/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 18",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22390/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 19",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22391/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 20",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22392/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 21",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22393/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 22",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22394/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 23",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22395/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 24",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22396/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 25",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22397/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 26",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22398/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 27",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22399/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 28",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22400/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 29",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22401/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 30",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22402/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 31",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22403/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 32",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22404/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 33",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22405/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 34",
+            "@type": "sc:Manifest"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/22406/manifest",
+            "label": "Catalogue of the Kawaguchi-Takakusu Collection of Sansdrit manuscripts. Note-book 35",
+            "@type": "sc:Manifest"
+        }
+    ],
+    "@type": "sc:Collection"
+}
