@@ -1,43 +1,217 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <title>LOD Applications</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h1 class="display-4">LOD Applications</h1>
-  </div>
+  <header>
 
-  <div class="container">
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light white scrolling-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="#">LOD Applications</a>
+      </button>
 
-    <div class="list-group">
-      <a href="iiif.html" class="list-group-item list-group-item-action">List and show iiif manifests</a>
-      <a href="timeline.html" class="list-group-item list-group-item-action">Changes of number of items</a>
-      <a href="items.html" class="list-group-item list-group-item-action">List and count items</a>
-      <a href="item-sets.html" class="list-group-item list-group-item-action">List item-sets</a>
-      <a href="media.html" class="list-group-item list-group-item-action">Count media</a>
-      <a href="tei.html" class="list-group-item list-group-item-action">List TEI files</a>
     </div>
+  </nav>
+  <!--/.Navbar-->
 
+</header>
 
-    <footer class="pt-4 my-md-5 pt-md-5 border-top">
-      <div class="row">
-        <div class="col-12 col-md">
-          <small class="d-block mb-3 text-muted">&copy; 2018 UTokyo Academic Archives Project Development Office.</small>
+<!--Main layout-->
+<div class="container">
+
+  <!--Second row-->
+  <div class="row mt-5">
+
+    <!--Third columnn-->
+    <div class="col-lg-4 mb-4">
+      <!--Card-->
+      <div class="card wow fadeIn" data-wow-delay="0.2s">
+
+        <!--Card image-->
+        <img class="img-fluid" src="assets/images/dydra.jpg" alt="Card image cap">
+
+        <!--Card content-->
+        <div class="card-body text-center">
+          <!--Title-->
+          <h4 class="card-title">
+            SPARQL Endpoint
+          </h4>
+          <a href="https://dydra.com/ut-digital-archives/lod" class="btn btn-primary btn-md">View</a>
         </div>
+
       </div>
-    </footer>
+      <!--/.Card-->
+    </div>
+    <!--Third columnn-->
+
+    <!--Second columnn-->
+    <div class="col-lg-4 mb-4">
+      <!--Card-->
+      <div class="card mb-r wow fadeIn" data-wow-delay="0.4s">
+
+        <!--Card image-->
+        <img class="img-fluid" src="assets/images/collection.jpg" alt="Card image cap">
+
+        <!--Card content-->
+        <div class="card-body text-center">
+          <!--Title-->
+          <h4 class="card-title">
+            IIIF Manifest Collection with Mirador
+          </h4>
+          <a href="https://nakamura196.github.io/iiif/mirador/?collection=https://nakamura196.github.io/lod/collection/collection.json" class="btn btn-primary btn-md">View</a>
+        </div>
+
+      </div>
+      <!--/.Card-->
+
+    </div>
+    <!--Second columnn-->
+
+    <!--First columnn-->
+    <div class="col-lg-4 mb-4">
+      <!--Card-->
+      <div class="card mb-r wow fadeIn" data-wow-delay="0.6s">
+
+        <!--Card image-->
+        <img class="img-fluid" src="assets/images/ld.jpg" alt="Card image cap">
+
+        <!--Card content-->
+        <div class="card-body text-center">
+          <!--Title-->
+          <h4 class="card-title">
+            IIIF Manifest Collection with Linked Data Browser from The Web KANZAKI
+          </h4>
+          <a href="https://www.kanzaki.com/works/2014/pub/ld-browser?u=https://nakamura196.github.io/lod/collection/collection.json" class="btn btn-primary btn-md">View</a>
+        </div>
+
+      </div>
+      <!--/.Card-->
+    </div>
+    <!--First columnn-->
+
+    <!--First columnn-->
+    <div class="col-lg-4 mb-4">
+      <!--Card-->
+      <div class="card mb-r wow fadeIn" data-wow-delay="0.2s">
+
+        <!--Card image-->
+        <img class="img-fluid" src="assets/images/items.jpg" alt="Card image cap">
+
+        <!--Card content-->
+        <div class="card-body text-center">
+          <!--Title-->
+          <h4 class="card-title">
+            Item Count
+          </h4>
+          <a href="html/items.html" class="btn btn-primary btn-md">View</a>
+        </div>
+
+      </div>
+      <!--/.Card-->
+    </div>
+    <!--First columnn-->
+
+    <!--Second columnn-->
+    <div class="col-lg-4 mb-4">
+      <!--Card-->
+      <div class="card mb-r wow fadeIn" data-wow-delay="0.4s">
+
+        <!--Card image-->
+        <img class="img-fluid" src="assets/images/media.jpg" alt="Card image cap">
+
+        <!--Card content-->
+        <div class="card-body text-center">
+          <!--Title-->
+          <h4 class="card-title">
+            Media Count
+          </h4>
+          <a href="html/media.html" class="btn btn-primary btn-md">View</a>
+        </div>
+
+      </div>
+      <!--/.Card-->
+
+    </div>
+    <!--Second columnn-->
+
+    <!--Third columnn-->
+    <div class="col-lg-4 mb-4">
+      <!--Card-->
+      <div class="card mb-r wow fadeIn" data-wow-delay="0.6s">
+
+        <!--Card image-->
+        <img class="img-fluid" src="assets/images/timeline.jpg" alt="Card image cap">
+
+        <!--Card content-->
+        <div class="card-body text-center">
+          <!--Title-->
+          <h4 class="card-title">
+            History of created items
+          </h4>
+          <a href="html/timeline.html" class="btn btn-primary btn-md">View</a>
+        </div>
+
+      </div>
+      <!--/.Card-->
+    </div>
+    <!--Third columnn-->
+
+
+
+
   </div>
+  <!--/.Third row-->
+
+</div>
+<!--/.Main layout-->
+
+<!--Footer-->
+<footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn">
+
+  <!--Copyright-->
+  <div class="footer-copyright py-3">
+    Satoru Nakamura. CC BY.
+  </div>
+  <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
+
+
+<!-- SCRIPTS -->
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
+
+<script>
+new WOW().init();
+</script>
 
 </body>
+
 </html>

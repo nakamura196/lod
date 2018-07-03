@@ -1,0 +1,336 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
+  <style>
+  .white-popup {
+    position: relative;
+    background: #FFF;
+    padding: 20px;
+    width: auto;
+    max-width: 500px;
+    margin: 20px auto;
+  }
+  </style>
+
+  <title>LOD Applications</title>
+
+</head>
+
+<body>
+
+  <header>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light white scrolling-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="../">LOD Applications</a>
+      </button>
+
+    </div>
+  </nav>
+  <!--/.Navbar-->
+
+</header>
+
+<div class="container mt-5">
+
+  <!-- Card -->
+  <div class="card mb-5">
+
+    <!-- Card content -->
+    <div class="card-body">
+
+      <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">History of created items</h1>
+      </div>
+
+      <div class="text-center" id="loading">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
+      </div>
+
+      <div id="test-modal" class="white-popup mfp-hide">
+        <div id="container3"></div>
+        <p class="text-center"><a class="popup-modal-dismiss btn btn-primary" href="#">Close</a></p>
+      </div>
+
+      <div id="container2"></div>
+
+    </div>
+
+  </div>
+  <!-- Card -->
+</div>
+
+<!--Footer-->
+<footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn">
+
+  <!--Copyright-->
+  <div class="footer-copyright py-3">
+    Satoru Nakamura. CC BY.
+  </div>
+  <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
+
+
+<script
+src="//code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<script src="//code.highcharts.com/highcharts.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<script>
+
+$(function () {
+  $(document).on('click', '.popup-modal-dismiss', function (e) {
+    e.preventDefault();
+    $.magnificPopup.close();
+  });
+});
+
+jQuery(document).ready(function() {
+
+  jQuery.ajaxSetup({
+    cache : false
+  });
+
+  search()
+
+});
+
+
+function search() {
+
+  var query = " PREFIX o: <http://omeka.org/s/vocabs/o#> ";
+  query += " select distinct * ";
+  query += " where { ";
+
+  query += " ?s dcterms:title ?title . ";
+  query += " ?s o:created ?created . ";
+
+  query += " } order by ?created ";
+
+  $.ajax({
+    url:'https://dydra.com/ut-digital-archives/lod/sparql',
+    type:'POST',
+    data:{
+      query : query,
+      format : "json"
+    }
+  })
+  // Ajaxリクエストが成功した時発動
+  .done( (data) => {
+    var result = data.results.bindings;
+
+    var result2 = new Object();
+
+
+
+    for(var i = 0; i < result.length; i++){
+      var obj = result[i];
+      var date = obj.created.value.split("T")[0];
+
+      if(!result2[date]){
+        result2[date] = 0;
+      }
+
+      result2[date] = result2[date] + 1;
+    }
+
+    var items = new Array();
+
+    var total = 0;
+
+    for(var key in result2){
+      var item = new Array();
+      item.push(Date.parse(key));
+      total = total + result2[key];
+      item.push(total)
+      items.push(item)
+    }
+
+    // Build the chart
+    Highcharts.chart('container2', {
+      chart: {
+        zoomType: 'x'
+      },
+      title: {
+        text: ''
+      },
+      subtitle: {
+        text: document.ontouchstart === undefined ?
+        'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
+      },
+      xAxis: {
+        type: 'datetime'
+      },
+      yAxis: {
+        title: {
+          text: ""//'No. of data'
+        }
+      },
+      legend: {
+        enabled: false
+      },
+      plotOptions: {
+
+        series: {
+          point: {
+            events: {click: function(){
+              var id = this.series.data.indexOf(this);
+              var item = items[id]
+              var date = Highcharts.dateFormat('%Y-%m-%d', item[0]);
+
+              searchByDate(date);
+
+              $.magnificPopup.open({
+                items: {src: '#test-modal'},
+                type: 'inline',
+                modal: true,
+              }, 0);
+            }}
+          }
+        },
+        area: {
+          fillColor: {
+            linearGradient: {
+              x1: 0,
+              y1: 0,
+              x2: 0,
+              y2: 1
+            },
+            stops: [
+              [0, Highcharts.getOptions().colors[0]],
+              [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+            ]
+          },
+          marker: {
+            radius: 2
+          },
+          lineWidth: 1,
+          states: {
+            hover: {
+              lineWidth: 1
+            }
+          },
+        }
+      },
+
+      series: [{
+        type: 'area',
+        name: 'items',
+        data: items
+      }]
+    });
+  })
+  // Ajaxリクエストが失敗した時発動
+  .fail( (data) => {
+    alert(data.statusText);
+  })
+  // Ajaxリクエストが成功・失敗どちらでも発動
+  .always( (data) => {
+    $("#loading").empty()
+  });
+
+}
+
+function searchByDate(date){
+  var query = " PREFIX o: <http://omeka.org/s/vocabs/o#> ";
+  query += " select distinct ?pub (count(?pub) AS ?c) ";
+  query += " where { ";
+
+  query += " ?s <http://purl.org/utrepo/terms#databaseLabel> ?pub . ";
+  query += " ?s o:created ?created . ";
+  query += " filter (xsd:date(?created) = '"+date+"'^^xsd:date) . ";
+
+  query += " } group by ?pub ";
+
+  var array = new Array();
+
+  $.ajax({
+    url:'https://dydra.com/ut-digital-archives/lod/sparql',
+    type:'POST',
+    data:{
+      query : query,
+      format : "json"
+    }
+  })
+  // Ajaxリクエストが成功した時発動
+  .done( (data) => {
+    var result = data.results.bindings;
+    var tmp = new Array();
+
+    for (var i = 0; i < result.length; i++) {
+      var obj = result[i];
+
+      var pub = obj.pub.value;
+      var c = Number(obj.c.value);
+
+      var item = new Object();
+      item.name = pub;
+      item.y = c;
+      tmp.push(item)
+    }
+
+    // Build the chart
+    Highcharts.chart('container3', {
+      chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+      },
+      title: {
+        text: ''
+      },
+      tooltip: {
+        valueSuffix: ' items'
+      },
+      plotOptions: {
+        pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+            enabled: false
+          },
+          showInLegend: true
+        }
+      },
+      series: [{
+        name: '',
+        colorByPoint: true,
+        data: tmp
+      }]
+    });
+  })
+  // Ajaxリクエストが失敗した時発動
+  .fail( (data) => {
+    alert(data.statusText);
+  })
+  // Ajaxリクエストが成功・失敗どちらでも発動
+  .always( (data) => {
+  });
+}
+</script>
+</body>
+</html>
