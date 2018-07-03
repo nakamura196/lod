@@ -1,0 +1,50 @@
+{
+    "@context": "http://iiif.io/api/presentation/2/context.json",
+    "@id": "https://nakamura196.github.io/lod/collection/collection.json",
+    "@type": "sc:Collection",
+    "label": "IIIF Collections from UTokyo Digital Archives Project",
+    "manifests": [
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/12/manifest",
+            "@type": "sc:Manifest",
+            "label": "水野家古文書(水野忠幹氏旧蔵書文書)",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/kasen/manifests/kasen.json",
+            "@type": "sc:Manifest",
+            "label": "『三十六歌撰』絵巻",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/7/manifest",
+            "@type": "sc:Manifest",
+            "label": "明・弘治十八年八月二十日勅命",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/14/manifest",
+            "@type": "sc:Manifest",
+            "label": "写真帖『東京帝國大學』明治33年(1900)年版",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/15/manifest",
+            "@type": "sc:Manifest",
+            "label": "写真帖『東京帝國大學』明治37年(1904)年版",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/13/manifest",
+            "@type": "sc:Manifest",
+            "label": "直江状",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/koshu/manifests/koshu.json",
+            "@type": "sc:Manifest",
+            "label": "甲州法度之次第",
+            "license": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/s/koshu/page/reuse"
+        }
+    ]
+}
