@@ -5,9 +5,15 @@
     "label": "IIIF Collections from UTokyo Digital Archives Project",
     "manifests": [
         {
-            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/12/manifest",
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/7/manifest",
             "@type": "sc:Manifest",
-            "label": "水野家古文書(水野忠幹氏旧蔵書文書)",
+            "label": "明・弘治十八年八月二十日勅命",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/hyakki/manifests/hyakki.json",
+            "@type": "sc:Manifest",
+            "label": "百鬼夜行図",
             "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
         },
         {
@@ -17,9 +23,27 @@
             "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
         },
         {
-            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/7/manifest",
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/koshu/manifests/koshu.json",
             "@type": "sc:Manifest",
-            "label": "明・弘治十八年八月二十日勅命",
+            "label": "甲州法度之次第",
+            "license": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/s/koshu/page/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/kujira/manifests/kujira.json",
+            "@type": "sc:Manifest",
+            "label": "紀州熊野浦諸鯨之圖",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/12/manifest",
+            "@type": "sc:Manifest",
+            "label": "水野家古文書(水野忠幹氏旧蔵書文書)",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/13/manifest",
+            "@type": "sc:Manifest",
+            "label": "直江状",
             "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
         },
         {
@@ -35,16 +59,94 @@
             "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
         },
         {
-            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/13/manifest",
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21824/manifest",
             "@type": "sc:Manifest",
-            "label": "直江状",
+            "label": "松乃栄",
             "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
         },
         {
-            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/koshu/manifests/koshu.json",
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/21830/manifest",
             "@type": "sc:Manifest",
-            "label": "甲州法度之次第",
-            "license": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/s/koshu/page/reuse"
+            "label": "救世主像",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/71951/manifest",
+            "@type": "sc:Manifest",
+            "label": "大序",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/71952/manifest",
+            "@type": "sc:Manifest",
+            "label": "第一 私制字書巻一",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/71953/manifest",
+            "@type": "sc:Manifest",
+            "label": "第二 私制字書巻二",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/71954/manifest",
+            "@type": "sc:Manifest",
+            "label": "第三 私制字書巻三",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/71955/manifest",
+            "@type": "sc:Manifest",
+            "label": "第四 私制儒書巻一",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/71956/manifest",
+            "@type": "sc:Manifest",
+            "label": "第五 私制儒書巻二",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/71957/manifest",
+            "@type": "sc:Manifest",
+            "label": "第六 私制儒書巻三",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/71958/manifest",
+            "@type": "sc:Manifest",
+            "label": "第七 私制仏書巻",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/71959/manifest",
+            "@type": "sc:Manifest",
+            "label": "第八 私制韻鑑巻",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/71960/manifest",
+            "@type": "sc:Manifest",
+            "label": "第九 私法神書巻上",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/71961/manifest",
+            "@type": "sc:Manifest",
+            "label": "第二十四 私法世物語巻",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/71962/manifest",
+            "@type": "sc:Manifest",
+            "label": "第二十五 真道哲論巻",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
+        },
+        {
+            "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/71963/manifest",
+            "@type": "sc:Manifest",
+            "label": "残巻 断簡",
+            "license": "https://www.lib.u-tokyo.ac.jp/ja/library/general/reuse"
         }
     ]
 }
