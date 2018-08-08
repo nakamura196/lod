@@ -1,318 +1,168 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"/>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <title>LOD Applications</title>
-  <style>
-  body{
-    word-wrap : break-word;
-    overflow-wrap : break-word;
-  }
-</style>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+
 </head>
 
 <body>
 
+  <header>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light white scrolling-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="../">LOD Applications</a>
+      </button>
+
+    </div>
+  </nav>
+  <!--/.Navbar-->
+
+</header>
+
+<!--Main layout-->
+<div class="container mb-5">
+
   <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h1 class="display-4">TEI files</h1>
+    <h1 class="display-4">TEI</h1>
   </div>
 
-  <div class="container">
+  <!--Second row-->
+  <div class="row">
 
-    <div class="text-center" id="loading">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
+    <!--Third columnn-->
+    <div class="col-lg-4 mb-4">
+      <!--Card-->
+      <div class="card wow fadeIn" data-wow-delay="0.2s">
+
+        <!--Card image-->
+        <img class="img-fluid" src="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/square/10/default.jpg" alt="Card image cap">
+
+        <!--Card content-->
+        <div class="card-body text-center">
+          <!--Title-->
+          <h4 class="card-title">
+            甲州法度之次第
+          </h4>
+          <p>Graduate Schools for Law and Politics / Faculty of Law in the University of Tokyo</p>
+          <a href="../mirador/?resourceUri=https://nakamura196.github.io/lod/mirador/xml/koshu.xml&textDirection=vertical" class="btn btn-primary btn-md">View</a>
+        </div>
+
+      </div>
+      <!--/.Card-->
+    </div>
+    <!--Third columnn-->
+    
+    <!--
+    <div class="col-lg-4 mb-4">
+
+    <div class="card mb-r wow fadeIn" data-wow-delay="0.2s">
+
+    <img class="img-fluid" src="https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif-img/85/full/200,/0/default.jpg" alt="Card image cap">
+
+    <div class="card-body text-center">
+
+    <h4 class="card-title">
+    直江状
+  </h4>
+  <a href="../mirador/?resourceUri=https://nakamura196.github.io/lod/mirador/xml/koshu.xml&textDirection=vertical" class="btn btn-primary btn-md">View</a>
+</div>
+
+</div>
+
+</div>
+-->
+
+<div class="col-lg-4 mb-4">
+  <!--Card-->
+  <div class="card mb-r wow fadeIn" data-wow-delay="0.2s">
+
+    <!--Card image-->
+    <img class="img-fluid" src="https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif-img/140440/full/200,/0/default.jpg" alt="Card image cap">
+
+    <!--Card content-->
+    <div class="card-body text-center">
+      <!--Title-->
+      <h4 class="card-title">
+        平賀譲日記 ー昭和十三年十二月〜昭和十四年十二月ー
+      </h4>
+      <p>東京大学柏図書館 Kashiwa Library in the University of Tokyo, JAPAN</p>
+      <a href="../mirador/?resourceUri=https://nakamura196.github.io/hiraga_lod/mirador/xml/diary.xml" class="btn btn-primary btn-md">View</a>
     </div>
 
-    <form>
-
-      <div class="form-group row">
-        <label for="inputEmail3" class="col-sm-2 col-form-label">Title</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" name="title" id="title">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="inputPassword3" class="col-sm-2 col-form-label">Collection</label>
-        <div class="col-sm-10">
-          <!-- <input type="text" class="form-control" name="collection" id="collection"> -->
-          <select class="form-control" name="collection" id="collection">
-            <option></option>
-          </select>
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-sm-10">
-          <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>&nbsp;Search</button>
-        </div>
-      </div>
-    </form>
-
-    <br/>
-
-    <table class="table table-hover" id="table">
-      <thead id="thead">
-        <tr>
-          <th></th>
-          <th>Thumbnail</th>
-          <th>Title</th>
-          <th>Link to TAPAS</th>
-          <th>Collection</th>
-          <th>License</th>
-        </tr>
-      </thead>
-      <tbody id="resourceListBody">
-      </tbody>
-    </table>
-
-    <footer class="pt-4 my-md-5 pt-md-5 border-top">
-      <div class="row">
-        <div class="col-12 col-md">
-          <small class="d-block mb-3 text-muted">&copy; 2018 UTokyo Academic Archives Project Development Office.</small>
-        </div>
-      </div>
-    </footer>
   </div>
+  <!--/.Card-->
+</div>
+
+<div class="col-lg-4 mb-4">
+  <!--Card-->
+  <div class="card mb-r wow fadeIn" data-wow-delay="0.2s">
+
+    <!--Card image-->
+    <img class="img-fluid" src="https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif-img/169697/full/200,/0/default.jpg" alt="Card image cap">
+
+    <!--Card content-->
+    <div class="card-body text-center">
+      <!--Title-->
+      <h4 class="card-title">
+        金麟厚草書千字文 [ASIA0004]
+      </h4>
+      <p>東京大学附属図書館アジア研究図書館上廣倫理財団寄付研究部門 / Uehiro Project for the Asian Research Library in the University of Tokyo, JAPAN</p>
+      <a href="../mirador/?resourceUri=https://nakamura196.github.io/lod/mirador/xml/ASIA0004.xml&textDirection=vertical" class="btn btn-primary btn-md">View</a>
+    </div>
+
+  </div>
+  <!--/.Card-->
+</div>
+
+</div>
+
+</div>
+<!--/.Main layout-->
+
+<!--Footer-->
+<footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn">
+
+  <!--Copyright-->
+  <div class="footer-copyright py-5">
+    Satoru Nakamura. CC BY.
+  </div>
+  <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
 
 
-  <script
-  src="//code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- SCRIPTS -->
 
-  <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
 
-  <script>
-
-  var arg  = new Object;
-  url = location.search.substring(1).split('&');
-
-  for(i=0; url[i]; i++) {
-    var k = url[i].split('=');
-    arg[k[0]] = decodeURIComponent(k[1]);
-  }
-
-  var title = arg["title"] != null ? arg["title"] : "";
-  $("#title").val(title);
-  var collection = arg["collection"] != null ? arg["collection"] : "";
-  $("#collection").val(collection);
-
-  jQuery(document).ready(function() {
-
-    jQuery.ajaxSetup({
-      cache : false
-    });
-
-    getCollections()
-    search()
-
-  });
-
-  function getCollections(){
-    var query = " select distinct ?pub ";
-    query += " where { ";
-    query += " ?s dcterms:title ?title . ";
-    query += " ?s dcterms:publisher ?pub . ";
-    if(title != ""){
-      query += " filter regex ( ?pub , '"+title+"' , 'i' ) . ";
-    }
-    if(collection != ""){
-      query += " filter ( ?pub = \""+collection+"\" ) .  ";
-    }
-    query += " } ";
-
-    $.ajax({
-      url:'https://dydra.com/ut-archives-repo/lod/sparql',
-      type:'POST',
-      data:{
-        query : query,
-        format : "json"
-      }
-    })
-    // Ajaxリクエストが成功した時発動
-    .done( (data) => {
-      var result = data.results.bindings;
-
-      for (var i = 0; i < result.length; i++) {
-        var obj = result[i];
-
-        var pub = obj.pub.value;
-
-        var option = $("<option>");
-        $("#collection").append(option);
-        option.append(pub);
-
-        if (pub == collection){
-          option.attr("selected","selected");
-        }
-      }
-    })
-    // Ajaxリクエストが失敗した時発動
-    .fail( (data) => {
-      alert(data.statusText);
-    })
-    // Ajaxリクエストが成功・失敗どちらでも発動
-    .always( (data) => {
-
-    });
-  }
-
-
-  function search() {
-
-    var query = " select distinct * ";
-    query += " where { ";
-
-    query += " ?s dcterms:title ?title . ";
-    query += " ?s dcterms:identifier ?id . ";
-    query += " optional { ?s foaf:thumbnail ?thumb . } ";
-    query += " ?s dcterms:isReferencedBy ?ref . ";
-    query += " ?s dcterms:relation ?relation . ";
-    query += " ?s dcterms:publisher ?pub . ";
-    query += " ?s dcterms:isPartOf ?part . ";
-    query += " ?s dcterms:rights ?right . ";
-    if(title != ""){
-      query += " filter regex ( ?pub , '"+title+"' , 'i' ) . ";
-    }
-    if(collection != ""){
-      query += " filter ( ?pub = \""+collection+"\" ) .  ";
-    }
-    query += " } ";
-
-    $.ajax({
-      url:'https://dydra.com/ut-archives-repo/lod/sparql',
-      type:'POST',
-      data:{
-        query : query,
-        format : "json"
-      }
-    })
-    // Ajaxリクエストが成功した時発動
-    .done( (data) => {
-      var result = data.results.bindings;
-
-      var tbody = $("#resourceListBody");
-
-      for (var i = 0; i < result.length; i++) {
-        var obj = result[i];
-
-        var title = obj.title.value;
-
-        var tr = $("<tr>");
-        tbody.append(tr);
-
-        var td = $("<td>");
-        tr.append(td);
-
-        //サムネイル
-        td = $("<td>");
-        tr.append(td);
-        if (obj.thumb) {
-          var img = $("<img>");
-          td.append(img);
-          img.attr("src", obj.thumb.value)
-          img.attr("width", "100px")
-        }
-
-        //タイトル + ポータル
-        td = $("<td>");
-        tr.append(td);
-
-        var a = $("<a>");
-        td.append(a);
-        a.append(title);
-        a.attr("href", obj.relation.value);
-        a.attr("target", "_blank");
-
-
-        //Manifest
-        td = $("<td>");
-        tr.append(td);
-
-        var a = $("<a>");
-        td.append(a)
-        a.attr("href", obj.ref.value);
-        a.attr("target", "_blank");
-
-        var img = $("<img>");
-        a.append(img)
-        img.attr("height", 32);
-        img.attr("src", "http://www.tei-c.org/About/Logos/TEI-175.jpg")
-
-        //デジタルアーカイブ
-        td = $("<td>");
-        tr.append(td);
-        var a = $("<a>");
-        td.append(a)
-        a.attr("href", obj.part.value);
-        a.append(obj.pub.value)
-        a.attr("target", "_blank");
-
-        //権利
-        td = $("<td>");
-        tr.append(td);
-        var a = $("<a>");
-        td.append(a)
-        a.attr("href", obj.right.value);
-        a.append(obj.right.value)
-        a.attr("target", "_blank");
-
-      }
-
-      // DataTable
-      var table = $('#table').DataTable({
-        "iDisplayLength" : 25,
-        "order" : [ [ 4, "asc" ] ],
-
-        "autoWidth" : false,
-        "columnDefs" : [ {
-          "width" : "5%",
-          "targets" : 0
-        }, {
-          "width" : "15%",
-          "targets" : 1
-        }, {
-          "width" : "20%",
-          "targets" : 2
-        }, {
-          "width" : "20%",
-          "targets" : 3
-        }, {
-          "width" : "20%",
-          "targets" : 4
-        }, {
-          "width" : "20%",
-          "targets" : 5
-        }]
-
-      });
-
-      table.on('order.dt search.dt', function() {
-        table.column(0, {
-          search : 'applied',
-          order : 'applied'
-        }).nodes().each(function(cell, i) {
-          cell.innerHTML = i + 1;
-        });
-      }).draw();
-    })
-    // Ajaxリクエストが失敗した時発動
-    .fail( (data) => {
-      alert(data.statusText);
-    })
-    // Ajaxリクエストが成功・失敗どちらでも発動
-    .always( (data) => {
-      $("#loading").empty()
-    });
-  }
+<script>
+new WOW().init();
 </script>
+
 </body>
+
 </html>
