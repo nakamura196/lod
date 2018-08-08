@@ -24,406 +24,266 @@
     <nav class="navbar navbar-expand-lg navbar-light white scrolling-navbar">
       <div class="container">
         <a class="navbar-brand" href="../">LOD Applications</a>
-      </button>
 
+      </div>
+    </nav>
+    <!--/.Navbar-->
+
+  </header>
+
+  <div class="container mt-5">
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Collections</h1>
     </div>
-  </nav>
-  <!--/.Navbar-->
 
-</header>
-
-<div class="container mt-5">
-
-  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h1 class="display-4">Collections</h1>
-  </div>
-
-  <div class="text-center" id="loading">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
-  </div>
-
-  <div class="card mb-5">
-    <div class="card-body">
-      <form>
-
-        <div class="form-group row">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">Title</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" name="title" id="title">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="inputPassword3" class="col-sm-2 col-form-label">Collection</label>
-          <div class="col-sm-10">
-            <!-- <input type="text" class="form-control" name="collection" id="collection"> -->
-            <select class="form-control" name="collection" id="collection">
-              <option></option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>&nbsp;Search</button>
-          </div>
-        </div>
-      </form>
+    <div class="text-center" id="loading">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
     </div>
+
+    <div class="card mb-5">
+      <div class="card-body">
+        <form>
+
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Title</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="title" id="title">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Collection</label>
+            <div class="col-sm-10">
+              <!-- <input type="text" class="form-control" name="collection" id="collection"> -->
+              <select class="form-control" name="collection" id="collection">
+                <option></option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>&nbsp;Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!--Second row-->
+    <div class="row mb-5" id="row"></div>
+
   </div>
 
-  <!--Second row-->
-  <div class="row mb-5" id="row"></div>
+  <!--Footer-->
+  <footer class="page-footer text-center font-small mdb-color darken-2 mt-4 fadeIn">
 
-</div>
+    <!--Copyright-->
+    <div class="footer-copyright py-5">
+      <a href="https://researchmap.jp/nakamura.satoru/?lang=english">Satoru Nakamura</a>. CC BY.
+    </div>
+    <!--/.Copyright-->
 
-<!--Footer-->
-<footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn">
-
-  <!--Copyright-->
-  <div class="footer-copyright py-3">
-    Satoru Nakamura. CC BY.
-  </div>
-  <!--/.Copyright-->
-
-</footer>
-<!--/.Footer-->
+  </footer>
+  <!--/.Footer-->
 
 
-<script
-src="//code.jquery.com/jquery-3.3.1.min.js"
-integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-crossorigin="anonymous"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script
+  src="//code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
-<script>
+  <script>
 
-var arg  = new Object;
-url = location.search.substring(1).split('&');
+  var arg  = new Object;
+  url = location.search.substring(1).split('&');
 
-for(i=0; url[i]; i++) {
-  var k = url[i].split('=');
-  arg[k[0]] = decodeURIComponent(k[1]);
-}
+  for(i=0; url[i]; i++) {
+    var k = url[i].split('=');
+    arg[k[0]] = decodeURIComponent(k[1]);
+  }
 
-var title = arg["title"] != null ? arg["title"] : "";
-$("#title").val(title);
-var collection = arg["collection"] != null ? arg["collection"] : "";
-$("#collection").val(collection);
+  var title = arg["title"] != null ? arg["title"] : "";
+  $("#title").val(title);
+  var collection = arg["collection"] != null ? arg["collection"] : "";
+  $("#collection").val(collection);
 
-jQuery(document).ready(function() {
+  jQuery(document).ready(function() {
 
-  jQuery.ajaxSetup({
-    cache : false
+    jQuery.ajaxSetup({
+      cache : false
+    });
+
+    getCollections()
+    search()
+
   });
 
-  getCollections()
-  search()
-
-});
-
-function getCollections(){
-  var query = " select distinct ?pub ";
-  query += " where { ";
-  query += " ?s dcterms:title ?title . ";
-  query += " ?s <http://purl.org/utrepo/terms#databaseLabel> ?pub . ";
-  if(title != ""){
-    query += " filter regex ( ?pub , '"+title+"' , 'i' ) . ";
-  }
-  if(collection != ""){
-    query += " filter ( ?pub = \""+collection+"\" ) .  ";
-  }
-  query += " } ";
-
-  $.ajax({
-    url:'https://dydra.com/ut-digital-archives/lod/sparql',
-    type:'POST',
-    data:{
-      query : query,
-      format : "json"
+  function getCollections(){
+    var query = " select distinct ?pub ";
+    query += " where { ";
+    query += " ?s dcterms:title ?title . ";
+    query += " ?s <http://purl.org/utrepo/terms#databaseLabel> ?pub . ";
+    if(title != ""){
+      query += " filter regex ( ?pub , '"+title+"' , 'i' ) . ";
     }
-  })
-  // Ajaxリクエストが成功した時発動
-  .done( (data) => {
-    var result = data.results.bindings;
+    if(collection != ""){
+      query += " filter ( ?pub = \""+collection+"\" ) .  ";
+    }
+    query += " } ";
 
-    for (var i = 0; i < result.length; i++) {
-      var obj = result[i];
-
-      var pub = obj.pub.value;
-
-      var option = $("<option>");
-      $("#collection").append(option);
-      option.append(pub);
-
-      if (pub == collection){
-        option.attr("selected","selected");
+    $.ajax({
+      url:'https://dydra.com/ut-digital-archives/lod/sparql',
+      type:'POST',
+      data:{
+        query : query,
+        format : "json"
       }
-    }
-  })
-  // Ajaxリクエストが失敗した時発動
-  .fail( (data) => {
-    alert(data.statusText);
-  })
-  // Ajaxリクエストが成功・失敗どちらでも発動
-  .always( (data) => {
+    })
+    // Ajaxリクエストが成功した時発動
+    .done( (data) => {
+      var result = data.results.bindings;
 
-  });
-}
+      for (var i = 0; i < result.length; i++) {
+        var obj = result[i];
 
+        var pub = obj.pub.value;
 
-function search() {
+        var option = $("<option>");
+        $("#collection").append(option);
+        option.append(pub);
 
-  var query = " select distinct * ";
-  query += " where { ";
+        if (pub == collection){
+          option.attr("selected","selected");
+        }
+      }
+    })
+    // Ajaxリクエストが失敗した時発動
+    .fail( (data) => {
+      alert(data.statusText);
+    })
+    // Ajaxリクエストが成功・失敗どちらでも発動
+    .always( (data) => {
 
-  query += " ?s dcterms:title ?title . ";
-  query += " ?s <http://purl.org/ontology/bibo/identifier> ?id . ";
-  query += " optional { ?s foaf:thumbnail ?thumb . } ";
-  query += " ?s <http://purl.org/utrepo/terms#manifestUri> ?ref . ";
-  query += " ?s dcterms:relation ?relation . ";
-  query += " ?s <http://purl.org/utrepo/terms#databaseLabel> ?pub . ";
-  query += " ?s dcterms:isPartOf ?part . ";
-  query += " ?s dcterms:rights ?right . ";
-  query += " ?s <http://omeka.org/s/vocabs/o#id> ?oid . ";
-  if(title != ""){
-    query += " filter regex ( ?pub , '"+title+"' , 'i' ) . ";
+    });
   }
-  if(collection != ""){
-    query += " filter ( ?pub = \""+collection+"\" ) .  ";
-  }
-  query += " } order by ?oid ";
 
-  $.ajax({
-    url:'https://dydra.com/ut-digital-archives/lod/sparql',
-    type:'POST',
-    data:{
-      query : query,
-      format : "json"
+
+  function search() {
+
+    var query = " select distinct * ";
+    query += " where { ";
+
+    query += " ?s dcterms:title ?title . ";
+    query += " ?s <http://purl.org/ontology/bibo/identifier> ?id . ";
+    query += " optional { ?s foaf:thumbnail ?thumb . } ";
+    query += " ?s <http://purl.org/utrepo/terms#manifestUri> ?ref . ";
+    query += " ?s dcterms:relation ?relation . ";
+    query += " ?s <http://purl.org/utrepo/terms#databaseLabel> ?pub . ";
+    query += " ?s dcterms:isPartOf ?part . ";
+    query += " ?s dcterms:rights ?right . ";
+    query += " ?s <http://omeka.org/s/vocabs/o#id> ?oid . ";
+    if(title != ""){
+      query += " filter regex ( ?pub , '"+title+"' , 'i' ) . ";
     }
-  })
-  // Ajaxリクエストが成功した時発動
-  .done( (data) => {
-    var result = data.results.bindings;
-
-    var tbody = $("#resourceListBody");
-
-    for (var i = 0; i < result.length; i++) {
-      var obj = result[i];
-
-      var title = obj.title.value;
-
-      var col = $('<div class="col-md-3 mb-4">');
-      $("#row").append(col)
-
-      var card = $('<div class="card wow fadeIn" data-wow-delay="0.2s">');
-      col.append(card);
-
-      var img = $('<img class="img-fluid">');
-      card.append(img);
-      img.attr("src", obj.thumb.value);
-
-      var body = $('<div class="card-body text-center">');
-      card.append(body);
-
-      var h4 = $('<h4 class="card-title">');
-      body.append(h4);
-      var a = $('<a>');
-      h4.append(a);
-      a.attr("href", obj.relation.value);
-      a.attr("target", "_blank");
-      a.append(title)
-
-      var p = $("<p>");
-      body.append(p);
-      var a2 = $("<a>");
-      p.append(a2);
-      a2.attr("href", obj.part.value);
-      a2.attr("target", "_blank");
-      a2.append(obj.pub.value);
-
-      var p = $("<p>");
-      body.append(p);
-
-      var a = $("<a>");
-      p.append(a)
-      a.attr("href", obj.ref.value);
-      a.attr("target", "_blank");
-
-      var img = $("<img>");
-      a.append(img)
-      img.attr("src", "https://iiif.dl.itc.u-tokyo.ac.jp/images/iiif.png")
-      a.attr("target", "_blank");
-
-      p.append(" ");
-
-      var a = $("<a>");
-      p.append(a)
-      a.attr("href", "http://da.dl.itc.u-tokyo.ac.jp/mirador/?manifest="+obj.ref.value);
-      a.attr("target", "_blank");
-
-      var img = $("<img>");
-      a.append(img)
-      img.attr("src", "https://iiif.dl.itc.u-tokyo.ac.jp/images/mirador.png")
-
-      p.append(" ");
-
-      var a = $("<a>");
-      p.append(a)
-      a.attr("href", "http://da.dl.itc.u-tokyo.ac.jp/uv/?manifest="+obj.ref.value);
-      a.attr("target", "_blank");
-
-      var img = $("<img>");
-      a.append(img)
-      img.attr("src", "https://iiif.dl.itc.u-tokyo.ac.jp/images/uv.png")
-
-      /*
-      td.append(" ");
-
-      var a = $("<a>");
-      td.append(a)
-      a.attr("href", "http://codh.rois.ac.jp/software/iiif-curation-viewer/demo/?manifest="+obj.ref.value);
-      a.attr("target", "_blank");
-
-      var img = $("<img>");
-      a.append(img)
-      img.attr("src", "http://codh.rois.ac.jp/favicon-32.ico")
-
-
-
-      /*
-      <!--Third columnn-->
-      <div class="col-lg-4 mb-4">
-      <!--Card-->
-      <div class="card wow fadeIn" data-wow-delay="0.2s">
-
-      <!--Card image-->
-      <img class="img-fluid" src="assets/images/dydra.jpg" alt="Card image cap">
-
-      <!--Card content-->
-      <div class="card-body text-center">
-      <!--Title-->
-      <h4 class="card-title">
-      SPARQL Endpoint
-      </h4>
-      <a href="https://dydra.com/ut-digital-archives/lod" class="btn btn-primary btn-md">View</a>
-      </div>
-
-      </div>
-      <!--/.Card-->
-      </div>
-      <!--Third columnn-->
-      */
-
-      /*
-
-      var tr = $("<tr>");
-      tbody.append(tr);
-
-      var td = $("<td>");
-      tr.append(td);
-
-      //サムネイル
-      td = $("<td>");
-      tr.append(td);
-      if (obj.thumb) {
-      var img = $("<img>");
-      td.append(img);
-      img.attr("src", obj.thumb.value)
-      img.attr("width", "100px")
+    if(collection != ""){
+      query += " filter ( ?pub = \""+collection+"\" ) .  ";
     }
+    query += " } order by ?oid ";
 
-    //タイトル + ポータル
-    td = $("<td>");
-    tr.append(td);
+    $.ajax({
+      url:'https://dydra.com/ut-digital-archives/lod/sparql',
+      type:'POST',
+      data:{
+        query : query,
+        format : "json"
+      }
+    })
+    // Ajaxリクエストが成功した時発動
+    .done( (data) => {
+      var result = data.results.bindings;
 
-    var a = $("<a>");
-    td.append(a);
-    a.append(title);
-    a.attr("href", obj.relation.value);
-    a.attr("target", "_blank");
+      for (var i = 0; i < result.length; i++) {
+        var obj = result[i];
 
+        var title = obj.title.value;
 
-    //Manifest
-    td = $("<td>");
-    tr.append(td);
+        var col = $('<div class="col-md-3 mb-4">');
+        $("#row").append(col)
 
-    var a = $("<a>");
-    td.append(a)
-    a.attr("href", "http://da.dl.itc.u-tokyo.ac.jp/mirador/?manifest="+obj.ref.value);
-    a.attr("target", "_blank");
+        var card = $('<div class="card wow fadeIn" data-wow-delay="0.2s">');
+        col.append(card);
 
-    var img = $("<img>");
-    a.append(img)
-    img.attr("src", "https://iiif.dl.itc.u-tokyo.ac.jp/images/mirador.png")
+        var img = $('<img class="img-fluid">');
+        card.append(img);
+        img.attr("src", obj.thumb.value);
 
-    td.append(" ");
+        var body = $('<div class="card-body text-center">');
+        card.append(body);
 
-    var a = $("<a>");
-    td.append(a)
-    a.attr("href", "http://da.dl.itc.u-tokyo.ac.jp/uv/?manifest="+obj.ref.value);
-    a.attr("target", "_blank");
+        var h4 = $('<h4 class="card-title">');
+        body.append(h4);
+        var a = $('<a>');
+        h4.append(a);
+        a.attr("href", obj.relation.value);
+        a.attr("target", "_blank");
+        a.append(title)
 
-    var img = $("<img>");
-    a.append(img)
-    img.attr("src", "https://iiif.dl.itc.u-tokyo.ac.jp/images/uv.png")
+        var p = $("<p>");
+        body.append(p);
+        var a2 = $("<a>");
+        p.append(a2);
+        a2.attr("href", obj.part.value);
+        a2.attr("target", "_blank");
+        a2.append(obj.pub.value);
 
-    /*
-    td.append(" ");
+        var p = $("<p>");
+        body.append(p);
 
-    var a = $("<a>");
-    td.append(a)
-    a.attr("href", "http://codh.rois.ac.jp/software/iiif-curation-viewer/demo/?manifest="+obj.ref.value);
-    a.attr("target", "_blank");
+        var a = $("<a>");
+        p.append(a)
+        a.attr("href", obj.ref.value);
+        a.attr("target", "_blank");
 
-    var img = $("<img>");
-    a.append(img)
-    img.attr("src", "http://codh.rois.ac.jp/favicon-32.ico")
+        var img = $("<img>");
+        a.append(img)
+        img.attr("src", "https://iiif.dl.itc.u-tokyo.ac.jp/images/iiif.png")
+        a.attr("target", "_blank");
 
-    */
+        p.append(" ");
 
-    /*
-    td.append(" ");
+        var a = $("<a>");
+        p.append(a)
+        a.attr("href", "http://da.dl.itc.u-tokyo.ac.jp/mirador/?manifest="+obj.ref.value);
+        a.attr("target", "_blank");
 
-    var a = $("<a>");
-    td.append(a)
-    a.attr("href", obj.ref.value);
-    a.attr("target", "_blank");
+        var img = $("<img>");
+        a.append(img)
+        img.attr("src", "https://iiif.dl.itc.u-tokyo.ac.jp/images/mirador.png")
 
-    var img = $("<img>");
-    a.append(img)
-    img.attr("src", "https://iiif.dl.itc.u-tokyo.ac.jp/images/iiif.png")
+        p.append(" ");
 
-    //デジタルアーカイブ
-    td = $("<td>");
-    tr.append(td);
-    var a = $("<a>");
-    td.append(a)
-    a.attr("href", obj.part.value);
-    a.append(obj.pub.value)
-    a.attr("target", "_blank");
+        var a = $("<a>");
+        p.append(a)
+        a.attr("href", "http://da.dl.itc.u-tokyo.ac.jp/uv/?manifest="+obj.ref.value);
+        a.attr("target", "_blank");
 
-    //権利
-    td = $("<td>");
-    tr.append(td);
-    var a = $("<a>");
-    td.append(a)
-    a.attr("href", obj.right.value);
-    a.append(obj.right.value)
-    a.attr("target", "_blank");
+        var img = $("<img>");
+        a.append(img)
+        img.attr("src", "https://iiif.dl.itc.u-tokyo.ac.jp/images/uv.png")
 
-    */
-
+      }
+    })
+    // Ajaxリクエストが失敗した時発動
+    .fail( (data) => {
+      alert(data.statusText);
+    })
+    // Ajaxリクエストが成功・失敗どちらでも発動
+    .always( (data) => {
+      $("#loading").empty()
+    });
   }
-})
-// Ajaxリクエストが失敗した時発動
-.fail( (data) => {
-  alert(data.statusText);
-})
-// Ajaxリクエストが成功・失敗どちらでも発動
-.always( (data) => {
-  $("#loading").empty()
-});
-}
 </script>
 </body>
 </html>
