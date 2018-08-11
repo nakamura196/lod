@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Bootstrap core CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 
-  <style>
+  <style type="text/css">
   .white-popup {
     position: relative;
     background: #FFF;
@@ -24,12 +23,27 @@
     max-width: 500px;
     margin: 20px auto;
   }
+  /* alternating column backgrounds */
+  .vis-time-axis .vis-grid.vis-odd {
+    background: #f5f5f5;
+  }
+
+  /* gray background in weekends, white text color */
+  .vis-time-axis .vis-grid.vis-saturday, .vis-time-axis .vis-grid.vis-sunday
+  {
+    background: gray;
+  }
+
+  .vis-time-axis .vis-text.vis-saturday, .vis-time-axis .vis-text.vis-sunday
+  {
+    color: white;
+  }
   </style>
 
+  <link href="../assets/vis/4.15.1/vis.min.css" rel="stylesheet" type="text/css" />
+
   <title>LOD Applications</title>
-
 </head>
-
 <body>
 
   <header>
@@ -45,33 +59,22 @@
 
   </header>
 
-  <div class="container mt-5">
+  <div class="container-fluid mt-5">
 
-    <!-- Card -->
-    <div class="card mb-5">
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Timeline</h1>
+    </div>
 
-      <!-- Card content -->
-      <div class="card-body">
+    <div class="text-center" id="loading">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
+    </div>
 
-        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-          <h1 class="display-4">Timeline</h1>
-        </div>
-
-        <div class="text-center" id="loading">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
-        </div>
-
-        <div id="test-modal" class="white-popup mfp-hide">
-          <div id="container3"></div>
-          <p class="text-center"><a class="popup-modal-dismiss btn btn-primary" href="#">Close</a></p>
-        </div>
-
-        <div id="container2"></div>
-
-      </div>
+    <div id="timeline" class="mt-5 mx-5">
 
     </div>
-    <!-- Card -->
+
+    <div id="visualization" class="my-5 mx-5"></div>
+
   </div>
 
   <!--Footer-->
@@ -79,12 +82,23 @@
 
     <!--Copyright-->
     <div class="footer-copyright py-5">
-      <a href="https://researchmap.jp/nakamura.satoru/?lang=english">Satoru Nakamura</a>. CC BY.
+      <a href="https://researchmap.jp/nakamura.satoru/?lang=english">Satoru Nakamura</a>. <a href="http://creativecommons.org/licenses/by/4.0/">CC BY</a>.
     </div>
     <!--/.Copyright-->
 
   </footer>
   <!--/.Footer-->
+
+  <div id="test-modal" class="white-popup mfp-hide">
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h3 id="title"></h3>
+      <p id=total></p>
+      <p id=group></p>
+    </div>
+    <div id="container3"></div>
+    <p class="text-center"><a class="btn btn-primary" id="portal-link" target="_blank">View</a> <a class="popup-modal-dismiss btn btn-sm btn-mdb-color" href="#">Close</a></p>
+  </div>
+
 
 
   <script
@@ -93,12 +107,12 @@
   crossorigin="anonymous"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-
-  <script src="//code.highcharts.com/highcharts.js"></script>
+  <script src="../assets/vis/4.15.1/vis.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+  <script src="//code.highcharts.com/highcharts.js"></script>
 
-  <script>
+  <script type="text/javascript">
 
   $(function () {
     $(document).on('click', '.popup-modal-dismiss', function (e) {
@@ -106,6 +120,35 @@
       $.magnificPopup.close();
     });
   });
+
+  var map = {}
+
+  var timeline;
+  var graph2d;
+
+  var arg = getParam()
+
+  var endpoint = arg["endpoint"] != null ? arg["endpoint"] : "https://dydra.com/ut-digital-archives/lod/sparql";
+  //endpoint = "https://dydra.com/ut-digital-archives/diplomatic/sparql"
+
+  var limit = arg["limit"] != null ? Number(arg["limit"]) : -1;
+
+  var dateType = arg["dateType"] != null ? arg["dateType"] : "year";
+
+  var predicateUri = arg["predicateUri"] != null ? arg["predicateUri"] : "http://omeka.org/s/vocabs/o#created";
+
+  var groupUri = arg["groupUri"] != null ? arg["groupUri"] : "http://omeka.org/s/vocabs/o#is_public";
+  $("#group").text(groupUri)
+
+  var searchPrefixUrl = arg["searchPrefixUrl"] != null ? arg["searchPrefixUrl"] : null;
+  if(searchPrefixUrl == null){
+    $("#portal-link").remove()
+  }
+
+  var searchSuffix = arg["searchSuffix"] != null ? arg["searchSuffix"] : "";
+
+  var dateUrl = arg["dateUrl"] != null ? arg["dateUrl"] : null;
+  //"http://localhost/phr/docs/json/koumin.json"
 
   jQuery(document).ready(function() {
 
@@ -117,20 +160,34 @@
 
   });
 
+  function getParam(){
+    var arg = new Object;
+    url = location.search.substring(1).split('&');
+
+    for(i=0; url[i]; i++) {
+      var k = url[i].split('=');
+      arg[k[0]] = decodeURIComponent(k[1]);
+    }
+
+    return arg
+  }
 
   function search() {
 
-    var query = " PREFIX o: <http://omeka.org/s/vocabs/o#> ";
-    query += " select distinct * ";
+    var query = " SELECT * ";
     query += " where { ";
 
-    query += " ?s dcterms:title ?title . ";
-    query += " ?s o:created ?created . ";
-
-    query += " } order by ?created ";
+    query += " ?s ?v ?o . ";
+    query += " ?s rdf:type <http://omeka.org/s/vocabs/o#Item> . ";
+    query += " filter ( ?v = <"+predicateUri+">) ";
+    query += " ?s <"+groupUri+"> ?group . ";
+    query += " } "
+    if(limit != -1){
+      query += " limit "+limit
+    }
 
     $.ajax({
-      url:'https://dydra.com/ut-digital-archives/lod/sparql',
+      url:endpoint,
       type:'POST',
       data:{
         query : query,
@@ -141,106 +198,64 @@
     .done( (data) => {
       var result = data.results.bindings;
 
-      var result2 = new Object();
-
-
-
-      for(var i = 0; i < result.length; i++){
+      for (var i = 0; i < result.length; i++) {
         var obj = result[i];
-        var date = obj.created.value.split("T")[0];
 
-        if(!result2[date]){
-          result2[date] = 0;
+        var s = obj.s.value;
+        var v = obj.v.value;
+        var o = obj.o.value;
+
+        //console.log(o)
+
+        o = arrangeDate(o)
+
+        if(o == null){
+          continue
         }
 
-        result2[date] = result2[date] + 1;
+        var group = obj.group.value;
+
+        if(!map[group]){
+          map[group] = {}
+        }
+
+        tmp = map[group]
+
+        if(!tmp[o]){
+          tmp[o] = 0
+        }
+        tmp[o] = tmp[o] + 1
+
+
       }
 
-      var items = new Array();
+      var groups = new vis.DataSet();
 
-      var total = 0;
+      var items = []
 
-      for(var key in result2){
-        var item = new Array();
-        item.push(Date.parse(key));
-        total = total + result2[key];
-        item.push(total)
-        items.push(item)
+      for(group in map){
+
+        var total = 0
+
+        obj = map[group]
+        for(key in obj){
+          var tmp = {}
+          tmp.x = key
+          tmp.y = obj[key]
+          tmp.group = group
+          items.push(tmp)
+
+          total += tmp.y
+        }
+
+        groups.add({
+          id: group,
+          content: group+"："+total
+        })
       }
 
-      // Build the chart
-      Highcharts.chart('container2', {
-        chart: {
-          zoomType: 'x'
-        },
-        title: {
-          text: ''
-        },
-        subtitle: {
-          text: document.ontouchstart === undefined ?
-          'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
-        },
-        xAxis: {
-          type: 'datetime'
-        },
-        yAxis: {
-          title: {
-            text: ""//'No. of data'
-          }
-        },
-        legend: {
-          enabled: false
-        },
-        plotOptions: {
+      displayTimeline(items, groups)
 
-          series: {
-            point: {
-              events: {click: function(){
-                var id = this.series.data.indexOf(this);
-                var item = items[id]
-                var date = Highcharts.dateFormat('%Y-%m-%d', item[0]);
-
-                searchByDate(date);
-
-                $.magnificPopup.open({
-                  items: {src: '#test-modal'},
-                  type: 'inline',
-                  modal: true,
-                }, 0);
-              }}
-            }
-          },
-          area: {
-            fillColor: {
-              linearGradient: {
-                x1: 0,
-                y1: 0,
-                x2: 0,
-                y2: 1
-              },
-              stops: [
-                [0, Highcharts.getOptions().colors[0]],
-                [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-              ]
-            },
-            marker: {
-              radius: 2
-            },
-            lineWidth: 1,
-            states: {
-              hover: {
-                lineWidth: 1
-              }
-            },
-          }
-        },
-
-        series: [{
-          type: 'area',
-          name: 'items',
-          data: items
-        }]
-      });
     })
     // Ajaxリクエストが失敗した時発動
     .fail( (data) => {
@@ -250,86 +265,202 @@
     .always( (data) => {
       $("#loading").empty()
     });
-
   }
 
-  function searchByDate(date){
-    var query = " PREFIX o: <http://omeka.org/s/vocabs/o#> ";
-    query += " select distinct ?pub (count(?pub) AS ?c) ";
-    query += " where { ";
+  function arrangeDate(o){
+    var str = o.split("-")
 
-    query += " ?s <http://purl.org/utrepo/terms#databaseLabel> ?pub . ";
-    query += " ?s o:created ?created . ";
-    query += " filter (xsd:date(?created) = '"+date+"'^^xsd:date) . ";
+    if(str[0] == "9999"){
+      return null
+    }
 
-    query += " } group by ?pub ";
-
-    var array = new Array();
-
-    $.ajax({
-      url:'https://dydra.com/ut-digital-archives/lod/sparql',
-      type:'POST',
-      data:{
-        query : query,
-        format : "json"
+    if(dateType == "year"){
+      var year = str[0]
+      if($.isNumeric(year)){
+        return year
+      } else {
+        return null
       }
-    })
-    // Ajaxリクエストが成功した時発動
-    .done( (data) => {
-      var result = data.results.bindings;
-      var tmp = new Array();
+    } else if(dateType == "month"){
+      if(str.length >= 2){
+        var year = str[0]
+        var month = str[1]
+        if($.isNumeric(year) && $.isNumeric(month)){
+          return year+"-"+('00' + month).slice(-2);
+        } else {
+          return null
+        }
+      } else {
+        return null
+      }
+    }
+  }
 
-      for (var i = 0; i < result.length; i++) {
-        var obj = result[i];
+  function displayTimeline(items, groups){
 
-        var pub = obj.pub.value;
-        var c = Number(obj.c.value);
+    var container = document.getElementById('visualization');
 
+    var dataset = new vis.DataSet(items);
+    var options = {
+      defaultGroup: 'ungrouped',
+      style:'bar',
+      stack : true,
+      barChart: {align:'right'}, // align: left, center, right
+      drawPoints: false,
+      dataAxis: {
+        icons:true
+      },
+      legend: true,
+      orientation:'top'
+    };
+    graph2d = new vis.Graph2d(container, items, groups, options);
+    graph2d.on('doubleClick', onClick);
+
+    // add event listener
+    graph2d.on('rangechanged', onChange);
+    $("#visualization").append('<p class="text-center mt-3">'+predicateUri+'</p>')
+    $("#visualization").append('<p class="text-center grey-text mt-3">ヒストグラムをダブルクリックで詳細を表示</p>')
+
+    if(dateUrl != null){
+      getTimeline()
+
+      //move to center
+      range = graph2d.getWindow()
+      center = Math.round(range.start.getFullYear() + (range.end.getFullYear() - range.start.getFullYear()) / 2)
+      graph2d.moveTo(String(center))
+    }
+  }
+
+  function onClick(properties) {
+
+    $.magnificPopup.open({
+      items: {src: '#test-modal'},
+      type: 'inline',
+      modal: true,
+    }, 0);
+
+    var dd = new Date(properties.time);
+
+    var year = dd.getFullYear();
+    var month = dd.getMonth() + 1;
+    month = ('00' + month).slice(-2);
+
+    var day = dd.getDay();
+    day = ('00' + day).slice(-2);
+
+    var date;
+
+    if(dateType == "year"){
+      date = year
+    } else if(dateType == "month"){
+      date = year + "-" + month
+    }
+
+    var url = searchPrefixUrl+date+searchSuffix;
+
+    $("#title").text(date)
+
+    if(searchPrefixUrl != null){
+      $("#portal-link").attr("href", url);
+    }
+
+    var list = new Array();
+
+    var total = 0
+
+    for(group in map){
+      tmp = map[group]
+      if(tmp[date]){
         var item = new Object();
-        item.name = pub;
-        item.y = c;
-        tmp.push(item)
-      }
+        item.name = group;
+        item.y = tmp[date];
+        list.push(item)
 
-      // Build the chart
-      Highcharts.chart('container3', {
-        chart: {
-          plotBackgroundColor: null,
-          plotBorderWidth: null,
-          plotShadow: false,
-          type: 'pie'
-        },
-        title: {
-          text: ''
-        },
-        tooltip: {
-          valueSuffix: ' items'
-        },
-        plotOptions: {
-          pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-              enabled: false
-            },
-            showInLegend: true
-          }
-        },
-        series: [{
-          name: '',
-          colorByPoint: true,
-          data: tmp
-        }]
-      });
-    })
-    // Ajaxリクエストが失敗した時発動
-    .fail( (data) => {
-      alert(data.statusText);
-    })
-    // Ajaxリクエストが成功・失敗どちらでも発動
-    .always( (data) => {
+        total += tmp[date]
+      }
+    }
+
+    $("#total").text(total+" items")
+
+    // Build the chart
+    Highcharts.chart('container3', {
+      chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+      },
+      title: {
+        text: ''
+      },
+      tooltip: {
+        valueSuffix: ' items'
+      },
+      plotOptions: {
+        pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+            enabled: false
+          },
+          showInLegend: true
+        }
+      },
+      series: [{
+        name: '',
+        colorByPoint: true,
+        data: list
+      }]
     });
   }
+
+
+  function getTimeline() {
+
+    $.getJSON(dateUrl , function(data) {
+
+      for(i = 0; i < data.length; i++){
+        var obj = data[i]
+        obj.group = "1"
+      }
+
+      // Create a DataSet (allows two way data-binding)
+      var items = new vis.DataSet(data);
+
+      // DOM element where the Timeline will be attached
+      var container = document.getElementById('timeline');
+
+      // Configuration for the Timeline
+      var options = {};
+
+      // Create a Timeline
+      timeline = new vis.Timeline(container, items, options);
+      var groups = new vis.DataSet();
+      groups.add({
+        id: "1",
+        content: "Timeline"
+      })
+      timeline.setGroups(groups);
+
+      timeline.on('select', function(properties) {
+        var selection = timeline.getSelection();
+        timeline.focus(selection);
+      });
+
+      // add event listener
+      timeline.on('rangechanged', onChange);
+
+    })
+
+  }
+
+  function onChange(properties) {
+    if(dateUrl != null){
+      timeline.setWindow(properties.start, properties.end);
+    }
+    graph2d.setWindow(properties.start, properties.end);
+  }
+
 </script>
 </body>
 </html>
