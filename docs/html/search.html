@@ -72,6 +72,12 @@
     <!--Second row-->
     <div class="row mb-5" id="row"></div>
 
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center" id="pagination">
+
+      </ul>
+    </nav>
+
   </div>
 
   <!--Footer-->
@@ -126,10 +132,10 @@
     query += " ?s dcterms:title ?title . ";
     query += " ?s <http://purl.org/utrepo/terms#databaseLabel> ?pub . ";
     if(title != ""){
-      query += " filter regex ( ?pub , '"+title+"' , 'i' ) . ";
+      //query += " filter regex ( ?pub , '"+title+"' , 'i' ) . ";
     }
     if(collection != ""){
-      query += " filter ( ?pub = \""+collection+"\" ) .  ";
+      //query += " filter ( ?pub = \""+collection+"\" ) .  ";
     }
     query += " } ";
 
@@ -172,6 +178,33 @@
 
   function search() {
 
+    var page = 1
+    if(arg["page"]){
+      page = Number(arg["page"])
+    }
+
+    var start = page - 3 < 0 ? 0 : page -3
+
+    for(var i = start; i < page + 2; i++){
+      var li = $("<li>")
+      $("#pagination").append(li)
+
+
+      if(i+1 == page){
+        li.attr("class", "page-item active")
+      } else {
+        li.attr("class", "page-item")
+      }
+
+      var a = $("<a>");
+      li.append(a)
+      a.attr("class", "page-link")
+      a.attr("href", "?page="+(i+1));
+      a.append(i+1)
+    }
+    
+    var unit = 100
+
     var query = " select distinct * ";
     query += " where { ";
 
@@ -191,6 +224,8 @@
       query += " filter ( ?pub = \""+collection+"\" ) .  ";
     }
     query += " } order by ?oid ";
+    query += " limit "+unit;
+    query += " offset "+(page - 1)*unit;
 
     $.ajax({
       url:'https://dydra.com/ut-digital-archives/lod/sparql',
