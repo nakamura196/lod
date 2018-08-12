@@ -99,12 +99,14 @@
 
   function search() {
 
-    var query = " SELECT * ";
+    var query = " SELECT ?v ?o (count(?o) AS ?c) ";
     query += " where { ";
 
     query += " ?s ?v ?o . ";
-    query += " ?s rdf:type <http://omeka.org/s/vocabs/o#Item> ";
-    query += " } "
+    query += " ?s rdf:type <http://omeka.org/s/vocabs/o#Item> . ";
+    query += " filter ( ?v != <http://omeka.org/s/vocabs/o#media> ). ";
+    query += " filter ( isLiteral(?o) ). ";
+    query += " } group by ?v ?o "
 
     $.ajax({
       url:endpoint,
@@ -120,12 +122,10 @@
 
       map = {}
 
-      items = []
-
       for (var i = 0; i < result.length; i++) {
         var obj = result[i];
 
-        var s = obj.s.value;
+        // var s = obj.s.value;
         var v = obj.v.value;
         var o = obj.o.value;
 
@@ -137,20 +137,17 @@
         if(!tmp[o]){
           tmp[o] = 0
         }
-        tmp[o] = tmp[o] + 1
 
-        if(items.indexOf(s) == -1){
-          items.push(s)
-        }
-
+        tmp[o] = tmp[o] + Number(obj.c.value)
       }
+
 
       count = 0
       for(var v in map){
 
         histgram = map[v]
 
-        if(Object.keys(histgram).length == 1 || Object.keys(histgram).length >= items.length){
+        if(Object.keys(histgram).length == 1 || Object.keys(histgram).length >= 50){
           continue
         }
 

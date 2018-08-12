@@ -217,7 +217,9 @@
 
         var img = $('<img class="img-fluid">');
         card.append(img);
-        img.attr("src", obj.thumb.value);
+        if(obj.thumb){
+          img.attr("src", obj.thumb.value);
+        }
 
         var body = $('<div class="card-body text-center">');
         card.append(body);
