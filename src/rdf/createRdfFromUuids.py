@@ -4,72 +4,96 @@ import csv
 from rdflib import Graph
 from rdflib import URIRef
 import urllib, json
-
-argvs = sys.argv  # コマンドライン引数を格納したリストの取得
-argc = len(argvs) # 引数の個数
-
-if (argc < 2):   # 引数が足りない場合は、その旨を表示
-    print('Usage: # python %s filename' % argvs[0])
-    quit()         # プログラムの終了
+import argparse
 
 
-inputPath = argvs[1];
+def parse_args(args=sys.argv[1:]):
+    """ Get the parsed arguments specified on this script.
+    """
+    parser = argparse.ArgumentParser(description="")
 
-mode = ""
-if argc == 3:
-    mode = argvs[2]
+    parser.add_argument(
+        'endpoint_path',
+        action='store',
+        type=str,
+        help='URL of omeka api endpoint.')
 
-outputPath = inputPath+".rdf"
+    parser.add_argument(
+        'input_path',
+        action='store',
+        type=str,
+        help='Ful path to csv file of ids.')
 
-prefix = "https://iiif.dl.itc.u-tokyo.ac.jp/repo"
+    parser.add_argument(
+        'property_id',
+        action='store',
+        type=str,
+        help='Property id of identifier.')
 
-g = Graph()
+    return parser.parse_args(args)
 
-ids = []
 
-with open(inputPath, 'r') as f:
-    reader = csv.reader(f)
-    header = next(reader)  # ヘッダーを読み飛ばしたい時
+if __name__ == "__main__":
+    args = parse_args()
 
-    for row in reader:
+    input_path = args.input_path;
 
-        id = row[0]
-        ids.append(id)
+    property_id = args.property_id; #10, 98
 
-for i in range(0, len(ids)):
-    id = ids[i]
-    if i % 10 == 0:
-        print(str(i)+"/"+str(len(ids))+"\t"+id)
+    mode = ""
 
-    url = prefix+"/api/items?search="+id
+    outputPath = input_path+".rdf"
 
-    response = urllib.request.urlopen(url)
-    response_body = response.read().decode("utf-8")
-    data = json.loads(response_body.split('\n')[0])
+    g = Graph()
 
-    if len(data) == 1:
-        data = data[0]
+    ids = []
 
-        iri = data["@id"]
+    with open(input_path, 'r') as f:
+        reader = csv.reader(f)
+        header = next(reader)  # ヘッダーを読み飛ばしたい時
+
+        for row in reader:
+
+            id = row[0]
+            ids.append(id)
+
+    for i in range(0, len(ids)):
+        id = ids[i]
+        if i % 10 == 0:
+            print(str(i)+"/"+str(len(ids))+"\t"+id)
+
+        url = args.endpoint_path+"/items?property%5B0%5D%5Bproperty%5D="+property_id+"&property%5B0%5D%5Btype%5D=eq&property%5B0%5D%5Btext%5D="+id
 
         try:
-            g2 = Graph()
-            g2.parse(iri, format="json-ld")
-            g2.serialize(format='xml')
-            g.parse(iri, format="json-ld")
+            response = urllib.request.urlopen(url)
+            response_body = response.read().decode("utf-8")
+            data = json.loads(response_body.split('\n')[0])
 
+            if len(data) == 1:
+                data = data[0]
+
+                iri = data["@id"]
+
+                try:
+                    g2 = Graph()
+                    g2.parse(iri, format="json-ld")
+                    g2.serialize(format='xml')
+                    g.parse(iri, format="json-ld")
+
+                except:
+                    import traceback
+                    traceback.print_exc()
+
+
+            if mode == "test":
+                if i > 5:
+                    break
         except:
-            import traceback
-            traceback.print_exc()
+            print("Error:\t"+url)
 
 
-    if mode == "test":
-        if i > 5:
-            break
+    f2 = open(outputPath, "wb")
+    f2.write(g.serialize(format='xml'))
+    f2.close()
 
-
-f2 = open(outputPath, "wb")
-f2.write(g.serialize(format='xml'))
-f2.close()
-
-print("outputPath:\t"+outputPath)
+    print("outputPath:\t"+outputPath)
