@@ -33,5 +33,5 @@ for obj in results["results"]["bindings"]:
 
     manifests.append(manifest)
 
-fw = open("collection.json",'w')
+fw = open("../../docs/collection/collection.json",'w')
 json.dump(collection, fw, ensure_ascii=False, indent=4, sort_keys=True, separators=(',', ': '))
