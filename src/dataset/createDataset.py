@@ -82,5 +82,5 @@ for id in sorted(data):
 
 df = pd.DataFrame(table);
 
-df.to_excel('dataset.xlsx', index=False, header=False)
-# df.to_csv('dataset.tsv', sep='\t', index=False, header=False)
+df.to_excel('../../docs/dataset/dataset.xlsx', index=False, header=False)
+df.to_csv('../../docs/dataset/dataset.tsv', sep='\t', index=False, header=False)
