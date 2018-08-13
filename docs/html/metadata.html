@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+      <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+
+  <title>LOD Applications</title>
+
+</head>
+
+<body>
+
+  <header>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light white scrolling-navbar">
+      <div class="container">
+        <a class="navbar-brand">Metadata</a>
+    </div>
+  </nav>
+  <!--/.Navbar-->
+
+</header>
+
+<div class="container mt-5">
+
+  <div class="text-center" id="loading">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
+  </div>
+
+  <div class="card mb-5">
+    <div class="card-body">
+      <table id="example_subject" class="display" style="width:100%">
+      </table>
+    </div>
+  </div>
+
+  <div class="card mb-5">
+    <div class="card-body">
+      <table id="example_object" class="display" style="width:100%">
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!--Footer-->
+<footer class="page-footer text-center font-small mdb-color darken-2 mt-4 fadeIn">
+
+  <!--Copyright-->
+  <div class="footer-copyright py-5">
+    <a href="https://researchmap.jp/nakamura.satoru/?lang=english">Satoru Nakamura</a>. CC BY.
+  </div>
+  <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
+
+
+<script
+src="//code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+
+<script>
+
+var arg  = new Object;
+url = location.search.substring(1).split('&');
+
+for(i=0; url[i]; i++) {
+  var k = url[i].split('=');
+  arg[k[0]] = decodeURIComponent(k[1]);
+}
+
+
+var resourceUri = arg["resourceUri"] != null ? arg["resourceUri"] : "http://omeka.org/s/vocabs/o#Item";
+var endpoint = arg["endpoint"] != null ? arg["endpoint"] : "https://dydra.com/ut-digital-archives/lod/sparql";
+
+jQuery(document).ready(function() {
+
+  jQuery.ajaxSetup({
+    cache : false
+  });
+
+  //getCollections()
+  search("subject")
+  search("object")
+
+});
+
+function search(searchType) {
+
+  var query = " select distinct * ";
+  query += " where { ";
+
+  query += " ?s ?p ?o . ";
+  if(searchType == "subject"){
+    query += " filter ( ?s = <"+resourceUri+"> )"
+  } else {
+    query += " filter ( ?o = <"+resourceUri+"> )"
+  }
+
+  query += " } order by ?p ";
+
+  $.ajax({
+    url:endpoint,
+    type:'POST',
+    data:{
+      query : query,
+      format : "json"
+    }
+  })
+  // Ajaxリクエストが成功した時発動
+  .done( (data) => {
+    var result = data.results.bindings;
+
+    //テーブル表示用の変数
+    var dataSet = [];
+
+    var array = ["s", "p", "o"]
+
+    for (var i = 0; i < result.length; i++) {
+      var obj = result[i];
+      var data = []
+
+      for(var j = 0; j < array.length; j++){
+        var e = array[j];
+        var text;
+        var tmp = obj[e]
+        if(tmp.type == "literal"){
+          text = tmp.value
+        } else {
+          text = '<a href="./metadata.html?endpoint='+endpoint+'&resourceUri='+encodeURIComponent(tmp.value)+'">'+tmp.value+'</a>'
+        }
+        data.push(text)
+      }
+
+      dataSet.push(data);
+  }
+
+  var table = $('#example_'+searchType).DataTable({
+      data: dataSet,
+      columns: [
+          {title: "S"},
+          {title: "P"},
+          {title: "O"}
+      ],
+      "order": [[1, "asc"]],
+      "pageLength": 100
+  });
+})
+// Ajaxリクエストが失敗した時発動
+.fail( (data) => {
+  alert(data.statusText);
+})
+// Ajaxリクエストが成功・失敗どちらでも発動
+.always( (data) => {
+  $("#loading").empty()
+});
+}
+</script>
+</body>
+</html>
