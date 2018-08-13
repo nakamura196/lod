@@ -62,7 +62,7 @@ if __name__ == "__main__":
         if i % 10 == 0:
             print(str(i)+"/"+str(len(ids))+"\t"+id)
 
-        url = args.endpoint_path+"/items?property%5B0%5D%5Bproperty%5D="+property_id+"&property%5B0%5D%5Btype%5D=eq&property%5B0%5D%5Btext%5D="+id
+        url = args.endpoint_path+"/items?property[0][property]="+property_id+"&property[0][type]=eq&property[0][text]="+id
 
         try:
             response = urllib.request.urlopen(url)
