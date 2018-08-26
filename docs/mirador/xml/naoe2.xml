@@ -640,9 +640,10 @@
             <p><pb facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00001.jpg" n="1"
                     /><lb/><span facs="#zone_08f741f233d5820a7f9b6bd9ed7b0f7b">直江状</span></p>
             <p><pb facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00002.jpg" n="2"
-                    /><lb/><span facs="#zone_4ba55338831ce4ac2f2047d1f73f8df3">今朔之尊書、昨十</span><span
-                    facs="#zone_37f7c9c508aae614a2ee12b33ebbcb49">三下着、具拝見多</span><span
-                    facs="#zone_e64790a5023c9b4f5545629a89306faf">幸々々</span></p>
+                    /><lb/><span facs="#zone_4ba55338831ce4ac2f2047d1f73f8df3"
+                    >今朔之尊書、昨十</span><lb/><span facs="#zone_37f7c9c508aae614a2ee12b33ebbcb49"
+                    >三下着、具拝見多</span><lb/><span facs="#zone_e64790a5023c9b4f5545629a89306faf"
+                    >幸々々</span></p>
             <p><lb/><span facs="#zone_3aa5dd7ab0bd748c57c4701649ac878d">一、当国之儀、於其元 <pb
                         facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00003.jpg"
                         n="3"/></span><lb/><span facs="#zone_84e0fcb307dc552c28c24efd58634676"
@@ -652,17 +653,17 @@
                     >見之於間さへ色々雑</span><lb/><span facs="#zone_dc72f14314e2a4aff28770959f9f1d80"
                     >説無止時候、況遠国</span><lb/><span facs="#zone_65f358b5e39fa82e9dc894376a5d383e"
                     >と云、景勝若輩と云、</span><lb/><span facs="#zone_e2676d6d6132a9582ff6166a8671b8a3"
-                    >似合たる雑説と存</span><lb/><span facs="#zone_97a8d9e57e9811ec87c336dff789e08c">不苦候之条、可被安尊
-                        <pb
+                    >似合たる雑説と存</span><lb/><span facs="#zone_97a8d9e57e9811ec87c336dff789e08c"
+                    >不苦候之条、可被安尊 <pb
                         facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00004.jpg"
                         n="4"/></span><lb/><span facs="#zone_048890089f483d11c74545c148eac7bf"
                     >慮候、重而連々可被</span><lb/><span facs="#zone_43c6abd5a7880ed8a8a39c447c760070">聞召届候事
                 </span></p>
-            <p><lb/><span facs="#zone_26e331c63281303e4696bb0c9fd4d036">一、景勝上洛延引付而</span><span
-                    facs="#zone_00bca4d38b96a69d6cb61917a64d72f7">何角と申廻之由、不審候、</span><span
-                    facs="#zone_2b18d5a8ffb6b33245b013b8a6d0c528">去々年　国替無程</span><span
-                    facs="#zone_429bd5a9d962bfa61909d37ce9a5f359">上洛、去年九月下国</span><span
-                    facs="#zone_e09a013457dac9a8c6886f211d3d8b5b">当正月時分上洛被</span><span
+            <p><lb/><span facs="#zone_26e331c63281303e4696bb0c9fd4d036">一、景勝上洛延引付而</span><lb/><span
+                    facs="#zone_00bca4d38b96a69d6cb61917a64d72f7">何角と申廻之由、不審候、</span><lb/><span
+                    facs="#zone_2b18d5a8ffb6b33245b013b8a6d0c528">去々年　国替無程</span><lb/><span
+                    facs="#zone_429bd5a9d962bfa61909d37ce9a5f359">上洛、去年九月下国</span><lb/><span
+                    facs="#zone_e09a013457dac9a8c6886f211d3d8b5b">当正月時分上洛被</span><lb/><span
                     facs="#zone_e1a0f09f35030a554e0d9f1957e2c16b">申候而、いつの間に仕置 <pb
                         facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00005.jpg"
                         n="5"/></span><lb/><span facs="#zone_966409330c0987f64335fcb577031787"
@@ -672,38 +673,41 @@
                     >事も不罷成候、当国</span><lb/><span facs="#zone_b2b9357031caf9c39665d714f50bbf44"
                     >案内者可有御尋候、</span><lb/><span facs="#zone_44ab4ccb2475252a079d44e467bb069d"
                     >然者従正月雑説、全上</span><lb/><span facs="#zone_77dbd46c397e41434abdd7cdb7b667fa"
-                    >洛延引故、可在之候、何</span><lb/><span facs="#zone_73f46f65fbac27b77ca277ecf45ad720">者歟景勝逆心を具存
-                        <pb
+                    >洛延引故、可在之候、何</span><lb/><span facs="#zone_73f46f65fbac27b77ca277ecf45ad720"
+                    >者歟景勝逆心を具存 <pb
                         facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00006.jpg"
                         n="6"/></span><lb/><span facs="#zone_08d3a21edc12a9a3b245c981d5d26f1f"
                     >候て、申成故と令推量</span><lb/><span facs="#zone_456a3940fc8f5cc4f70f3d5e09e5b76e"
-                >候事</span></p>
-            <p><lb/><span facs="#zone_bce1b23c30581d41dc5f397814923b5b">一、景勝於別心者、誓詞を</span><span
-                    facs="#zone_e1862ce929d14bad5ddcadd36aa4e94b">以成共可申上之由、去々年</span><span
-                    facs="#zone_d9430706ab0d0785b2fd15411f438a7f">以来数通之起請文反</span><span
-                    facs="#zone_83f905f3a362e18bb4f2f1d001edf8f1">古成候者、重而不可入事、</span></p>
-            <p><lb/><span facs="#zone_eb522fe9cfda04a321e27909ada0236d">一、太閤様已来景勝律義</span><span
+                    >候事</span></p>
+            <p><lb/><span facs="#zone_bce1b23c30581d41dc5f397814923b5b"
+                    >一、景勝於別心者、誓詞を</span><lb/><span facs="#zone_e1862ce929d14bad5ddcadd36aa4e94b"
+                    >以成共可申上之由、去々年</span><lb/><span facs="#zone_d9430706ab0d0785b2fd15411f438a7f"
+                    >以来数通之起請文反</span><lb/><span facs="#zone_83f905f3a362e18bb4f2f1d001edf8f1"
+                    >古成候者、重而不可入事、</span></p>
+            <p><lb/><span facs="#zone_eb522fe9cfda04a321e27909ada0236d">一、太閤様已来景勝律義</span><lb/><span
                     facs="#zone_cc10710c9765de4b1e8f4f0607a6ebcd">之仁と思召候者、今以不可 <pb
                         facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00007.jpg"
                         n="7"/></span><lb/><span facs="#zone_3cb1b0a44433ad269b236e0850fdfc6a"
                     >有別儀候、世上之朝変</span><lb/><span facs="#zone_84071d5761a70d477cfbf97ab8d2e53a"
                     >暮化之義者相違之事、</span></p>
-            <p><lb/><span facs="#zone_5bef8f033bbf926d486ea014c13c8f0c">一、景勝心中毛頭別心無</span><span
-                    facs="#zone_4018769601a9211eca1570f9ecc0cdcb">之候へ共、讒人之申成無</span><span
-                    facs="#zone_7852e3ae4f370899c2416899bc7430bd">御糺明逆心と思召儀、</span><span
-                    facs="#zone_564e69647e524d98ad4d3cf3afb2fd45">不及是非候、兼而無等</span><span
-                    facs="#zone_1ba9ea4eaaad757111e03e44c3084c4d">閑験候者、讒者被引合、</span><span
+            <p><lb/><span facs="#zone_5bef8f033bbf926d486ea014c13c8f0c">一、景勝心中毛頭別心無</span><lb/><span
+                    facs="#zone_4018769601a9211eca1570f9ecc0cdcb">之候へ共、讒人之申成無</span><lb/><span
+                    facs="#zone_7852e3ae4f370899c2416899bc7430bd">御糺明逆心と思召儀、</span><lb/><span
+                    facs="#zone_564e69647e524d98ad4d3cf3afb2fd45">不及是非候、兼而無等</span><lb/><span
+                    facs="#zone_1ba9ea4eaaad757111e03e44c3084c4d">閑験候者、讒者被引合、</span><lb/><span
                     facs="#zone_4dd6cf06ae2ecf3eb24b12c5c4b50784">是非御尋可然候、左様無 <pb
                         facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00008.jpg"
                         n="8"/></span><lb/><span facs="#zone_86a72d31691b6e2c4fc8b4a9071b72a6"
                     >之候者、　内府様御表</span><lb/><span facs="#zone_fe8544b14c5c94530b8645c7a326c015"
                     >裏と可存事、</span></p>
-            <p><lb/><span facs="#zone_a6b83f04c56578a609e96915de8eb19b">一、北国肥前殿儀、思召侭被</span><span
-                    facs="#zone_f8bd18801f15b7ac7048eb2a1076ec66">仰付之由、御威光不浅存候事</span></p>
-            <p><lb/><span facs="#zone_22364cadbae79ce1cc9f6117fa3c2352">一、増右、大形少御出頭之由、</span><span
-                    facs="#zone_61898ff242c33b1f858b0e86dd293f40">珍重候、用所之儀可</span><span
-                    facs="#zone_5b60aaa5a1dd47af968cc920bc3a5ecf">申越候、榊式大者景勝</span><span
-                    facs="#zone_594f9927bcd2d3a5b016f117aeb4e15a">表向之取次にて候、然者<pb
+            <p><lb/><span facs="#zone_a6b83f04c56578a609e96915de8eb19b"
+                    >一、北国肥前殿儀、思召侭被</span><lb/><span facs="#zone_f8bd18801f15b7ac7048eb2a1076ec66"
+                    >仰付之由、御威光不浅存候事</span></p>
+            <p><lb/><span facs="#zone_22364cadbae79ce1cc9f6117fa3c2352"
+                    >一、増右、大形少御出頭之由、</span><lb/><span facs="#zone_61898ff242c33b1f858b0e86dd293f40"
+                    >珍重候、用所之儀可</span><lb/><span facs="#zone_5b60aaa5a1dd47af968cc920bc3a5ecf"
+                    >申越候、榊式大者景勝</span><lb/><span facs="#zone_594f9927bcd2d3a5b016f117aeb4e15a"
+                        >表向之取次にて候、然者<pb
                         facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00009.jpg"
                         n="9"/></span><lb/><span facs="#zone_feaa6c4d705afb4825467bf079a33bfe"
                     >景勝逆心曆然候者、一</span><lb/><span facs="#zone_d81cfe589203233461820aec55a5fd30"
@@ -717,12 +721,13 @@
                         facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00010.jpg"
                         n="10"/></span><lb/><span facs="#zone_11791cbf6680300f431543757304bdac"
                     >可頼入事</span></p>
-            <p><lb/><span facs="#zone_8105b4b5217802666a76c47d855043b6">一、雑説第一、上洛延引故</span><span
-                    facs="#zone_7473d054c50185aec2b69c9af7b0206d">と存候事</span></p>
-            <p><lb/><span facs="#zone_ec7520754e852c45bc14d694a37f21b2">一、第二、武具集事、上</span><span
-                    facs="#zone_b4a35cc76737ccfd5d1db1ebc7d148c4">方之武士者今焼・炭</span><span
-                    facs="#zone_03cbf1deb2c4569c1048a16813c14aa3">取・ふくヘ以下之人た</span><span
-                    facs="#zone_aedf7d6131161c3b278d4145097381a7">らし道具御所持候、</span><span
+            <p><lb/><span facs="#zone_8105b4b5217802666a76c47d855043b6"
+                    >一、雑説第一、上洛延引故</span><lb/><span facs="#zone_7473d054c50185aec2b69c9af7b0206d"
+                    >と存候事</span></p>
+            <p><lb/><span facs="#zone_ec7520754e852c45bc14d694a37f21b2">一、第二、武具集事、上</span><lb/><span
+                    facs="#zone_b4a35cc76737ccfd5d1db1ebc7d148c4">方之武士者今焼・炭</span><lb/><span
+                    facs="#zone_03cbf1deb2c4569c1048a16813c14aa3">取・ふくヘ以下之人た</span><lb/><span
+                    facs="#zone_aedf7d6131161c3b278d4145097381a7">らし道具御所持候、</span><lb/><span
                     facs="#zone_0a4ae3700a7df89f5690cae44e87ff90">田舎之武士者鑓・鉄 <pb
                         facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00011.jpg"
                         n="11"/></span><lb/><span facs="#zone_5f50b9a99621bc25f7cc676c7e963ab8"
@@ -732,17 +737,17 @@
                     >縦世上に無之支度、</span><lb/><span facs="#zone_0f2940cd936e3b05a9d125e68e324788"
                     >不心言道具を用意</span><lb/><span facs="#zone_08e6d2cb1c17cf1ca69721d10aab12fb"
                     >被申候共、景勝不有之</span><lb/><span facs="#zone_e867299c7ed74af57077fb3381b1671c"
-                    >分限何程之事可有</span><lb/><span facs="#zone_e2c5d872d9c387d9cac0014322acb63c">之候哉、天下に不似合
-                        <pb
+                    >分限何程之事可有</span><lb/><span facs="#zone_e2c5d872d9c387d9cac0014322acb63c"
+                    >之候哉、天下に不似合 <pb
                         facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00012.jpg"
                         n="12"/></span><lb/><span facs="#zone_00e47ec22fbd4ea7498ac8059918baa3"
                     >御沙汰と存候事、</span></p>
-            <p><lb/><span facs="#zone_90fd10495d1e0ee76e7d17f151e14eca">一、第三、道作船橋被申</span><span
-                    facs="#zone_3cafe6771e08e4c81af92bf1f217af7b">付、往還之煩無之様に</span><span
-                    facs="#zone_b2f462b5975bded4549798a9c247ad62">と国を被抱役候条、如此候、</span><span
-                    facs="#zone_b0dea3f2b68ea78cc2af0ffc8147115f">於越国も舟橋道作候、</span><span
-                    facs="#zone_2dd5add69391f4e2c6ef66b506df128c">然者端々残候て可在之候、</span><span
-                    facs="#zone_50be81207755b8f1b56e6281c773b9b8">渕底堀監物可存候、当</span><span
+            <p><lb/><span facs="#zone_90fd10495d1e0ee76e7d17f151e14eca">一、第三、道作船橋被申</span><lb/><span
+                    facs="#zone_3cafe6771e08e4c81af92bf1f217af7b">付、往還之煩無之様に</span><lb/><span
+                    facs="#zone_b2f462b5975bded4549798a9c247ad62">と国を被抱役候条、如此候、</span><lb/><span
+                    facs="#zone_b0dea3f2b68ea78cc2af0ffc8147115f">於越国も舟橋道作候、</span><lb/><span
+                    facs="#zone_2dd5add69391f4e2c6ef66b506df128c">然者端々残候て可在之候、</span><lb/><span
+                    facs="#zone_50be81207755b8f1b56e6281c773b9b8">渕底堀監物可存候、当</span><lb/><span
                     facs="#zone_e31e2b8c85eda4051aed213c0ef8e09d">国へ被罷移刻、仕置をも <pb
                         facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00013.jpg"
                         n="13"/></span><lb/><span facs="#zone_6e30d48aa5119e0d6ef1f08891eca7ac"
@@ -787,22 +792,24 @@
                         facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00017.jpg"
                         n="17"/></span><lb/><span facs="#zone_9a9b6163bf5ca22c4c2815912ca0e5fe"
                     >御合点可参候事</span></p>
-            <p><lb/><span facs="#zone_5f60b97e9edef0c8c7097c9c49a09935">一、無等閑間にても以来虚言</span><span
-                    facs="#zone_9b14bad7aa9052438acd421b8280cb74">に罷成様之儀者自他之</span><span
-                    facs="#zone_d7776086ed8d90b843f3b436dc7e42ac">ため被仰間敷候由候ヘ共、高</span><span
-                    facs="#zone_a8ccc85bb9c4513fa656534527fc7eed">麗降参不申候者、来々</span><span
-                    facs="#zone_e2c84e3f56b87f2a31c0d9f5cc7bbf50">年御人数可被遣候て被</span><span
-                    facs="#zone_d0917e740095b9f7132c1bdf6d7ee1eb">拵候者、慥可為虚説候</span><span
-                    facs="#zone_d4548080e3c766ccfdfc8ac764a1d531">歟、一笑々々</span></p>
+            <p><lb/><span facs="#zone_5f60b97e9edef0c8c7097c9c49a09935"
+                    >一、無等閑間にても以来虚言</span><lb/><span facs="#zone_9b14bad7aa9052438acd421b8280cb74"
+                    >に罷成様之儀者自他之</span><lb/><span facs="#zone_d7776086ed8d90b843f3b436dc7e42ac"
+                    >ため被仰間敷候由候ヘ共、高</span><lb/><span facs="#zone_a8ccc85bb9c4513fa656534527fc7eed"
+                    >麗降参不申候者、来々</span><lb/><span facs="#zone_e2c84e3f56b87f2a31c0d9f5cc7bbf50"
+                    >年御人数可被遣候て被</span><lb/><span facs="#zone_d0917e740095b9f7132c1bdf6d7ee1eb"
+                    >拵候者、慥可為虚説候</span><lb/><span facs="#zone_d4548080e3c766ccfdfc8ac764a1d531"
+                    >歟、一笑々々</span></p>
             <p><pb facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00018.jpg" n="18"
-                    /><lb/><span facs="#zone_c06eaf5ca49bac0f684df9a2c6bfbd66">一、景勝当年三月者兼</span><span
-                    facs="#zone_7cae09304477700db85e65794b2c0b41">信追善相当候条、左</span><span
-                    facs="#zone_fbc5b9384267fb06126dd3abeb9335a9">様之被明隙、夏中に</span><span
-                    facs="#zone_078a0b6d496b0e380af75d699700f1e0">為御見廻、上洛可被仕</span><span
-                    facs="#zone_d49098c50fafbea94feea9996975717f">内存故、人数武具以下</span><span
-                    facs="#zone_07162b14950616357f58816c62419c43">国々仕置之ために候条、</span><span
-                    facs="#zone_7ca6ab9697e269c201495d9fc36d6629">在国中急度相調候</span><span
-                    facs="#zone_d135e836d105c4fe309d5c50ff29bbe9">様にと用意被申候処、 <pb
+                    /><lb/><span facs="#zone_c06eaf5ca49bac0f684df9a2c6bfbd66"
+                    >一、景勝当年三月者兼</span><lb/><span facs="#zone_7cae09304477700db85e65794b2c0b41"
+                    >信追善相当候条、左</span><lb/><span facs="#zone_fbc5b9384267fb06126dd3abeb9335a9"
+                    >様之被明隙、夏中に</span><lb/><span facs="#zone_078a0b6d496b0e380af75d699700f1e0"
+                    >為御見廻、上洛可被仕</span><lb/><span facs="#zone_d49098c50fafbea94feea9996975717f"
+                    >内存故、人数武具以下</span><lb/><span facs="#zone_07162b14950616357f58816c62419c43"
+                    >国々仕置之ために候条、</span><lb/><span facs="#zone_7ca6ab9697e269c201495d9fc36d6629"
+                    >在国中急度相調候</span><lb/><span facs="#zone_d135e836d105c4fe309d5c50ff29bbe9"
+                    >様にと用意被申候処、 <pb
                         facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00019.jpg"
                         n="19"/></span><lb/><span facs="#zone_979975c9df604d96ccc724b027f3e543"
                     >増右・大形少より使者被</span><lb/><span facs="#zone_3c31e42f2b0688bf609478f44f98f805"
@@ -821,8 +828,8 @@
                     >不及是非候、昨日迄企</span><lb/><span facs="#zone_db72195bf8b63447cc757c1e59c23ee2"
                     >逆心候輩も其行はつ</span><lb/><span facs="#zone_b80b5f15bcee3042ea8304049fb33d17"
                     >れ候へは、しらぬ顔にて</span><lb/><span facs="#zone_db6f135c3a9c07c1d521599ae1efc4f6"
-                    >上洛仕、或縁者、新知</span><lb/><span facs="#zone_15cb7227839481e637f32a0afae37475">行を取、恥有不足をも
-                        <pb
+                    >上洛仕、或縁者、新知</span><lb/><span facs="#zone_15cb7227839481e637f32a0afae37475"
+                    >行を取、恥有不足をも <pb
                         facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00021.jpg"
                         n="21"/></span><lb/><span facs="#zone_e38ec52c8b897519c4ecfe1fb14b2471"
                     >不顧、人のましハりをな</span><lb/><span facs="#zone_76e7b5a179b19ff25f8797d061190c66"
@@ -847,12 +854,13 @@
                         n="23"/></span><lb/><span facs="#zone_58f47371b5bff077ae6b78927a46fd83"
                     >表裏歟、世上之御沙汰次</span><lb/><span facs="#zone_c8333731b4d319bfd65193a3fa2361f7"
                     >第候事、</span></p>
-            <p><lb/><span facs="#zone_0eccdc43c21e363844a1b93605567cab">一、千万句も不入、景勝別</span><span
-                    facs="#zone_5771d0842ad554fdf03d9cb46fdb4824">心毛頭無之候、上洛之儀者</span><span
-                    facs="#zone_3d4799092595f125f121587af2396490">不罷成候様御しかけ候条、</span><span
-                    facs="#zone_50f2515209def3f186977bc1cb324255">不及是非候、此上も　内</span><span
-                    facs="#zone_190f870df4c1f249121dabc670dd04fd">府様御分別次第上洛可</span><span
-                    facs="#zone_5bd9d1a404eaa57827a7ef78382403e4">被申候、縦其侭在国被申候 <pb
+            <p><lb/><span facs="#zone_0eccdc43c21e363844a1b93605567cab"
+                    >一、千万句も不入、景勝別</span><lb/><span facs="#zone_5771d0842ad554fdf03d9cb46fdb4824"
+                    >心毛頭無之候、上洛之儀者</span><lb/><span facs="#zone_3d4799092595f125f121587af2396490"
+                    >不罷成候様御しかけ候条、</span><lb/><span facs="#zone_50f2515209def3f186977bc1cb324255"
+                    >不及是非候、此上も　内</span><lb/><span facs="#zone_190f870df4c1f249121dabc670dd04fd"
+                    >府様御分別次第上洛可</span><lb/><span facs="#zone_5bd9d1a404eaa57827a7ef78382403e4"
+                    >被申候、縦其侭在国被申候 <pb
                         facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00024.jpg"
                         n="24"/></span><lb/><span facs="#zone_56686eb13a3b7dd752b9643a37962bf8"
                     >共、太閤様御置目を相背、</span><lb/><span facs="#zone_a6004ba34e4950f8cbc466170dc00524"
@@ -861,8 +869,8 @@
                     >見放被申、内府様へ無</span><lb/><span facs="#zone_5c76e60b60d4c4f7f72245835f8199de"
                     >首尾を仕、此方より手</span><lb/><span facs="#zone_ced756677ce606ff025fe017f1c393a3"
                     >出を仕てハ、天下之主</span><lb/><span facs="#zone_6d525b5c99893df0855100497280ab40"
-                    >被成候ても悪人之名不</span><lb/><span facs="#zone_e2913e44da96458a70d93767fb1d1627">遁候条、末代之可為恥
-                        <pb
+                    >被成候ても悪人之名不</span><lb/><span facs="#zone_e2913e44da96458a70d93767fb1d1627"
+                    >遁候条、末代之可為恥 <pb
                         facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00025.jpg"
                         n="25"/></span><lb/><span facs="#zone_32684bb43880b9d3e63ac3ab8e8df9bc"
                     >辱候、此所無遠慮何事に</span><lb/><span facs="#zone_682ec3c8cf5e9b56f71e716823f16eb0"
@@ -871,7 +879,7 @@
                     >思召、不義之於御噯者、不</span><lb/><span facs="#zone_249c07995f66adac8c5d9cb6abf6f99c"
                     >及是非候、誓紙も堅約</span><lb/><span facs="#zone_62c7d6ea9bfc2dfcd1a053e5f392cd7c"
                     >も入間敷事</span></p>
-            <p><lb/><span facs="#zone_f82f1825f21c69909cfed9a8e5769caa">一、於其元景勝逆心と申</span><span
+            <p><lb/><span facs="#zone_f82f1825f21c69909cfed9a8e5769caa">一、於其元景勝逆心と申</span><lb/><span
                     facs="#zone_7e4073d1103f89da1b2003dca226a647">成候、於隣国会津働とて <pb
                         facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00026.jpg"
                         n="26"/></span><lb/><span facs="#zone_04f1625705f7f51d775f03498d6b3731"
@@ -881,8 +889,9 @@
                     >被仕、様々之雑説共候ヘ共、</span><lb/><span facs="#zone_9da50967223b0feed307c71bcffcdd21"
                     >無分別者之仕事候条、聞</span><lb/><span facs="#zone_759e2cd7b45650ea8d195493c8738e0a"
                     >不被入候事</span></p>
-            <p><lb/><span facs="#zone_024799a0885bc0cb786a86ac9cc61aff">一、内々　内府様へ以使者成</span><span
-                    facs="#zone_a4293e7e0915423b1ca870d783abe47f">共可被申宣候ヘ共、隣国 <pb
+            <p><lb/><span facs="#zone_024799a0885bc0cb786a86ac9cc61aff"
+                    >一、内々　内府様へ以使者成</span><lb/><span facs="#zone_a4293e7e0915423b1ca870d783abe47f"
+                    >共可被申宣候ヘ共、隣国 <pb
                         facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00027.jpg"
                         n="27"/></span><lb/><span facs="#zone_806810950f028d72553fea00c82bbd9a"
                     >より讒人打続種々申</span><lb/><span facs="#zone_bd6c9159e590ea4491ab4d0a4e1eed7f"
@@ -891,18 +900,19 @@
                     >処、御侘言なと被申候者、</span><lb/><span facs="#zone_1e51bf3269f61fe5ff0427831db33bd9"
                     >表裏者第一と御沙汰</span><lb/><span facs="#zone_8a3f47194987594d9f4757adcb950586"
                     >可有候条、右之条々無</span><lb/><span facs="#zone_3d45888969f414b57e52b74a5ed5182c"
-                    >御糺明間者被申上間敷</span><lb/><span facs="#zone_5100fbe66c84e0645a6016dbde0b4520">由候、全疎意無之通折
-                        <pb
+                    >御糺明間者被申上間敷</span><lb/><span facs="#zone_5100fbe66c84e0645a6016dbde0b4520"
+                    >由候、全疎意無之通折 <pb
                         facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00028.jpg"
                         n="28"/></span><lb/><span facs="#zone_ae3c190cf3a03ae5dc366a568ffa6311"
                     >節御取成於我等可畏入事</span></p>
-            <p><lb/><span facs="#zone_d2a4e59dee5afa0894bb32566bdebe88">一、何事も遠国なから校量</span><span
-                    facs="#zone_08a2cbdb2a0fc8b78046c58a2a3acb72">仕義候条、有様可被仰</span><span
-                    facs="#zone_0c9e653345cf67e6acf99f008bbcacb3">越候、当世様余情ケ間敷</span><span
-                    facs="#zone_0b81c64dc346a269e4ed6f7350301c0e">事候へハ、自然実之事も</span><span
-                    facs="#zone_b8b513ee7361dfa468fe0d13a9c66e7c">うそのやう罷成候、無申迄</span><span
-                    facs="#zone_72e190b5d427187845e7f59704b783c5">候へ共、被懸御目儀候条、天</span><span
-                    facs="#zone_ea05936cca7fa70bd3d8b28b23ab2723">下黒白を御存知之儀候 <pb
+            <p><lb/><span facs="#zone_d2a4e59dee5afa0894bb32566bdebe88"
+                    >一、何事も遠国なから校量</span><lb/><span facs="#zone_08a2cbdb2a0fc8b78046c58a2a3acb72"
+                    >仕義候条、有様可被仰</span><lb/><span facs="#zone_0c9e653345cf67e6acf99f008bbcacb3"
+                    >越候、当世様余情ケ間敷</span><lb/><span facs="#zone_0b81c64dc346a269e4ed6f7350301c0e"
+                    >事候へハ、自然実之事も</span><lb/><span facs="#zone_b8b513ee7361dfa468fe0d13a9c66e7c"
+                    >うそのやう罷成候、無申迄</span><lb/><span facs="#zone_72e190b5d427187845e7f59704b783c5"
+                    >候へ共、被懸御目儀候条、天</span><lb/><span facs="#zone_ea05936cca7fa70bd3d8b28b23ab2723"
+                    >下黒白を御存知之儀候 <pb
                         facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00029.jpg"
                         n="29"/></span><lb/><span facs="#zone_d4c7d9a3fd053a9cdbb4b4847ba9047c"
                     >条、被仰越義者可存候、御</span><lb/><span facs="#zone_904a0d5c318d42965502fcab08f829de"
@@ -910,18 +920,19 @@
                     >慮外不少候ヘ共、愚慮を</span><lb/><span facs="#zone_8986ad298e055f5491f1580c0dd086d0"
                     >申宣、可得御意ため不</span><lb/><span facs="#zone_6bd774fdc155052437b023e49b6fb263"
                     >顧其憚、侍者奏達、恐</span><lb/><span facs="#zone_89ad56793443f422f4b21506598c782d"
-                >惶敬白</span></p>
-            <p><lb/><span facs="#zone_2934867cd4974b33a9d59598e735b137">直江山城守</span><span
-                    facs="#zone_2722ce2913ffe584a80470de410915fa">卯月十四日　　　</span><span
-                    facs="#zone_99187f99f2c92c4de91bdb8fc1e19852">兼続</span><span
-                    facs="#zone_333f440c91a8e60c60575e75725fd44c">豊光寺</span><span
+                    >惶敬白</span></p>
+            <p><lb/><span facs="#zone_2934867cd4974b33a9d59598e735b137">直江山城守</span><lb/><span
+                    facs="#zone_2722ce2913ffe584a80470de410915fa">卯月十四日　　　<span
+                        facs="#zone_99187f99f2c92c4de91bdb8fc1e19852">兼続</span></span><lb/><span
+                    facs="#zone_333f440c91a8e60c60575e75725fd44c">豊光寺</span><lb/><span
                     facs="#zone_f29cfc131b5746eeaba7346d8649667f">侍者御中</span></p>
             <p><pb facs="https://iiif.dl.itc.u-tokyo.ac.jp/repo/files/original/13/00030.jpg" n="30"
-                    /><lb/><span facs="#zone_479c885d395f22ac143e3bc33eabce1e">承応三年</span><span
-                    facs="#zone_4db6589a4e229dcd39c6c9218d5089eb">初春吉旦</span><span
+                    /><lb/><span facs="#zone_479c885d395f22ac143e3bc33eabce1e">承応三年</span><lb/><span
+                    facs="#zone_4db6589a4e229dcd39c6c9218d5089eb">初春吉旦</span><lb/><span
                     facs="#zone_0b4739202c773955e8c53d741486fc06">中村五郎右衛門開板</span></p>
-            <p><span>(異筆)</span><lb/><span facs="#zone_203264e9a87d5bba611cb068f7e1ac02">はきのめ</span><span
-                    facs="#zone_7e19ee8796aca1752758832b602d58b2">佐藤文蔵</span></p>
+            <p><lb/><span>(異筆)</span><lb/><span facs="#zone_203264e9a87d5bba611cb068f7e1ac02"
+                    >はきのめ</span><lb/><span facs="#zone_7e19ee8796aca1752758832b602d58b2"
+                >佐藤文蔵</span></p>
         </body>
     </text>
 </TEI>
