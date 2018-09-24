@@ -136,6 +136,8 @@
   var groupUri = arg["groupUri"] != null ? arg["groupUri"] : "http://omeka.org/s/vocabs/o#is_public";
   $("#group").text(groupUri)
 
+  var width = arg["width"] != null ? arg["width"] : 5;
+
   var searchPrefixUrl = arg["searchPrefixUrl"] != null ? arg["searchPrefixUrl"] : null;
   if(searchPrefixUrl == null){
     $("#portal-link").remove()
@@ -301,7 +303,10 @@
       defaultGroup: 'ungrouped',
       style:'bar',
       stack : true,
-      barChart: {align:'right'}, // align: left, center, right
+      barChart: {
+        width: width,
+        align:'center'
+      }, // align: left, center, right
       drawPoints: false,
       dataAxis: {
         icons:true
