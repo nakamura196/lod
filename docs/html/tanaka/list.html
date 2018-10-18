@@ -137,9 +137,9 @@
     if(year != ""){
       query += " ?s dcterms:date '"+year+"' . ";
     }
-    query += " ?s dcterms:identifier ?i . ";
+    query += " ?s dcterms:tableOfContents ?toc . ";
     query += " optional { ?s foaf:thumbnail ?thumb . } ";
-    query += " } order by ?i ";
+    query += " } order by ?toc ";
     query += " limit "+unit;
     query += " offset "+(page - 1)*unit;
 
@@ -162,13 +162,12 @@
 
         var col = $("<div class='col-md-3'>")
         $("#row").append(col)
-
+        
         var a = $("<a>")
         col.append(a)
         if(obj.thumb){
           a.attr("href", "http://codh.rois.ac.jp/software/iiif-curation-player/demo/?curation="+obj.s.value.replace("#", "&pos="))
         }
-        a.attr("target", "_blank")
 
         var figure = $('<figure class="figure">')
         a.append(figure)
