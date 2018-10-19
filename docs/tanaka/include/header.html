@@ -1,0 +1,45 @@
+
+<header>
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-light white scrolling-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./">『捃拾帖』デジタル展示</a>
+
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item" id="listli">
+            <a class="nav-link" href="list.html">一覧</a>
+          </li>
+          <li class="nav-item" id="mapli">
+            <a class="nav-link" href="map.html">地図</a>
+          </li>
+          <li class="nav-item" id="timelineli">
+            <a class="nav-link" href="timeline.html">年表</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+  <!--/.Navbar-->
+
+</header>
+
+<script>
+if(location.pathname.indexOf("list.html") != -1){
+  $("#listli").addClass("active")
+} if(location.pathname.indexOf("map.html") != -1){
+  $("#mapli").addClass("active")
+} if(location.pathname.indexOf("timeline.html") != -1){
+  $("#timelineli").addClass("active")
+}
+
+</script>
