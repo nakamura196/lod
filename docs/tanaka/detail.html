@@ -115,7 +115,7 @@ jQuery(document).ready(function() {
         row.append(dd)
         dd.append(obj.o.value.replace("http://ja.dbpedia.org/resource/", ""))
       } else if(p == "http://xmlns.com/foaf/0.1/thumbnail"){
-        var img = $('<img class="z-depth-1 mb-5 mx-auto d-block">')
+        var img = $('<img class="img-fluid z-depth-1 mb-5 mx-auto d-block">')
         $("#left").append(img)
         img.attr("src", obj.o.value)
       } else if(p == "http://purl.org/dc/terms/tableOfContents"){
