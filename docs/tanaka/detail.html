@@ -27,113 +27,142 @@
     <h3 id="title" class="mb-5"></h3>
 
     <div class="row">
-      <div class="col-md-8" id="left"><iframe id="image"
+      <div class="col-md-8" id="left">
+
+        <!--
+        <iframe id="image"
         class="mb-5"
         allowfullscreen frameborder="0"
         width="100%"
         height="600"></iframe>
-      </div>
-      <div class="col-md-4"><div id="metadata" class="ml-2"></div></div>
+      -->
     </div>
-
+    <div class="col-md-4">
+      <div id="metadata" class="ml-2">
+      </div>
+    </div>
   </div>
 
-  <script>footer('./');</script>
+</div>
 
-  <script>
+<script>footer('./');</script>
 
-  map = {}
-  map["http://purl.org/dc/terms/type"] = "版種類"
-  map["http://purl.org/dc/terms/subject"] = "内容分類"
-  map["http://purl.org/dc/terms/spatial"] = "地名"
-  map["http://purl.org/dc/terms/identifier"] = "目録番号"
-  map["http://purl.org/dc/terms/extent"] = "形態分類"
-  map["http://purl.org/dc/terms/date"] = "西暦"
+<script>
 
-  jQuery(document).ready(function() {
+map = {}
+map["http://purl.org/dc/terms/type"] = "版種類"
+map["http://purl.org/dc/terms/subject"] = "内容分類"
+map["http://purl.org/dc/terms/spatial"] = "地名"
+map["http://purl.org/dc/terms/identifier"] = "目録番号"
+map["http://purl.org/dc/terms/extent"] = "形態分類"
+map["http://purl.org/dc/terms/date"] = "西暦"
 
-    var arg  = new Object;
-    url = location.search.substring(1).split('&');
+jQuery(document).ready(function() {
 
-    for(i=0; url[i]; i++) {
-      var k = url[i].split('=');
-      arg[k[0]] = decodeURIComponent(k[1]);
+  var arg  = new Object;
+  url = location.search.substring(1).split('&');
+
+  for(i=0; url[i]; i++) {
+    var k = url[i].split('=');
+    arg[k[0]] = decodeURIComponent(k[1]);
+  }
+
+  var curation = arg["curation"]
+
+  var pos = arg["pos"] != null ? arg["pos"] : "";
+  var resourceUri;
+  if(pos != ""){
+    resourceUri = curation+"#"+pos
+  } else {
+    $("#left").hide()
+    resourceUri = curation
+  }
+
+  var query = " SELECT distinct *";
+  query += " where { ";
+  query += " ?s ?p ?o . filter (?s = <"+resourceUri+">)";
+  query += " } order by ?p "
+
+  $.ajax({
+    url:'https://dydra.com/ut-digital-archives/tanaka/sparql',
+    type:'POST',
+    data:{
+      query : query,
+      format : "json"
     }
-
-    var curation = arg["curation"]
-
-    var pos = arg["pos"] != null ? arg["pos"] : "";
-    var resourceUri;
-    if(pos != ""){
-      resourceUri = curation+"#"+pos
-      $("#image").attr("src", "http://codh.rois.ac.jp/software/iiif-curation-player/demo/?curation="+curation+"&pos="+pos)
-    } else {
-      $("#left").hide()
-      resourceUri = curation
-    }
-
-    var query = " SELECT distinct *";
-    query += " where { ";
-    query += " ?s ?p ?o . filter (?s = <"+resourceUri+">)";
-    query += " } order by ?p "
-
-    $.ajax({
-      url:'https://dydra.com/ut-digital-archives/tanaka/sparql',
-      type:'POST',
-      data:{
-        query : query,
-        format : "json"
-      }
-    })
-    // Ajaxリクエストが成功した時発動
-    .done( (data) => {
-      var result = data.results.bindings;
-
-      for (var i = 0; i < result.length; i++) {
-        var obj = result[i];
-
-        p = obj.p.value
-        label = map[p]
-
-        if(p == "http://purl.org/dc/terms/title"){
-          $("#title").text(obj.o.value)
-        } else if(p == "http://purl.org/dc/terms/spatial"){
-          row = $('<dl>')
-          $("#metadata").append(row)
-
-          dt = $('<dt>')
-          row.append(dt)
-          dt.append(label)
-
-          dd = $('<dd>')
-          row.append(dd)
-          dd.append(obj.o.value.replace("http://ja.dbpedia.org/resource/", ""))
-        } else if(p == "http://xmlns.com/foaf/0.1/thumbnail" || p == "http://purl.org/dc/terms/tableOfContents"){
-
-        } else {
-          row = $('<dl>')
-          $("#metadata").append(row)
-
-          dt = $('<dt>')
-          row.append(dt)
-          dt.append(label)
-
-          dd = $('<dd>')
-          row.append(dd)
-          dd.append(obj.o.value)
-        }
-      }
-    })
-    // Ajaxリクエストが失敗した時発動
-    .fail( (data) => {
-      alert(data.statusText);
-    })
-    // Ajaxリクエストが成功・失敗どちらでも発動
-    .always( (data) => {
-      $("#loading").empty()
-    });
   })
+  // Ajaxリクエストが成功した時発動
+  .done( (data) => {
+    var result = data.results.bindings;
 
-  </script>
+    for (var i = 0; i < result.length; i++) {
+      var obj = result[i];
+
+      p = obj.p.value
+      label = map[p]
+
+      if(p == "http://purl.org/dc/terms/title"){
+        $("#title").text(obj.o.value)
+      } else if(p == "http://purl.org/dc/terms/spatial"){
+        row = $('<dl>')
+        $("#metadata").append(row)
+
+        dt = $('<dt>')
+        row.append(dt)
+        dt.append(label)
+
+        dd = $('<dd>')
+        row.append(dd)
+        dd.append(obj.o.value.replace("http://ja.dbpedia.org/resource/", ""))
+      } else if(p == "http://xmlns.com/foaf/0.1/thumbnail"){
+        var img = $('<img class="z-depth-1 mb-5 mx-auto d-block">')
+        $("#left").append(img)
+        img.attr("src", obj.o.value)
+      } else if(p == "http://purl.org/dc/terms/tableOfContents"){
+
+      } else {
+        row = $('<dl>')
+        $("#metadata").append(row)
+
+        dt = $('<dt>')
+        row.append(dt)
+        dt.append(label)
+
+        dd = $('<dd>')
+        row.append(dd)
+        dd.append(obj.o.value)
+      }
+    }
+
+    if(pos != ""){
+      row = $('<dl>')
+      $("#metadata").append(row)
+
+      dd = $('<dd class="mt-5">')
+      row.append(dd)
+
+      var a = $("<a>")
+      dd.append(a)
+      a.attr("href", "http://codh.rois.ac.jp/software/iiif-curation-player/demo/?curation="+curation+"&pos="+pos)
+
+      var img = $("<img>")
+      a.append(img)
+      img.attr("src", "http://codh.rois.ac.jp/icp/favicons/icp-logo-32x32.png")
+
+      a.append("&nbsp;&nbsp;&nbsp;IIIF Curation Playerで見る")
+    }
+
+  })
+  // Ajaxリクエストが失敗した時発動
+  .fail( (data) => {
+    alert(data.statusText);
+  })
+  // Ajaxリクエストが成功・失敗どちらでも発動
+  .always( (data) => {
+    $("#loading").empty()
+  });
+})
+
+</script>
 </body>
 </html>
