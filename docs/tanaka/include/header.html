@@ -15,6 +15,9 @@
 
         <!-- Left -->
         <ul class="navbar-nav ml-auto">
+          <li class="nav-item" id="tableli">
+            <a class="nav-link" href="table.html">表形式</a>
+          </li>
           <li class="nav-item" id="listli">
             <a class="nav-link" href="list.html">一覧</a>
           </li>
@@ -40,6 +43,8 @@ if(location.pathname.indexOf("list.html") != -1){
   $("#mapli").addClass("active")
 } if(location.pathname.indexOf("timeline.html") != -1){
   $("#timelineli").addClass("active")
+}　if(location.pathname.indexOf("table.html") != -1){
+  $("#tableli").addClass("active")
 }
 
 </script>
