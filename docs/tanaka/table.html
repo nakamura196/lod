@@ -19,14 +19,6 @@
   <script>asset('./');</script>
 
   <style>
-  table{
-    margin: 0 auto;
-    width: 100%;
-    clear: both;
-    border-collapse: collapse;
-    table-layout: fixed; // ***********add this
-    word-wrap:break-word; // ***********and this
-  }
   div.dataTables_length {
     padding-left: 2em;
   }
@@ -40,7 +32,7 @@
   .bottom {
     padding-top: 2em;
   }
-  </style>
+</style>
 
 </head>
 <body>
@@ -49,23 +41,26 @@
 
   <div class="container my-5">
 
-    <table class="table table-hover" id="table">
-      <thead id="thead">
-        <tr>
-          <th></th>
-          <th></th>
-          <th>タイトル</th>
-          <th>目録番号</th>
-          <th>西暦</th>
-          <th>地名</th>
-          <th>版種類</th>
-          <th>形態分類</th>
-          <th>内容分類</th>
-        </tr>
-      </thead>
-      <tbody id="resourceListBody">
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-hover" id="table">
+        <thead id="thead">
+          <tr>
+            <th></th>
+            <th></th>
+            <th>タイトル</th>
+            <th>目録番号</th>
+            <th>西暦</th>
+            <th>地名</th>
+            <th>版<!--種類--></th>
+            <th>形態<!--分類--></th>
+            <th>内容<!--分類--></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="resourceListBody">
+        </tbody>
+      </table>
+    </div>
 
     <div class="text-center" id="loading">
       <img src="https://img.buzzfeed.com/buzzfeed-static/static/enhanced/web05/2012/4/24/16/anigif_enhanced-buzz-10731-1335299292-14.gif" class="img-fluid"/>
@@ -154,9 +149,9 @@
         row.push(img.prop('outerHTML'))
 
 
-        var a = $("<a>")
-        a.attr("href", "detail.html?curation="+obj.s.value.replace("#", "&pos="))
-        a.attr("target", "_blank")
+        var a = $("<span>")
+        //a.attr("href", "detail.html?curation="+obj.s.value.replace("#", "&pos="))
+        //a.attr("target", "_blank")
         a.append(obj.title.value)
         row.push(a.prop('outerHTML'))
 
@@ -184,6 +179,20 @@
           row.push(text)
         }
 
+        //-----------
+
+        if(obj.s.value.indexOf("http://example.org") == -1){
+          var a = $("<a>")
+          a.attr("href", "http://codh.rois.ac.jp/software/iiif-curation-viewer/demo/?curation="+obj.s.value.replace("#", "&pos="))
+          a.attr("target", "_blank")
+          var img = $("<img>")
+          a.append(img)
+          img.attr("src", "http://codh.rois.ac.jp/icp/favicons/icp-logo-32x32.png")
+          row.push(a.prop('outerHTML'))
+        } else {
+          row.push("")
+        }
+
       }
 
       // Setup - add a text input to each footer cell
@@ -198,10 +207,18 @@
         "dom": '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
         "iDisplayLength" : 100,
         "order" : [ [ 3, "asc" ] ],
+        "bAutoWidth": false,
         "columnDefs": [
           { "width": "5%", "targets": 0 },
           { "width": "10%", "targets": 1 },
-          { "width": "30%", "targets": 2 }
+          { "width": "30%", "targets": 2 },
+          { "width": "15%", "targets": 3 },
+          { "width": "5%", "targets": 4 },
+          { "width": "5%", "targets": 5 },
+          { "width": "5%", "targets": 6 },
+          { "width": "5%", "targets": 7 },
+          { "width": "15%", "targets": 8 },
+          { "width": "5%", "targets": 9 }
         ],
       });
 
