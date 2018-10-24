@@ -18,16 +18,20 @@
           <li class="nav-item" id="tableli">
             <a class="nav-link" href="table.html">一覧</a>
           </li>
-          <!--
-          <li class="nav-item" id="listli">
-            <a class="nav-link" href="list.html">一覧</a>
-          </li>
-          -->
           <li class="nav-item" id="mapli">
             <a class="nav-link" href="map.html">地図</a>
           </li>
           <li class="nav-item" id="timelineli">
             <a class="nav-link" href="timeline.html">年表</a>
+          </li>
+          <li class="nav-item" id="annoli">
+            <a class="nav-link" href="anno_list.html">アノテーション付与</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://codh.rois.ac.jp/face/iiif-curation-finder/?curation=https://utda.github.io/text/json/79b0e49c45ab09611378e09515ca8488.json">IIIF Curation Finder</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://dydra.com/ut-digital-archives/tanaka2">SPARQL Endpoint</a>
           </li>
         </ul>
 
@@ -47,6 +51,8 @@ if(location.pathname.indexOf("list.html") != -1){
   $("#timelineli").addClass("active")
 }　if(location.pathname.indexOf("table.html") != -1){
   $("#tableli").addClass("active")
+} if(location.pathname.indexOf("anno_") != -1){
+  $("#annoli").addClass("active")
 }
 
 </script>
