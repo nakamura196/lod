@@ -28,6 +28,8 @@
   }
   .table {
     padding-top: 2em;
+    word-wrap: break-wrod;
+    overflow-wrap : break-word;
   }
   .bottom {
     padding-top: 2em;
@@ -198,7 +200,7 @@
       // Setup - add a text input to each footer cell
       $('#table thead th').each( function () {
         var title = $(this).text();
-        $(this).html( title+' <input type="text" class="form-control"/>' );
+        $(this).html( title+'<br/><input type="text" class="form-control"/>' );
       } );
 
       // DataTable
@@ -207,7 +209,6 @@
         "dom": '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
         "iDisplayLength" : 100,
         "order" : [ [ 3, "asc" ] ],
-        "bAutoWidth": false,
         "columnDefs": [
           { "width": "5%", "targets": 0 },
           { "width": "10%", "targets": 1 },
@@ -220,6 +221,7 @@
           { "width": "15%", "targets": 8 },
           { "width": "5%", "targets": 9 }
         ],
+        fixedColumns: true
       });
 
       // Apply the search
