@@ -95,11 +95,18 @@
     var query = " SELECT distinct * ";
     query += " where { ";
     query += " ?s dcterms:title ?title . ";
-    query += " ?s dcterms:spatial ?location. ";
+
 
     if(locationUri != ""){
-      query += " ?s dcterms:spatial <"+locationUri+"> . ";
+      query += " ?s dcterms:spatial ?location . ?s dcterms:spatial <"+locationUri+"> . ";
+    } else {
+      query += " optional {  ";
+      query += " ?s dcterms:spatial ?location . ";
+      query += " } ";
     }
+
+
+
     if(year != ""){
       query += " ?s dcterms:date '"+year+"' . ";
     }
@@ -113,13 +120,14 @@
     query += " optional { ?s dcterms:spatial ?spatial . } ";
     query += " optional { ?s dcterms:extent ?extent . } ";
 
-    query += " optional { ?s foaf:thumbnail ?thumb . } ";
+    query += " optional { ?s dcterms:relation ?relation . ?s foaf:thumbnail ?thumb . } ";
+
     query += " } ";
 
     var array = new Array();
 
     $.ajax({
-      url:'https://dydra.com/ut-digital-archives/tanaka/sparql',
+      url:'https://dydra.com/ut-digital-archives/tanaka2/sparql',
       type:'POST',
       data:{
         query : query,
@@ -165,6 +173,8 @@
         div.append(span)
         span.append(obj.toc.value)
         div.append(obj.id.value)
+
+
         row.push(div.prop("outerHTML"))
 
         //-----------
@@ -183,9 +193,9 @@
 
         //-----------
 
-        if(obj.s.value.indexOf("http://example.org") == -1){
+        if(obj.relation != null){
           var a = $("<a>")
-          a.attr("href", "http://codh.rois.ac.jp/software/iiif-curation-viewer/demo/?curation="+obj.s.value.replace("#", "&pos="))
+          a.attr("href", "http://codh.rois.ac.jp/software/iiif-curation-viewer/demo/?curation="+obj.relation.value.replace("#", "&pos="))
           a.attr("target", "_blank")
           var img = $("<img>")
           a.append(img)
