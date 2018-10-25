@@ -26,36 +26,203 @@
 
     <h3 class="text-center">アノテーション付与プロジェクト</h3>
 
+    <dt>Progress</dt>
+    <dd>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" id="bar" aria-valuemin="0"></div>
+      </div>
+    </dd>
+
     <div class="row mt-5">
 
-      <div class="col">
+      <div class="col-md-6">
+
+        <!--
 
         <iframe src="https://docs.google.com/spreadsheets/d/1XU3G6O2FDYIRyOF82lU2bDa6kleX_OOagiKOMOHsrsI/edit#gid=823375334" allowfullscreen="true" webkitallowfullscreen="true" frameborder="0" mozallowfullscreen="true" width="100%" height="600px"></iframe>
 
+      -->
+
+      <div style="width:100%; height:800px; overflow-y:auto;">
+
+        <div class="table-responsive">
+          <table class="table table-hover" id="table" width="100%">
+            <thead id="thead">
+              <tr>
+                <th>タイトル</th>
+                <th>目録番号</th>
+                <th>書誌事項</th>
+                <th>その他</th>
+              </tr>
+            </thead>
+            <tbody id="resourceListBody">
+            </tbody>
+          </table>
+
+          <div class="text-center" id="loading">
+            <img src="https://img.buzzfeed.com/buzzfeed-static/static/enhanced/web05/2012/4/24/16/anigif_enhanced-buzz-10731-1335299292-14.gif" class="img-fluid"/>
+          </div>
+        </div>
+
       </div>
-      <div class="col"><iframe title="Mirador" frameborder="0" id="mirador" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="100%" height="600px"></iframe></div>
+
+    </div>
+    <div class="col-md-6">
+      <iframe title="Mirador" frameborder="0" id="mirador" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="100%" height="800px"></iframe>
     </div>
   </div>
+</div>
 
-  <script>footer('./');</script>
+<script>footer('./');</script>
 
-  <script>
+<script>
 
-  jQuery(document).ready(function() {
+jQuery(document).ready(function() {
 
-    var arg  = new Object;
-    url = location.search.substring(1).split('&');
+  var arg  = new Object;
+  url = location.search.substring(1).split('&');
 
-    for(i=0; url[i]; i++) {
-      var k = url[i].split('=');
-      arg[k[0]] = decodeURIComponent(k[1]);
+  for(i=0; url[i]; i++) {
+    var k = url[i].split('=');
+    arg[k[0]] = decodeURIComponent(k[1]);
+  }
+
+  var resourceId = arg["resourceId"]
+  var vol = arg["vol"]
+
+  $("#mirador").attr("src", "https://diyhistory.org/public/omekac/admin/collections/"+resourceId+"/annotator")
+
+  getMetadata(vol)
+
+  var url = "assets/json/rows.json"
+
+  $.getJSON( url, function( data ) {
+
+    var rows = data[vol];
+
+    $("#bar").attr("aria-valuemax", rows)
+
+    var total = 0;
+
+    for(i = 0 ; i < 5; i++){
+      page = i + 1
+      url = "https://diyhistory.org/public/omekac/api/items?search=https://diyhistory.org/public/omekac/oa/collections/"+resourceId+"/manifest.json&item_type=18&page="+page
+
+      $.getJSON( url, function( data ) {
+
+        var count = data.length
+
+        if(count > 0){
+          total += count
+          $("#total").text(total)
+
+          var ratio = Math.floor(total / rows * 100)
+
+          $("#bar").attr("style", "width: "+ratio+"%")
+          $("#bar").attr("aria-valuenow", total)
+
+          var text = total + " / " + rows
+
+          $("#bar").text(text)
+        }
+      })
+    }
+  })
+})
+
+function getMetadata(vol){
+  var query = " SELECT distinct * ";
+  query += " where { ";
+  query += " ?s dcterms:title ?title . ";
+
+  query += " ?s dcterms:tableOfContents ?toc . ";
+  query += " ?s dcterms:identifier ?id . ";
+  query += " filter regex(?id, '16-A00-6010-"+vol+"') . "
+  query += " optional { ?s dcterms:date ?date . } ";
+  query += " optional { ?s dcterms:extent ?extent . } ";
+  query += " optional { ?s dcterms:description ?description . } ";
+
+  query += " } ";
+
+  var array = new Array();
+
+  $.ajax({
+    url:'https://dydra.com/ut-digital-archives/tanaka2/sparql',
+    type:'POST',
+    data:{
+      query : query,
+      format : "json"
+    }
+  })
+  // Ajaxリクエストが成功した時発動
+  .done( (data) => {
+    var result = data.results.bindings;
+
+    var dataSet = []
+
+    for (var i = 0; i < result.length; i++) {
+      var obj = result[i];
+
+      var row = []
+      dataSet.push(row)
+
+      row.push(obj.title.value)
+
+      //----------
+
+      var div = $("<div>")
+
+      var span = $("<span style='display : none;'>")
+      div.append(span)
+      span.append(obj.toc.value)
+      div.append(obj.id.value)
+
+
+      row.push(div.prop("outerHTML"))
+
+      //-----------
+
+      if(obj.description){
+        row.push(obj.description.value)
+      } else {
+        row.push("")
+      }
+
+      text = ""
+      if(obj.date){
+        text += obj.date.value+";"
+      }
+      if(obj.extent){
+        text += obj.extent.value+";"
+      }
+      row.push(text)
+
     }
 
-    var resourceId = arg["resourceId"]
-
-    $("#mirador").attr("src", "https://diyhistory.org/public/omekac/admin/collections/"+resourceId+"/annotator")
+    // DataTable
+    var table = $('#table').DataTable({
+      data: dataSet,
+      "iDisplayLength" : 10,
+      "order" : [ [ 1, "asc" ] ],
+      "columnDefs": [
+        { "width": "20%", "targets": 0 },
+        { "width": "20%", "targets": 1 },
+        { "width": "40%", "targets": 2 },
+        { "width": "20%", "targets": 3 }
+      ],
+      fixedColumns: true
+    });
 
   })
+  // Ajaxリクエストが失敗した時発動
+  .fail( (data) => {
+    alert(data.statusText);
+  })
+  // Ajaxリクエストが成功・失敗どちらでも発動
+  .always( (data) => {
+    $("#loading").empty()
+  });
+}
 
 </script>
 </body>
