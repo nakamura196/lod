@@ -56,7 +56,7 @@
             <th>版<!--種類--></th>
             <th>形態<!--分類--></th>
             <th>内容<!--分類--></th>
-            <th></th>
+            <th>ICV</th>
           </tr>
         </thead>
         <tbody id="resourceListBody">
@@ -92,77 +92,44 @@
 
     var year = arg["year"] != null ? arg["year"] : "";
 
-    var query = " SELECT distinct * ";
-    query += " where { ";
-    query += " ?s dcterms:title ?title . ";
-
-
-    if(locationUri != ""){
-      query += " ?s dcterms:spatial ?location . ?s dcterms:spatial <"+locationUri+"> . ";
-    } else {
-      query += " optional {  ";
-      query += " ?s dcterms:spatial ?location . ";
-      query += " } ";
-    }
-
-
-
-    if(year != ""){
-      query += " ?s dcterms:date '"+year+"' . ";
-    }
-
-    query += " ?s dcterms:tableOfContents ?toc . ";
-    query += " ?s dcterms:identifier ?id . ";
-
-    query += " optional { ?s dcterms:date ?date . } ";
-    query += " optional { ?s dcterms:subject ?subject . } ";
-    query += " optional { ?s dcterms:type ?type . } ";
-    query += " optional { ?s dcterms:spatial ?spatial . } ";
-    query += " optional { ?s dcterms:format ?extent . } ";
-
-    query += " optional { ?s dcterms:relation ?relation . ?s foaf:thumbnail ?thumb . } ";
-
-    query += " } ";
-
     var array = new Array();
 
     $.ajax({
-      url:'https://dydra.com/ut-digital-archives/tanaka2/sparql',
-      type:'POST',
-      data:{
-        query : query,
-        format : "json"
-      }
+      url:'assets/json/data.json',
+      type:'GET'
     })
     // Ajaxリクエストが成功した時発動
-    .done( (data) => {
-      var result = data.results.bindings;
+    .done( (result) => {
 
       var dataSet = []
 
       arr = ["date", "spatial", "type", "extent", "subject"]
 
       for (var i = 0; i < result.length; i++) {
+
+        var flg = true
+
         var obj = result[i];
 
         var row = []
-        dataSet.push(row)
+
         row.push("")
 
-        var img_text = ""
+        var img_div = $("<div>");
         var img = $("<img class='img-fluid z-depth-1' height='90px'>")
+        img_div.append(img)
         if(obj.thumb){
-          img.attr("src", obj.thumb.value.replace("/,300/", "/,90/"))
+          img.attr("src", obj.thumb.replace("/,300/", "/,90/"))
+          img.before("<span style='display : none;'>image,yes,on,true</span>");
         }　else {
           img.attr("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIQd_xAOzY_r1Ks1qviqM5J_R3pJK7nDUcCFqWZnzdrM1physC1g")
         }
-        row.push(img.prop('outerHTML'))
+
+        row.push(img_div.prop('outerHTML'))
 
 
         var a = $("<span>")
-        //a.attr("href", "detail.html?curation="+obj.s.value.replace("#", "&pos="))
-        //a.attr("target", "_blank")
-        a.append(obj.title.value)
+        a.append(obj.title)
         row.push(a.prop('outerHTML'))
 
         //----------
@@ -171,8 +138,8 @@
 
         var span = $("<span style='display : none;'>")
         div.append(span)
-        span.append(obj.toc.value)
-        div.append(obj.id.value)
+        span.append(obj.toc)
+        div.append(obj.id)
 
 
         row.push(div.prop("outerHTML"))
@@ -183,10 +150,20 @@
           e = arr[j]
           text = ""
           if(obj[e]){
-            text = obj[e].value
+            text = obj[e]
           }
           if(e == "spatial"){
+            //地名が設定されていた場合
+            if(locationUri != "" && text != locationUri){
+              flg = false
+              break
+            }
             text = text.replace("http://ja.dbpedia.org/resource/", "")
+          }　else if(e == "date" && year != ""){
+            if(text != year){
+              flg = false;
+              break
+            }
           }
           row.push(text)
         }
@@ -195,7 +172,7 @@
 
         if(obj.relation != null){
           var a = $("<a>")
-          a.attr("href", "http://codh.rois.ac.jp/software/iiif-curation-viewer/demo/?curation="+obj.relation.value.replace("#", "&pos="))
+          a.attr("href", "http://codh.rois.ac.jp/software/iiif-curation-viewer/demo/?curation="+obj.relation.replace("#", "&pos="))
           a.attr("target", "_blank")
           var img = $("<img>")
           a.append(img)
@@ -204,7 +181,10 @@
         } else {
           row.push("")
         }
-
+        //表示するかの判定
+        if(flg){
+          dataSet.push(row)
+        }
       }
 
       // Setup - add a text input to each footer cell
@@ -217,18 +197,18 @@
       var table = $('#table').DataTable({
         data: dataSet,
         "dom": '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
-        "iDisplayLength" : 100,
+        "iDisplayLength" : 50,
         "order" : [ [ 3, "asc" ] ],
         "columnDefs": [
           { "width": "5%", "targets": 0 },
           { "width": "10%", "targets": 1 },
-          { "width": "30%", "targets": 2 },
-          { "width": "15%", "targets": 3 },
-          { "width": "5%", "targets": 4 },
-          { "width": "5%", "targets": 5 },
-          { "width": "5%", "targets": 6 },
-          { "width": "5%", "targets": 7 },
-          { "width": "15%", "targets": 8 },
+          { "width": "20%", "targets": 2 },
+          { "width": "10%", "targets": 3 },
+          { "width": "10%", "targets": 4 },
+          { "width": "10%", "targets": 5 },
+          { "width": "10%", "targets": 6 },
+          { "width": "10%", "targets": 7 },
+          { "width": "10%", "targets": 8 },
           { "width": "5%", "targets": 9 }
         ],
         fixedColumns: true
