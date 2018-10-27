@@ -12,7 +12,7 @@
   crossorigin="anonymous"></script>
 
   <title>『捃拾帖』デジタル展示</title>
-
+  
   <script src="./assets/js/main.js"></script>
 
   <script>asset('./');</script>
@@ -104,27 +104,42 @@ jQuery(document).ready(function() {
 
     var total = 0;
 
+    var arr = [];
+
     for(i = 0 ; i < 5; i++){
       page = i + 1
       url = "https://diyhistory.org/public/omekac/api/items?search=https://diyhistory.org/public/omekac/oa/collections/"+resourceId+"/manifest.json&item_type=18&page="+page
 
       $.getJSON( url, function( data ) {
 
-        var count = data.length
+        //var count = data.length
 
-        if(count > 0){
-          total += count
-          $("#total").text(total)
+        for(i = 0; i < data.length; i++){
+          var obj = data[i]["element_texts"];
+          for(j = 0 ; j < obj.length; j++){
+            var e = obj[j];
+            if(e.element.id == 1){
+              var id = $(e.text).text().split("_")[0];
+              if(arr.indexOf(id) == -1){
+                arr.push(id);
+              }
+            }
 
-          var ratio = Math.floor(total / rows * 100)
-
-          $("#bar").attr("style", "width: "+ratio+"%")
-          $("#bar").attr("aria-valuenow", total)
-
-          var text = total + " / " + rows
-
-          $("#bar").text(text)
+          }
         }
+
+        total = arr.length;
+        $("#total").text(total)
+
+        var ratio = Math.floor(total / rows * 100)
+
+        $("#bar").attr("style", "width: "+ratio+"%")
+        $("#bar").attr("aria-valuenow", total)
+
+        var text = total + " / " + rows
+
+        $("#bar").text(text)
+
       })
     }
   })
