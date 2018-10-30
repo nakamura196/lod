@@ -3,7 +3,7 @@
   <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-light white scrolling-navbar">
     <div class="container-fluid">
-      <a class="navbar-brand" href="./">『捃拾帖』デジタル展示</a>
+      <a class="navbar-brand" href="./">電子展示『捃拾帖』</a>
 
       <!-- Collapse -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,21 +24,26 @@
           <li class="nav-item" id="timelineli">
             <a class="nav-link" href="timeline.html">年表</a>
           </li>
+          <li class="nav-item" id="aboutli">
+            <a class="nav-link" href="about.html">このサイトについて</a>
+          </li>
+          <!--
           <li class="nav-item" id="annoli">
-            <a class="nav-link" href="anno_list.html">アノテーション付与</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="http://codh.rois.ac.jp/face/iiif-curation-finder/?curation=https://utda.github.io/text/json/79b0e49c45ab09611378e09515ca8488.json">IIIF Curation Finder</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://dydra.com/ut-digital-archives/tanaka2">SPARQL Endpoint</a>
-          </li>
-        </ul>
+          <a class="nav-link" href="anno_list.html">アノテーション付与</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="http://codh.rois.ac.jp/face/iiif-curation-finder/?curation=https://utda.github.io/text/json/79b0e49c45ab09611378e09515ca8488.json">IIIF Curation Finder</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="https://dydra.com/ut-digital-archives/tanaka2">SPARQL Endpoint</a>
+    </li>
+  -->
+</ul>
 
-      </div>
-    </div>
-  </nav>
-  <!--/.Navbar-->
+</div>
+</div>
+</nav>
+<!--/.Navbar-->
 
 </header>
 
@@ -53,6 +58,8 @@ if(location.pathname.indexOf("list.html") != -1){
   $("#tableli").addClass("active")
 } if(location.pathname.indexOf("anno_") != -1){
   $("#annoli").addClass("active")
+} if(location.pathname.indexOf("about.html") != -1){
+  $("#aboutli").addClass("active")
 }
 
 </script>

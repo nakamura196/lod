@@ -128,6 +128,7 @@
           //contents += '<img class="mr-3" style="width : 64px" src="'+thumb+'" alt="Generic placeholder image">';
           contents += '<div class="media-body">';
           contents += '<h5 class="mt-0"><a href="'+link+'">'+title+'</a></h5>';
+          //contents += '<p id="p_'+i+'"></p>';
           contents += '</div>';
           contents += '</div></div>';
 
@@ -138,6 +139,8 @@
 
         }
 
+        //get_dbpedia_info(i, obj.location.value)
+
 
       }
 
@@ -146,6 +149,7 @@
       var popup = L.popup();
 
       function onMapClick(e) {
+
         popup
         .setLatLng(e.latlng)
         .setContent("You clicked the map at " + e.latlng.toString())
@@ -155,6 +159,7 @@
       mymap.on('click', onMapClick);
 
       mymap.panTo(new L.LatLng(mlat / result.length, mlong / result.length));
+
     })
     // Ajaxリクエストが失敗した時発動
     .fail( (data) => {
@@ -166,6 +171,45 @@
     });
   })
 
+  function get_dbpedia_info(id, locationUri){
+    var query = "";
+    query += " SELECT DISTINCT * ";
+    query += " WHERE { ";
+    query += " ?s <http://www.w3.org/2002/07/owl#sameAs> <" + locationUri + "> . ";
+    query += " ?s rdfs:comment ?comment . ";
+    query += " filter(LANG(?comment) = 'ja') ";
+    query += " } ";
+
+    $.ajax({
+      url:"https://dbpedia.org/sparql",
+      type:'POST',
+      data:{
+        query : query,
+        format : "json"
+      }
+    })
+    // Ajaxリクエストが成功した時発動
+    .done( (data) => {
+      var result = data.results.bindings;
+
+      if(result.length > 0){
+        var obj = result[0]
+
+        $("#p_"+id).append(obj.comment.value)
+      }
+
+    })
+    // Ajaxリクエストが失敗した時発動
+    .fail( (data) => {
+      console.log(data.statusText);
+    })
+    // Ajaxリクエストが成功・失敗どちらでも発動
+    .always( (data) => {
+      //$("#loading").empty()
+    });
+
+
+  }
 
   </script>
 </body>
