@@ -142,17 +142,6 @@
         "type": "木版"
     },
     {
-        "date": "1859",
-        "extent": "引札",
-        "id": "16-A00-6010-3-16",
-        "s": "http://example.org/16-A00-6010-3-16",
-        "spatial": "http://ja.dbpedia.org/resource/京都",
-        "subject": "病気・医療",
-        "title": "仙積散引札",
-        "toc": "0426",
-        "type": "木版"
-    },
-    {
         "date": "1875",
         "extent": "引札",
         "id": "16-A00-6010-14-54",
@@ -512,17 +501,6 @@
         "type": "木版"
     },
     {
-        "date": "1869",
-        "extent": "引札",
-        "id": "16-A00-6010-9-5",
-        "s": "http://example.org/16-A00-6010-9-5",
-        "spatial": "http://ja.dbpedia.org/resource/大阪",
-        "subject": "諸営業",
-        "title": "〔五銘酒引札〕",
-        "toc": "1601",
-        "type": "木版"
-    },
-    {
         "date": "1862",
         "extent": "引札",
         "id": "16-A00-6010-10-23",
@@ -851,19 +829,6 @@
         "relation": "https://utda.github.io/text/json/16-A00-6010-11-11.json",
         "s": "http://example.org/16-A00-6010-11-11",
         "spatial": "http://ja.dbpedia.org/resource/信濃国",
-        "subject": "病気・医療",
-        "thumb": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif-img/154677/972,563,5264,3947/,300/0/default.jpg",
-        "title": "天寿補元丹引札",
-        "toc": "1923",
-        "type": "木版"
-    },
-    {
-        "date": "1862",
-        "extent": "引札",
-        "id": "16-A00-6010-11-11",
-        "relation": "https://utda.github.io/text/json/16-A00-6010-11-11.json",
-        "s": "http://example.org/16-A00-6010-11-11",
-        "spatial": "http://ja.dbpedia.org/resource/大阪",
         "subject": "病気・医療",
         "thumb": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif-img/154677/972,563,5264,3947/,300/0/default.jpg",
         "title": "天寿補元丹引札",
@@ -1492,19 +1457,6 @@
         "type": "木版"
     },
     {
-        "date": "1862",
-        "extent": "引札",
-        "id": "16-A00-6010-11-12",
-        "relation": "https://utda.github.io/text/json/16-A00-6010-11-12.json",
-        "s": "http://example.org/16-A00-6010-11-12",
-        "spatial": "http://ja.dbpedia.org/resource/信濃国",
-        "subject": "病気・医療",
-        "thumb": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif-img/154678/1152,555,4965,3962/,300/0/default.jpg",
-        "title": "引止薬・粒甲丹引札",
-        "toc": "1924",
-        "type": "木版"
-    },
-    {
         "date": "1858",
         "extent": "引札",
         "id": "16-A00-6010-2-70",
@@ -2047,17 +1999,6 @@
         "id": "16-A00-6010-10-154",
         "s": "http://example.org/16-A00-6010-10-154",
         "spatial": "http://ja.dbpedia.org/resource/信濃国",
-        "subject": "文芸・芸能・スポーツ・教育・出版・教化",
-        "title": "〔青々卓池先生書画俳諧清会案内〕",
-        "toc": "1899",
-        "type": "木版"
-    },
-    {
-        "date": "1844",
-        "extent": "引札",
-        "id": "16-A00-6010-10-154",
-        "s": "http://example.org/16-A00-6010-10-154",
-        "spatial": "http://ja.dbpedia.org/resource/三河国",
         "subject": "文芸・芸能・スポーツ・教育・出版・教化",
         "title": "〔青々卓池先生書画俳諧清会案内〕",
         "toc": "1899",
@@ -4424,17 +4365,6 @@
         "type": "木版"
     },
     {
-        "date": "1877",
-        "extent": "引札",
-        "id": "16-A00-6010-15-109",
-        "s": "http://example.org/16-A00-6010-15-109",
-        "spatial": "http://ja.dbpedia.org/resource/東京",
-        "subject": "諸営業",
-        "title": "〔狭山茶引札〕",
-        "toc": "2572",
-        "type": "木版"
-    },
-    {
         "date": "1862",
         "id": "16-A00-6010-11-36",
         "relation": "https://utda.github.io/text/json/16-A00-6010-11-36.json",
@@ -4752,15 +4682,6 @@
         "id": "16-A00-6010-15-172",
         "s": "http://example.org/16-A00-6010-15-172",
         "spatial": "http://ja.dbpedia.org/resource/肥後国",
-        "title": "〔博覧会販売品売買契約証〕",
-        "toc": "2635",
-        "type": "活版"
-    },
-    {
-        "date": "1877",
-        "id": "16-A00-6010-15-172",
-        "s": "http://example.org/16-A00-6010-15-172",
-        "spatial": "http://ja.dbpedia.org/resource/東京",
         "title": "〔博覧会販売品売買契約証〕",
         "toc": "2635",
         "type": "活版"
@@ -5130,31 +5051,10 @@
         "type": "木版"
     },
     {
-        "date": "1869",
-        "extent": "引札",
-        "id": "16-A00-6010-9-57",
-        "s": "http://example.org/16-A00-6010-9-57",
-        "spatial": "http://ja.dbpedia.org/resource/京都",
-        "subject": "諸営業",
-        "title": "唐製鯛味噌引札",
-        "toc": "1653",
-        "type": "木版"
-    },
-    {
         "date": "1878",
         "id": "16-A00-6010-15-182",
         "s": "http://example.org/16-A00-6010-15-182",
         "spatial": "http://ja.dbpedia.org/resource/横浜",
-        "subject": "諸営業",
-        "title": "〔横浜品川間鉄道時刻表〕",
-        "toc": "2645",
-        "type": "活版"
-    },
-    {
-        "date": "1878",
-        "id": "16-A00-6010-15-182",
-        "s": "http://example.org/16-A00-6010-15-182",
-        "spatial": "http://ja.dbpedia.org/resource/東京",
         "subject": "諸営業",
         "title": "〔横浜品川間鉄道時刻表〕",
         "toc": "2645",
@@ -5391,16 +5291,6 @@
         "id": "16-A00-6010-14-59",
         "s": "http://example.org/16-A00-6010-14-59",
         "spatial": "http://ja.dbpedia.org/resource/横浜",
-        "subject": "諸営業",
-        "title": "汽車出発時刻及賃金表",
-        "toc": "2412",
-        "type": "活版"
-    },
-    {
-        "date": "1872",
-        "id": "16-A00-6010-14-59",
-        "s": "http://example.org/16-A00-6010-14-59",
-        "spatial": "http://ja.dbpedia.org/resource/東京",
         "subject": "諸営業",
         "title": "汽車出発時刻及賃金表",
         "toc": "2412",
@@ -5886,15 +5776,6 @@
         "id": "16-A00-6010-15-167",
         "s": "http://example.org/16-A00-6010-15-167",
         "spatial": "http://ja.dbpedia.org/resource/羽後国",
-        "title": "〔内国博覧会販売物品及び販売者名書付〕",
-        "toc": "2630",
-        "type": "写本"
-    },
-    {
-        "date": "1877",
-        "id": "16-A00-6010-15-167",
-        "s": "http://example.org/16-A00-6010-15-167",
-        "spatial": "http://ja.dbpedia.org/resource/豊前国",
         "title": "〔内国博覧会販売物品及び販売者名書付〕",
         "toc": "2630",
         "type": "写本"
@@ -6561,17 +6442,6 @@
     {
         "date": "1871",
         "extent": "引札",
-        "id": "16-A00-6010-12-97",
-        "s": "http://example.org/16-A00-6010-12-97",
-        "spatial": "http://ja.dbpedia.org/resource/東京",
-        "subject": "諸営業",
-        "title": "〔備後表銘酒引札〕",
-        "toc": "2107",
-        "type": "木版"
-    },
-    {
-        "date": "1871",
-        "extent": "引札",
         "id": "16-A00-6010-12-93",
         "s": "http://example.org/16-A00-6010-12-93",
         "spatial": "http://ja.dbpedia.org/resource/東京",
@@ -6711,17 +6581,6 @@
     {
         "date": "1871",
         "extent": "引札",
-        "id": "16-A00-6010-13-51",
-        "s": "http://example.org/16-A00-6010-13-51",
-        "spatial": "http://ja.dbpedia.org/resource/大阪",
-        "subject": "病気・医療",
-        "title": "御免延命散引札",
-        "toc": "2273",
-        "type": "木版"
-    },
-    {
-        "date": "1871",
-        "extent": "引札",
         "id": "16-A00-6010-12-151",
         "s": "http://example.org/16-A00-6010-12-151",
         "spatial": "http://ja.dbpedia.org/resource/東京",
@@ -6768,17 +6627,6 @@
         "id": "16-A00-6010-7-17",
         "s": "http://example.org/16-A00-6010-7-17",
         "spatial": "http://ja.dbpedia.org/resource/江戸",
-        "subject": "病気・医療",
-        "title": "三保丸効能",
-        "toc": "1437",
-        "type": "木版"
-    },
-    {
-        "date": "1862",
-        "extent": "引札",
-        "id": "16-A00-6010-7-17",
-        "s": "http://example.org/16-A00-6010-7-17",
-        "spatial": "http://ja.dbpedia.org/resource/京都",
         "subject": "病気・医療",
         "title": "三保丸効能",
         "toc": "1437",
@@ -7155,17 +7003,6 @@
     },
     {
         "date": "1862",
-        "extent": "引札",
-        "id": "16-A00-6010-4-436",
-        "s": "http://example.org/16-A00-6010-4-436",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
-        "subject": "病気・医療",
-        "title": "江州伊吹山七年製陳艾引札",
-        "toc": "1047",
-        "type": "木版"
-    },
-    {
-        "date": "1862",
         "id": "16-A00-6010-6-36",
         "relation": "https://utda.github.io/text/json/16-A00-6010-6-36.json",
         "s": "http://example.org/16-A00-6010-6-36",
@@ -7369,17 +7206,6 @@
         "id": "16-A00-6010-7-105",
         "s": "http://example.org/16-A00-6010-7-105",
         "spatial": "http://ja.dbpedia.org/resource/伊勢国",
-        "subject": "病気・医療",
-        "title": "天元養気円・小児健脾円引札",
-        "toc": "1525",
-        "type": "木版"
-    },
-    {
-        "date": "1862",
-        "extent": "引札",
-        "id": "16-A00-6010-7-105",
-        "s": "http://example.org/16-A00-6010-7-105",
-        "spatial": "http://ja.dbpedia.org/resource/信濃国",
         "subject": "病気・医療",
         "title": "天元養気円・小児健脾円引札",
         "toc": "1525",
@@ -7772,17 +7598,6 @@
         "type": "木版"
     },
     {
-        "date": "1862",
-        "extent": "引札",
-        "id": "16-A00-6010-7-35",
-        "s": "http://example.org/16-A00-6010-7-35",
-        "spatial": "http://ja.dbpedia.org/resource/京都",
-        "subject": "病気・医療",
-        "title": "三国無双一子相伝御目洗薬引札",
-        "toc": "1455",
-        "type": "木版"
-    },
-    {
         "date": "1875",
         "extent": "引札",
         "id": "16-A00-6010-14-85",
@@ -7973,17 +7788,6 @@
         "id": "16-A00-6010-7-31",
         "s": "http://example.org/16-A00-6010-7-31",
         "spatial": "http://ja.dbpedia.org/resource/近江国",
-        "subject": "病気・医療",
-        "title": "牛胆丸・反本丸引札",
-        "toc": "1451",
-        "type": "木版"
-    },
-    {
-        "date": "1862",
-        "extent": "引札",
-        "id": "16-A00-6010-7-31",
-        "s": "http://example.org/16-A00-6010-7-31",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
         "subject": "病気・医療",
         "title": "牛胆丸・反本丸引札",
         "toc": "1451",
@@ -8359,17 +8163,6 @@
         "id": "16-A00-6010-15-121",
         "s": "http://example.org/16-A00-6010-15-121",
         "spatial": "http://ja.dbpedia.org/resource/摂津国",
-        "subject": "諸営業",
-        "title": "大日本西宮別仕入清酒松の尾引札",
-        "toc": "2584",
-        "type": "銅版"
-    },
-    {
-        "date": "1877",
-        "extent": "引札",
-        "id": "16-A00-6010-15-121",
-        "s": "http://example.org/16-A00-6010-15-121",
-        "spatial": "http://ja.dbpedia.org/resource/東京",
         "subject": "諸営業",
         "title": "大日本西宮別仕入清酒松の尾引札",
         "toc": "2584",
@@ -9199,17 +8992,6 @@
     {
         "date": "1862",
         "extent": "引札",
-        "id": "16-A00-6010-7-39",
-        "s": "http://example.org/16-A00-6010-7-39",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
-        "subject": "病気・医療",
-        "title": "真珠妙応丸引札",
-        "toc": "1459",
-        "type": "木版"
-    },
-    {
-        "date": "1862",
-        "extent": "引札",
         "id": "16-A00-6010-5-128",
         "s": "http://example.org/16-A00-6010-5-128",
         "spatial": "http://ja.dbpedia.org/resource/江戸",
@@ -9501,17 +9283,6 @@
         "type": "木版"
     },
     {
-        "date": "1862",
-        "extent": "引札",
-        "id": "16-A00-6010-7-29",
-        "s": "http://example.org/16-A00-6010-7-29",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
-        "subject": "病気・医療",
-        "title": "回生真訣折衝飲引札",
-        "toc": "1449",
-        "type": "木版"
-    },
-    {
         "date": "1876",
         "extent": "引札",
         "id": "16-A00-6010-15-54",
@@ -9573,17 +9344,6 @@
         "id": "16-A00-6010-9-146",
         "s": "http://example.org/16-A00-6010-9-146",
         "spatial": "http://ja.dbpedia.org/resource/横浜",
-        "subject": "諸営業",
-        "title": "〔ハルトリ－商店西洋書籍等引札〕",
-        "toc": "1742",
-        "type": "木版"
-    },
-    {
-        "date": "1869",
-        "extent": "引札",
-        "id": "16-A00-6010-9-146",
-        "s": "http://example.org/16-A00-6010-9-146",
-        "spatial": "http://ja.dbpedia.org/resource/大阪",
         "subject": "諸営業",
         "title": "〔ハルトリ－商店西洋書籍等引札〕",
         "toc": "1742",
@@ -9945,17 +9705,6 @@
         "type": "木版"
     },
     {
-        "date": "1862",
-        "extent": "引札",
-        "id": "16-A00-6010-7-33",
-        "s": "http://example.org/16-A00-6010-7-33",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
-        "subject": "諸営業",
-        "title": "本家御薬粟守酒引札",
-        "toc": "1453",
-        "type": "木版"
-    },
-    {
         "date": "1860",
         "extent": "引札",
         "id": "16-A00-6010-11-35",
@@ -10090,17 +9839,6 @@
         "type": "木版"
     },
     {
-        "date": "1871",
-        "extent": "引札",
-        "id": "16-A00-6010-12-9",
-        "s": "http://example.org/16-A00-6010-12-9",
-        "spatial": "http://ja.dbpedia.org/resource/東京",
-        "subject": "諸営業",
-        "title": "写真図引札",
-        "toc": "2019",
-        "type": "木版"
-    },
-    {
         "date": "1877",
         "extent": "引札",
         "id": "16-A00-6010-15-124",
@@ -10117,17 +9855,6 @@
         "id": "16-A00-6010-3-83",
         "s": "http://example.org/16-A00-6010-3-83",
         "spatial": "http://ja.dbpedia.org/resource/尾張国",
-        "subject": "病気・医療",
-        "title": "人参三臓円引札",
-        "toc": "0493",
-        "type": "木版"
-    },
-    {
-        "date": "1859",
-        "extent": "引札",
-        "id": "16-A00-6010-3-83",
-        "s": "http://example.org/16-A00-6010-3-83",
-        "spatial": "http://ja.dbpedia.org/resource/大阪",
         "subject": "病気・医療",
         "title": "人参三臓円引札",
         "toc": "0493",
@@ -10272,17 +9999,6 @@
         "id": "16-A00-6010-7-112",
         "s": "http://example.org/16-A00-6010-7-112",
         "spatial": "http://ja.dbpedia.org/resource/江戸",
-        "subject": "病気・医療",
-        "title": "和蘭秘方三保丸引札",
-        "toc": "1532",
-        "type": "木版"
-    },
-    {
-        "date": "1862",
-        "extent": "引札",
-        "id": "16-A00-6010-7-112",
-        "s": "http://example.org/16-A00-6010-7-112",
-        "spatial": "http://ja.dbpedia.org/resource/京都",
         "subject": "病気・医療",
         "title": "和蘭秘方三保丸引札",
         "toc": "1532",
@@ -10481,17 +10197,6 @@
         "id": "16-A00-6010-15-92",
         "s": "http://example.org/16-A00-6010-15-92",
         "spatial": "http://ja.dbpedia.org/resource/大阪",
-        "subject": "諸営業",
-        "title": "魚鮮餅引札",
-        "toc": "2555",
-        "type": "木版"
-    },
-    {
-        "date": "1877",
-        "extent": "引札",
-        "id": "16-A00-6010-15-92",
-        "s": "http://example.org/16-A00-6010-15-92",
-        "spatial": "http://ja.dbpedia.org/resource/北海道",
         "subject": "諸営業",
         "title": "魚鮮餅引札",
         "toc": "2555",
@@ -11046,17 +10751,6 @@
         "type": "木版"
     },
     {
-        "date": "1871",
-        "extent": "引札",
-        "id": "16-A00-6010-12-115",
-        "s": "http://example.org/16-A00-6010-12-115",
-        "spatial": "http://ja.dbpedia.org/resource/東京",
-        "subject": "諸営業",
-        "title": "〔洛東五条阪八幡下ル陶器師亀水引札〕",
-        "toc": "2125",
-        "type": "木版"
-    },
-    {
         "date": "1853",
         "extent": "番附",
         "id": "16-A00-6010-7-44",
@@ -11593,39 +11287,6 @@
         "type": "木版"
     },
     {
-        "date": "1871",
-        "extent": "引札",
-        "id": "16-A00-6010-12-128",
-        "s": "http://example.org/16-A00-6010-12-128",
-        "spatial": "http://ja.dbpedia.org/resource/東京",
-        "subject": "諸営業",
-        "title": "〔浅草仁王門内写真処引札〕",
-        "toc": "2148",
-        "type": "木版"
-    },
-    {
-        "date": "1871",
-        "extent": "引札",
-        "id": "16-A00-6010-12-128",
-        "s": "http://example.org/16-A00-6010-12-128",
-        "spatial": "http://ja.dbpedia.org/resource/東京",
-        "subject": "諸営業",
-        "title": "神方還生酒引札",
-        "toc": "2138",
-        "type": "木版"
-    },
-    {
-        "date": "1871",
-        "extent": "引札",
-        "id": "16-A00-6010-12-128",
-        "s": "http://example.org/16-A00-6010-12-128",
-        "spatial": "http://ja.dbpedia.org/resource/東京",
-        "subject": "諸営業",
-        "title": "神方還生酒引札",
-        "toc": "2148",
-        "type": "木版"
-    },
-    {
         "date": "1869",
         "extent": "引札",
         "id": "16-A00-6010-9-7",
@@ -11664,17 +11325,6 @@
         "id": "16-A00-6010-10-166",
         "s": "http://example.org/16-A00-6010-10-166",
         "spatial": "http://ja.dbpedia.org/resource/信濃国",
-        "subject": "諸営業",
-        "title": "人参三臓円引札",
-        "toc": "1911",
-        "type": "木版"
-    },
-    {
-        "date": "1862",
-        "extent": "引札",
-        "id": "16-A00-6010-10-166",
-        "s": "http://example.org/16-A00-6010-10-166",
-        "spatial": "http://ja.dbpedia.org/resource/大阪",
         "subject": "諸営業",
         "title": "人参三臓円引札",
         "toc": "1911",
@@ -12021,19 +11671,6 @@
         "type": "木版"
     },
     {
-        "date": "1869",
-        "extent": "引札",
-        "id": "16-A00-6010-8-19",
-        "relation": "https://utda.github.io/text/json/16-A00-6010-8-19.json",
-        "s": "http://example.org/16-A00-6010-8-19",
-        "spatial": "http://ja.dbpedia.org/resource/大阪",
-        "subject": "諸営業",
-        "thumb": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif-img/154562/822,580,1418,4097/,300/0/default.jpg",
-        "title": "薩州国分引札",
-        "toc": "1553",
-        "type": "木版"
-    },
-    {
         "date": "1875",
         "extent": "引札",
         "id": "16-A00-6010-14-81",
@@ -12277,17 +11914,6 @@
         "type": "木版"
     },
     {
-        "date": "1870",
-        "extent": "引札",
-        "id": "16-A00-6010-10-123",
-        "s": "http://example.org/16-A00-6010-10-123",
-        "spatial": "http://ja.dbpedia.org/resource/東京",
-        "subject": "諸営業",
-        "title": "〔東京横浜蒸気弘明丸出帆刻限案内〕",
-        "toc": "1868",
-        "type": "木版"
-    },
-    {
         "date": "1869",
         "extent": "引札",
         "id": "16-A00-6010-9-58",
@@ -12485,17 +12111,6 @@
         "type": "木版"
     },
     {
-        "date": "1862",
-        "extent": "引札",
-        "id": "16-A00-6010-4-413",
-        "s": "http://example.org/16-A00-6010-4-413",
-        "spatial": "http://ja.dbpedia.org/resource/京都",
-        "subject": "病気・医療",
-        "title": "せきの妙薬引札",
-        "toc": "1024",
-        "type": "木版"
-    },
-    {
         "date": "1869",
         "id": "16-A00-6010-6-46",
         "relation": "https://utda.github.io/text/json/16-A00-6010-6-46.json",
@@ -12545,17 +12160,6 @@
         "id": "16-A00-6010-7-12",
         "s": "http://example.org/16-A00-6010-7-12",
         "spatial": "http://ja.dbpedia.org/resource/上総国",
-        "subject": "病気・医療",
-        "title": "神仙一角丸・回生真訣折衝飲引札",
-        "toc": "1432",
-        "type": "木版"
-    },
-    {
-        "date": "1862",
-        "extent": "引札",
-        "id": "16-A00-6010-7-12",
-        "s": "http://example.org/16-A00-6010-7-12",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
         "subject": "病気・医療",
         "title": "神仙一角丸・回生真訣折衝飲引札",
         "toc": "1432",
@@ -12763,17 +12367,6 @@
         "type": "木版"
     },
     {
-        "date": "1859",
-        "extent": "引札",
-        "id": "16-A00-6010-3-24",
-        "s": "http://example.org/16-A00-6010-3-24",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
-        "subject": "病気・医療",
-        "title": "七味まるめろう引札",
-        "toc": "0434",
-        "type": "木版"
-    },
-    {
         "date": "1858",
         "extent": "引札",
         "id": "16-A00-6010-2-132",
@@ -12908,18 +12501,6 @@
         "relation": "https://utda.github.io/text/json/16-A00-6010-8-61.json",
         "s": "http://example.org/16-A00-6010-8-61",
         "spatial": "http://ja.dbpedia.org/resource/江戸",
-        "subject": "諸営業",
-        "thumb": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif-img/154575/847,497,3447,4270/,300/0/default.jpg",
-        "title": "江戸飛脚御用通",
-        "toc": "1595",
-        "type": "木版"
-    },
-    {
-        "date": "1864",
-        "id": "16-A00-6010-8-61",
-        "relation": "https://utda.github.io/text/json/16-A00-6010-8-61.json",
-        "s": "http://example.org/16-A00-6010-8-61",
-        "spatial": "http://ja.dbpedia.org/resource/京都",
         "subject": "諸営業",
         "thumb": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif-img/154575/847,497,3447,4270/,300/0/default.jpg",
         "title": "江戸飛脚御用通",
@@ -13097,17 +12678,6 @@
         "id": "16-A00-6010-7-6",
         "s": "http://example.org/16-A00-6010-7-6",
         "spatial": "http://ja.dbpedia.org/resource/紀伊国",
-        "subject": "病気・医療",
-        "title": "家伝芝金丸効能",
-        "toc": "1426",
-        "type": "木版"
-    },
-    {
-        "date": "1862",
-        "extent": "引札",
-        "id": "16-A00-6010-7-6",
-        "s": "http://example.org/16-A00-6010-7-6",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
         "subject": "病気・医療",
         "title": "家伝芝金丸効能",
         "toc": "1426",
@@ -13956,19 +13526,6 @@
         "type": "木版"
     },
     {
-        "date": "1876",
-        "extent": "引札",
-        "id": "16-A00-6010-15-2",
-        "relation": "https://utda.github.io/text/json/16-A00-6010-15-2.json",
-        "s": "http://example.org/16-A00-6010-15-2",
-        "spatial": "http://ja.dbpedia.org/resource/京都",
-        "subject": "諸営業",
-        "thumb": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif-img/154932/3765,555,795,4357/,300/0/default.jpg",
-        "title": "〔京都御影堂扇子引札〕",
-        "toc": "2465",
-        "type": "木版"
-    },
-    {
         "date": "1877",
         "id": "16-A00-6010-15-65",
         "s": "http://example.org/16-A00-6010-15-65",
@@ -14060,17 +13617,6 @@
         "id": "16-A00-6010-7-49",
         "s": "http://example.org/16-A00-6010-7-49",
         "spatial": "http://ja.dbpedia.org/resource/信濃国",
-        "subject": "病気・医療",
-        "title": "御免蘭方ホルトス引札",
-        "toc": "1469",
-        "type": "木版"
-    },
-    {
-        "date": "1862",
-        "extent": "引札",
-        "id": "16-A00-6010-7-49",
-        "s": "http://example.org/16-A00-6010-7-49",
-        "spatial": "http://ja.dbpedia.org/resource/大阪",
         "subject": "病気・医療",
         "title": "御免蘭方ホルトス引札",
         "toc": "1469",
@@ -14328,16 +13874,6 @@
         "id": "16-A00-6010-7-42",
         "s": "http://example.org/16-A00-6010-7-42",
         "spatial": "http://ja.dbpedia.org/resource/肥前国",
-        "subject": "諸営業",
-        "title": "〔長崎会所定〕",
-        "toc": "1462",
-        "type": "木版"
-    },
-    {
-        "date": "1862",
-        "id": "16-A00-6010-7-42",
-        "s": "http://example.org/16-A00-6010-7-42",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
         "subject": "諸営業",
         "title": "〔長崎会所定〕",
         "toc": "1462",
@@ -14904,17 +14440,6 @@
         "type": "木版"
     },
     {
-        "date": "1871",
-        "extent": "引札",
-        "id": "16-A00-6010-12-126",
-        "s": "http://example.org/16-A00-6010-12-126",
-        "spatial": "http://ja.dbpedia.org/resource/東京",
-        "subject": "諸営業",
-        "title": "御膳しら髪めん引札",
-        "toc": "2136",
-        "type": "木版"
-    },
-    {
         "date": "1862",
         "extent": "引札",
         "id": "16-A00-6010-10-21",
@@ -15149,15 +14674,6 @@
         "id": "16-A00-6010-15-173",
         "s": "http://example.org/16-A00-6010-15-173",
         "spatial": "http://ja.dbpedia.org/resource/信濃国",
-        "title": "〔博覧会販売品売買契約証〕",
-        "toc": "2636",
-        "type": "活版"
-    },
-    {
-        "date": "1877",
-        "id": "16-A00-6010-15-173",
-        "s": "http://example.org/16-A00-6010-15-173",
-        "spatial": "http://ja.dbpedia.org/resource/東京",
         "title": "〔博覧会販売品売買契約証〕",
         "toc": "2636",
         "type": "活版"
@@ -15531,17 +15047,6 @@
         "id": "16-A00-6010-3-31",
         "s": "http://example.org/16-A00-6010-3-31",
         "spatial": "http://ja.dbpedia.org/resource/越後国",
-        "subject": "諸営業",
-        "title": "〔本銀町４丁目越後屋十右衛門方宿縮屋又兵衛引札〕",
-        "toc": "0441",
-        "type": "木版"
-    },
-    {
-        "date": "1859",
-        "extent": "引札",
-        "id": "16-A00-6010-3-31",
-        "s": "http://example.org/16-A00-6010-3-31",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
         "subject": "諸営業",
         "title": "〔本銀町４丁目越後屋十右衛門方宿縮屋又兵衛引札〕",
         "toc": "0441",
@@ -18250,16 +17755,6 @@
     },
     {
         "date": "1858",
-        "id": "16-A00-6010-2-50",
-        "s": "http://example.org/16-A00-6010-2-50",
-        "spatial": "http://ja.dbpedia.org/resource/美濃国",
-        "subject": "信仰・行楽・名所図会",
-        "title": "祢津甚平由来記",
-        "toc": "0320",
-        "type": "木版"
-    },
-    {
-        "date": "1858",
         "extent": "引札",
         "id": "16-A00-6010-1-129",
         "relation": "https://utda.github.io/text/json/16-A00-6010-1-129.json",
@@ -18813,17 +18308,6 @@
         "id": "16-A00-6010-15-164",
         "s": "http://example.org/16-A00-6010-15-164",
         "spatial": "http://ja.dbpedia.org/resource/上野国",
-        "subject": "諸営業",
-        "title": "〔上州甘楽郡中小阪村鉄鉱引札〕",
-        "toc": "2627",
-        "type": "活版"
-    },
-    {
-        "date": "1877",
-        "extent": "引札",
-        "id": "16-A00-6010-15-164",
-        "s": "http://example.org/16-A00-6010-15-164",
-        "spatial": "http://ja.dbpedia.org/resource/東京",
         "subject": "諸営業",
         "title": "〔上州甘楽郡中小阪村鉄鉱引札〕",
         "toc": "2627",
@@ -19658,17 +19142,6 @@
         "type": "木版"
     },
     {
-        "date": "1859",
-        "extent": "引札",
-        "id": "16-A00-6010-3-63",
-        "s": "http://example.org/16-A00-6010-3-63",
-        "spatial": "http://ja.dbpedia.org/resource/美濃国",
-        "subject": "病気・医療",
-        "title": "三国錠引札",
-        "toc": "0473",
-        "type": "木版"
-    },
-    {
         "date": "1869",
         "extent": "引札",
         "id": "16-A00-6010-9-16",
@@ -19714,32 +19187,10 @@
         "type": "木版"
     },
     {
-        "date": "1865",
-        "id": "16-A00-6010-6-52",
-        "relation": "https://utda.github.io/text/json/16-A00-6010-6-52.json",
-        "s": "http://example.org/16-A00-6010-6-52",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
-        "subject": "文芸・芸能・スポーツ・教育・出版・教化",
-        "thumb": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif-img/154434/4212,541,1906,3959/,300/0/default.jpg",
-        "title": "〔長崎会所受取書〕",
-        "toc": "1374",
-        "type": "木版"
-    },
-    {
         "date": "1863",
         "id": "16-A00-6010-6-58",
         "s": "http://example.org/16-A00-6010-6-58",
         "spatial": "http://ja.dbpedia.org/resource/肥前国",
-        "subject": "文芸・芸能・スポーツ・教育・出版・教化",
-        "title": "〔長崎会所受取書〕",
-        "toc": "1380",
-        "type": "写本"
-    },
-    {
-        "date": "1863",
-        "id": "16-A00-6010-6-58",
-        "s": "http://example.org/16-A00-6010-6-58",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
         "subject": "文芸・芸能・スポーツ・教育・出版・教化",
         "title": "〔長崎会所受取書〕",
         "toc": "1380",
@@ -20402,17 +19853,6 @@
     {
         "date": "1869",
         "extent": "引札",
-        "id": "16-A00-6010-9-10",
-        "s": "http://example.org/16-A00-6010-9-10",
-        "spatial": "http://ja.dbpedia.org/resource/大阪",
-        "subject": "諸営業",
-        "title": "〔大阪淡路町１丁目伏見京町駿河屋出店菓子所煉羊羹所引札〕",
-        "toc": "1606",
-        "type": "木版"
-    },
-    {
-        "date": "1869",
-        "extent": "引札",
         "id": "16-A00-6010-9-6",
         "s": "http://example.org/16-A00-6010-9-6",
         "spatial": "http://ja.dbpedia.org/resource/大阪",
@@ -20459,17 +19899,6 @@
         "id": "16-A00-6010-13-2",
         "s": "http://example.org/16-A00-6010-13-2",
         "spatial": "http://ja.dbpedia.org/resource/下総国",
-        "subject": "諸営業",
-        "title": "名物干温飩引札",
-        "toc": "2224",
-        "type": "木版"
-    },
-    {
-        "date": "1871",
-        "extent": "引札",
-        "id": "16-A00-6010-13-2",
-        "s": "http://example.org/16-A00-6010-13-2",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
         "subject": "諸営業",
         "title": "名物干温飩引札",
         "toc": "2224",
@@ -20711,17 +20140,6 @@
         "id": "16-A00-6010-4-412",
         "s": "http://example.org/16-A00-6010-4-412",
         "spatial": "http://ja.dbpedia.org/resource/越後国",
-        "subject": "病気・医療",
-        "title": "御免御用薄荷之盛気（はくかゑん）引札",
-        "toc": "1023",
-        "type": "木版"
-    },
-    {
-        "date": "1862",
-        "extent": "引札",
-        "id": "16-A00-6010-4-412",
-        "s": "http://example.org/16-A00-6010-4-412",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
         "subject": "病気・医療",
         "title": "御免御用薄荷之盛気（はくかゑん）引札",
         "toc": "1023",
@@ -21511,17 +20929,6 @@
         "type": "木版"
     },
     {
-        "date": "1862",
-        "extent": "引札",
-        "id": "16-A00-6010-7-26",
-        "s": "http://example.org/16-A00-6010-7-26",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
-        "subject": "諸営業",
-        "title": "〔元飯田町薪河岸鹿島源七郎酒類引札〕",
-        "toc": "1446",
-        "type": "木版"
-    },
-    {
         "date": "1877",
         "id": "16-A00-6010-15-104",
         "s": "http://example.org/16-A00-6010-15-104",
@@ -22066,17 +21473,6 @@
         "type": "木版"
     },
     {
-        "date": "1862",
-        "extent": "引札",
-        "id": "16-A00-6010-7-27",
-        "s": "http://example.org/16-A00-6010-7-27",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
-        "subject": "諸営業",
-        "title": "本家御薬粟守酒引札",
-        "toc": "1447",
-        "type": "木版"
-    },
-    {
         "date": "1877",
         "extent": "引札",
         "id": "16-A00-6010-15-137",
@@ -22298,17 +21694,6 @@
         "id": "16-A00-6010-4-187",
         "s": "http://example.org/16-A00-6010-4-187",
         "spatial": "http://ja.dbpedia.org/resource/江戸",
-        "subject": "病気・医療",
-        "title": "かうべ薬引札",
-        "toc": "0798",
-        "type": "木版"
-    },
-    {
-        "date": "1862",
-        "extent": "引札",
-        "id": "16-A00-6010-4-187",
-        "s": "http://example.org/16-A00-6010-4-187",
-        "spatial": "http://ja.dbpedia.org/resource/大阪",
         "subject": "病気・医療",
         "title": "かうべ薬引札",
         "toc": "0798",
@@ -23503,19 +22888,6 @@
         "type": "木版"
     },
     {
-        "date": "1858",
-        "extent": "引札",
-        "id": "16-A00-6010-1-199",
-        "relation": "https://utda.github.io/text/json/16-A00-6010-1-199.json",
-        "s": "http://example.org/16-A00-6010-1-199",
-        "spatial": "http://ja.dbpedia.org/resource/京都",
-        "subject": "諸営業",
-        "thumb": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif-img/154155/944,483,3428,2921/,300/0/default.jpg",
-        "title": "〔カステイラ引札〕",
-        "toc": "0199",
-        "type": "木版"
-    },
-    {
         "date": "1862",
         "extent": "引札",
         "id": "16-A00-6010-4-122",
@@ -23752,19 +23124,6 @@
         "relation": "https://utda.github.io/text/json/16-A00-6010-1-231.json",
         "s": "http://example.org/16-A00-6010-1-231",
         "spatial": "http://ja.dbpedia.org/resource/備中国",
-        "subject": "諸営業",
-        "thumb": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif-img/154161/1638,431,4020,2765/,300/0/default.jpg",
-        "title": "柚べし引札",
-        "toc": "0231",
-        "type": "木版"
-    },
-    {
-        "date": "1858",
-        "extent": "引札",
-        "id": "16-A00-6010-1-231",
-        "relation": "https://utda.github.io/text/json/16-A00-6010-1-231.json",
-        "s": "http://example.org/16-A00-6010-1-231",
-        "spatial": "http://ja.dbpedia.org/resource/尾張国",
         "subject": "諸営業",
         "thumb": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif-img/154161/1638,431,4020,2765/,300/0/default.jpg",
         "title": "柚べし引札",
@@ -24463,16 +23822,6 @@
         "id": "16-A00-6010-2-26",
         "s": "http://example.org/16-A00-6010-2-26",
         "spatial": "http://ja.dbpedia.org/resource/尾張国",
-        "subject": "文芸・芸能・スポーツ・教育・出版・教化",
-        "title": "〔甲午歳旦和歌１６首摺物〕",
-        "toc": "0296",
-        "type": "木版"
-    },
-    {
-        "date": "1834",
-        "id": "16-A00-6010-2-26",
-        "s": "http://example.org/16-A00-6010-2-26",
-        "spatial": "http://ja.dbpedia.org/resource/伊勢国",
         "subject": "文芸・芸能・スポーツ・教育・出版・教化",
         "title": "〔甲午歳旦和歌１６首摺物〕",
         "toc": "0296",
@@ -25938,17 +25287,6 @@
     },
     {
         "date": "1858",
-        "extent": "引札",
-        "id": "16-A00-6010-2-29",
-        "s": "http://example.org/16-A00-6010-2-29",
-        "spatial": "http://ja.dbpedia.org/resource/大阪",
-        "subject": "病気・医療",
-        "title": "家伝麻姑散引札",
-        "toc": "0299",
-        "type": "木版"
-    },
-    {
-        "date": "1858",
         "id": "16-A00-6010-2-122",
         "s": "http://example.org/16-A00-6010-2-122",
         "spatial": "http://ja.dbpedia.org/resource/尾張国",
@@ -25997,17 +25335,6 @@
         "id": "16-A00-6010-3-14",
         "s": "http://example.org/16-A00-6010-3-14",
         "spatial": "http://ja.dbpedia.org/resource/尾張国",
-        "subject": "病気・医療",
-        "title": "御免首より上妙薬う山引札",
-        "toc": "0424",
-        "type": "木版"
-    },
-    {
-        "date": "1859",
-        "extent": "引札",
-        "id": "16-A00-6010-3-14",
-        "s": "http://example.org/16-A00-6010-3-14",
-        "spatial": "http://ja.dbpedia.org/resource/大阪",
         "subject": "病気・医療",
         "title": "御免首より上妙薬う山引札",
         "toc": "0424",
@@ -26302,17 +25629,6 @@
     {
         "date": "1862",
         "extent": "引札",
-        "id": "16-A00-6010-4-82",
-        "s": "http://example.org/16-A00-6010-4-82",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
-        "subject": "諸営業",
-        "title": "粟水飴引札",
-        "toc": "0693",
-        "type": "木版"
-    },
-    {
-        "date": "1862",
-        "extent": "引札",
         "id": "16-A00-6010-4-57",
         "s": "http://example.org/16-A00-6010-4-57",
         "spatial": "http://ja.dbpedia.org/resource/江戸",
@@ -26542,16 +25858,6 @@
         "id": "16-A00-6010-3-8",
         "s": "http://example.org/16-A00-6010-3-8",
         "spatial": "http://ja.dbpedia.org/resource/尾張国",
-        "subject": "芝居・浄瑠璃・歌謡",
-        "title": "〔よしこの集投稿案内〕",
-        "toc": "0418",
-        "type": "木版"
-    },
-    {
-        "date": "1860",
-        "id": "16-A00-6010-3-8",
-        "s": "http://example.org/16-A00-6010-3-8",
-        "spatial": "http://ja.dbpedia.org/resource/京都",
         "subject": "芝居・浄瑠璃・歌謡",
         "title": "〔よしこの集投稿案内〕",
         "toc": "0418",
@@ -27274,17 +26580,6 @@
         "type": "木版"
     },
     {
-        "date": "1858",
-        "extent": "引札",
-        "id": "16-A00-6010-2-115",
-        "s": "http://example.org/16-A00-6010-2-115",
-        "spatial": "http://ja.dbpedia.org/resource/京都",
-        "subject": "病気・医療",
-        "title": "肝凉円引札",
-        "toc": "0385",
-        "type": "木版"
-    },
-    {
         "date": "1828",
         "id": "16-A00-6010-1-190",
         "relation": "https://utda.github.io/text/json/16-A00-6010-1-190.json",
@@ -27738,19 +27033,6 @@
     {
         "date": "1858",
         "extent": "引札",
-        "id": "16-A00-6010-1-154",
-        "relation": "https://utda.github.io/text/json/16-A00-6010-1-154.json",
-        "s": "http://example.org/16-A00-6010-1-154",
-        "spatial": "http://ja.dbpedia.org/resource/大阪",
-        "subject": "病気・医療",
-        "thumb": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif-img/154142/799,412,4172,2909/,300/0/default.jpg",
-        "title": "浪華名製万歳飴引札",
-        "toc": "0154",
-        "type": "木版"
-    },
-    {
-        "date": "1858",
-        "extent": "引札",
         "id": "16-A00-6010-1-72",
         "relation": "https://utda.github.io/text/json/16-A00-6010-1-72.json",
         "s": "http://example.org/16-A00-6010-1-72",
@@ -28114,16 +27396,6 @@
     },
     {
         "date": "1858",
-        "id": "16-A00-6010-2-84",
-        "s": "http://example.org/16-A00-6010-2-84",
-        "spatial": "http://ja.dbpedia.org/resource/三河国",
-        "subject": "文芸・芸能・スポーツ・教育・出版・教化",
-        "title": "〔俳句摺物〕",
-        "toc": "0354",
-        "type": "木版"
-    },
-    {
-        "date": "1858",
         "extent": "引札",
         "id": "16-A00-6010-2-86",
         "s": "http://example.org/16-A00-6010-2-86",
@@ -28289,17 +27561,6 @@
         "id": "16-A00-6010-4-80",
         "s": "http://example.org/16-A00-6010-4-80",
         "spatial": "http://ja.dbpedia.org/resource/上野国",
-        "subject": "諸営業",
-        "title": "〔吉井火打引札〕",
-        "toc": "0691",
-        "type": "木版"
-    },
-    {
-        "date": "1862",
-        "extent": "引札",
-        "id": "16-A00-6010-4-80",
-        "s": "http://example.org/16-A00-6010-4-80",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
         "subject": "諸営業",
         "title": "〔吉井火打引札〕",
         "toc": "0691",
@@ -28478,19 +27739,6 @@
     {
         "date": "1862",
         "extent": "引札",
-        "id": "16-A00-6010-6-15",
-        "relation": "https://utda.github.io/text/json/16-A00-6010-6-15.json",
-        "s": "http://example.org/16-A00-6010-6-15",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
-        "subject": "諸営業",
-        "thumb": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif-img/154415/935,660,2466,3745/,300/0/default.jpg",
-        "title": "〔上州吉井中野屋孫二郎女作火打引札〕",
-        "toc": "1337",
-        "type": "木版"
-    },
-    {
-        "date": "1862",
-        "extent": "引札",
         "id": "16-A00-6010-11-57",
         "relation": "https://utda.github.io/text/json/16-A00-6010-11-57.json",
         "s": "http://example.org/16-A00-6010-11-57",
@@ -28646,34 +27894,10 @@
     },
     {
         "date": "1865",
-        "id": "16-A00-6010-6-47",
-        "relation": "https://utda.github.io/text/json/16-A00-6010-6-47.json",
-        "s": "http://example.org/16-A00-6010-6-47",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
-        "subject": "文芸・芸能・スポーツ・教育・出版・教化",
-        "thumb": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif-img/154432/2901,551,1791,3930/,300/0/default.jpg",
-        "title": "〔長崎会所請取書〕",
-        "toc": "1369",
-        "type": "木版"
-    },
-    {
-        "date": "1865",
         "id": "16-A00-6010-6-48",
         "relation": "https://utda.github.io/text/json/16-A00-6010-6-48.json",
         "s": "http://example.org/16-A00-6010-6-48",
         "spatial": "http://ja.dbpedia.org/resource/肥前国",
-        "subject": "文芸・芸能・スポーツ・教育・出版・教化",
-        "thumb": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif-img/154432/1022,541,1887,4027/,300/0/default.jpg",
-        "title": "〔長崎会所請取書〕",
-        "toc": "1370",
-        "type": "木版"
-    },
-    {
-        "date": "1865",
-        "id": "16-A00-6010-6-48",
-        "relation": "https://utda.github.io/text/json/16-A00-6010-6-48.json",
-        "s": "http://example.org/16-A00-6010-6-48",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
         "subject": "文芸・芸能・スポーツ・教育・出版・教化",
         "thumb": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif-img/154432/1022,541,1887,4027/,300/0/default.jpg",
         "title": "〔長崎会所請取書〕",
@@ -29101,19 +28325,6 @@
         "relation": "https://utda.github.io/text/json/16-A00-6010-1-254.json",
         "s": "http://example.org/16-A00-6010-1-254",
         "spatial": "http://ja.dbpedia.org/resource/尾張国",
-        "subject": "文芸・芸能・スポーツ・教育・出版・教化",
-        "thumb": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif-img/154164/1823,414,4096,3061/,300/0/default.jpg",
-        "title": "〔美濃名所図会近刊案内〕",
-        "toc": "0254",
-        "type": "木版"
-    },
-    {
-        "date": "1858",
-        "extent": "引札",
-        "id": "16-A00-6010-1-254",
-        "relation": "https://utda.github.io/text/json/16-A00-6010-1-254.json",
-        "s": "http://example.org/16-A00-6010-1-254",
-        "spatial": "http://ja.dbpedia.org/resource/美濃国",
         "subject": "文芸・芸能・スポーツ・教育・出版・教化",
         "thumb": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif-img/154164/1823,414,4096,3061/,300/0/default.jpg",
         "title": "〔美濃名所図会近刊案内〕",
@@ -29700,16 +28911,6 @@
         "type": "木版"
     },
     {
-        "date": "1843",
-        "id": "16-A00-6010-2-28",
-        "s": "http://example.org/16-A00-6010-2-28",
-        "spatial": "http://ja.dbpedia.org/resource/京都",
-        "subject": "文芸・芸能・スポーツ・教育・出版・教化",
-        "title": "楽焼記",
-        "toc": "0298",
-        "type": "木版"
-    },
-    {
         "date": "1859",
         "extent": "引札",
         "id": "16-A00-6010-3-78",
@@ -29991,17 +29192,6 @@
     {
         "date": "1862",
         "extent": "引札",
-        "id": "16-A00-6010-4-137",
-        "s": "http://example.org/16-A00-6010-4-137",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
-        "subject": "諸営業",
-        "title": "南都古梅園出店引札",
-        "toc": "0748",
-        "type": "木版"
-    },
-    {
-        "date": "1862",
-        "extent": "引札",
         "id": "16-A00-6010-4-335",
         "s": "http://example.org/16-A00-6010-4-335",
         "spatial": "http://ja.dbpedia.org/resource/江戸",
@@ -30260,17 +29450,6 @@
         "id": "16-A00-6010-4-255",
         "s": "http://example.org/16-A00-6010-4-255",
         "spatial": "http://ja.dbpedia.org/resource/越後国",
-        "subject": "諸営業",
-        "title": "太白氷飴引札",
-        "toc": "0866",
-        "type": "木版"
-    },
-    {
-        "date": "1862",
-        "extent": "引札",
-        "id": "16-A00-6010-4-255",
-        "s": "http://example.org/16-A00-6010-4-255",
-        "spatial": "http://ja.dbpedia.org/resource/江戸",
         "subject": "諸営業",
         "title": "太白氷飴引札",
         "toc": "0866",
