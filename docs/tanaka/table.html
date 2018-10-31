@@ -51,6 +51,8 @@
             <th></th>
             <th>タイトル</th>
             <th>目録番号</th>
+            <th>書誌事項</th>
+            <th>枚数</th>
             <th>西暦</th>
             <th>地名</th>
             <th>版<!--種類--></th>
@@ -103,7 +105,7 @@
 
       var dataSet = []
 
-      arr = ["date", "spatial", "type", "extent", "subject"]
+      arr = ["description", "extent", "date", "spatial", "type", "format", "subject"]
 
       for (var i = 0; i < result.length; i++) {
 
@@ -188,10 +190,12 @@
       }
 
       // Setup - add a text input to each footer cell
+      /*
       $('#table thead th').each( function () {
         var title = $(this).text();
         $(this).html( title+'<br/><input type="text" class="form-control"/>' );
       } );
+      */
 
       // DataTable
       var table = $('#table').DataTable({
@@ -202,14 +206,16 @@
         "columnDefs": [
           { "width": "5%", "targets": 0 },
           { "width": "10%", "targets": 1 },
-          { "width": "20%", "targets": 2 },
+          { "width": "15%", "targets": 2 },
           { "width": "10%", "targets": 3 },
-          { "width": "10%", "targets": 4 },
-          { "width": "10%", "targets": 5 },
-          { "width": "10%", "targets": 6 },
-          { "width": "10%", "targets": 7 },
-          { "width": "10%", "targets": 8 },
-          { "width": "5%", "targets": 9 }
+          { "width": "20%", "targets": 4 },
+          { "width": "5%", "targets": 5 },
+          { "width": "5%", "targets": 6 },
+          { "width": "5%", "targets": 7 },
+          { "width": "5%", "targets": 8 },
+          { "width": "5%", "targets": 9 },
+          { "width": "10%", "targets": 10 },
+          { "width": "5%", "targets": 11 }
         ],
         fixedColumns: true
       });
