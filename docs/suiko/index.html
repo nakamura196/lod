@@ -61,7 +61,7 @@
       arg[k[0]] = decodeURIComponent(k[1]);
     }
 
-    var resourceUri = arg["curation"]
+    var resourceUri = arg["curation"] != null ? arg["curation"] : "https://nakamura196.github.io/lod/suiko/json/data.json";
 
     var q = arg["q"] != null ? arg["q"] : "";
     $("#q").val(q);
