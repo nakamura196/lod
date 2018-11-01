@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <script
+  src="//code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  <title>IIIF Curation</title>
+
+  <script src="./assets/js/main.js"></script>
+
+
+  <script>asset('./');</script>
+
+</head>
+<body>
+
+  <script>header('./');</script>
+
+  <div class="container py-2 my-5">
+
+    <div class="table-responsive my-5">
+      <table class="table table-hover" id="table">
+        <thead id="thead">
+
+        </thead>
+        <tbody id="resourceListBody">
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-center" id="loading">
+      <img src="https://img.buzzfeed.com/buzzfeed-static/static/enhanced/web05/2012/4/24/16/anigif_enhanced-buzz-10731-1335299292-14.gif" class="img-fluid"/>
+    </div>
+
+
+  </div>
+
+  <script>footer('./');</script>
+
+
+  <script>
+
+  var dcterms = "http://purl.org/dc/terms/"
+  var foaf = "http://xmlns.com/foaf/0.1/"
+  var archiveshub = "http://data.archiveshub.ac.uk/def/"
+
+  jQuery(document).ready(function() {
+
+    var arg  = new Object;
+    url = location.search.substring(1).split('&');
+
+    for(i=0; url[i]; i++) {
+      var k = url[i].split('=');
+      arg[k[0]] = decodeURIComponent(k[1]);
+    }
+
+    var resourceUri = arg["curation"]
+
+    var q = arg["q"] != null ? arg["q"] : "";
+    $("#q").val(q);
+
+    var locationUri = arg["locationUri"] != null ? arg["locationUri"] : "";
+
+    var year = arg["year"] != null ? arg["year"] : "";
+
+    var array = new Array();
+
+    $.ajax({
+      url:resourceUri,
+      type:'GET'
+    })
+    // Ajaxリクエストが成功した時発動
+    .done( (result) => {
+
+      members = result["selections"][0]["members"]
+
+      metadata_0 = []
+
+      for(var i = 0; i < members.length; i++){
+        var tr = $("<tr>")
+        $("#resourceListBody").append(tr)
+
+        var obj = members[i]
+
+        var td = $("<td>");
+        tr.append(td)
+
+        metadata = obj["metadata"]
+
+        if(i == 0){
+          for(var j = 0; j < metadata.length; j++){
+            metadata_0.push(metadata[j]["label"])
+          }
+        }
+
+        var arr = []
+        for(var j = 0; j < metadata_0.length; j++){
+          arr.push("")
+        }
+
+        for(var j = 0; j < metadata.length; j++){
+          var m = metadata[j]
+          var index = $.inArray(m.label, metadata_0)
+          arr[index] = m.value
+        }
+
+        for(var j = 0; j < metadata.length; j++){
+          var td = $("<td>")
+          tr.append(td)
+          td.append(arr[j])
+        }
+
+        var td = $("<td>")
+        tr.append(td)
+
+        var a = $("<a>")
+        td.append(a)
+
+        a.attr("href", "http://codh.rois.ac.jp/software/iiif-curation-player/demo/?curation="+resourceUri+"&pos="+(i+1))
+        a.attr("target", "_blank")
+        var img = $("<img>")
+        a.append(img)
+        img.attr("src", "http://codh.rois.ac.jp/icp/favicons/icp-logo-32x32.png")
+
+      }
+
+      tr = $("<tr>")
+      $("#thead").append(tr)
+
+      var td = $("<th>")
+      tr.append(td)
+
+      for(var j = 0; j < metadata.length; j++){
+        var td = $("<th>")
+        tr.append(td)
+        td.append(metadata_0[j])
+      }
+
+      td = $("<th>")
+      tr.append(td)
+      td.append("ICV")
+
+      // DataTable
+      var table = $('#table').DataTable({
+        "iDisplayLength" : 50,
+        fixedColumns: true
+      });
+
+      // Apply the search
+      table.columns().every( function () {
+        var that = this;
+
+        $( 'input', this.header() ).on( 'keyup change', function () {
+          if ( that.search() !== this.value ) {
+            that
+            .search( this.value )
+            .draw();
+          }
+        } );
+      } );
+
+      table.on('order.dt search.dt', function() {
+        table.column(0, {
+          search : 'applied',
+          order : 'applied'
+        }).nodes().each(function(cell, i) {
+          cell.innerHTML = i + 1;
+        });
+      }).draw();
+
+
+    })
+    // Ajaxリクエストが失敗した時発動
+    .fail( (data) => {
+      alert(data.statusText);
+    })
+    // Ajaxリクエストが成功・失敗どちらでも発動
+    .always( (data) => {
+      $("#loading").empty()
+    });
+  })
+
+</script>
+</body>
+</html>
