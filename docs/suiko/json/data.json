@@ -1,0 +1,184 @@
+{
+    "@context": [
+        "http://iiif.io/api/presentation/2/context.json",
+        "http://codh.rois.ac.jp/iiif/curation/1/context.json"
+    ],
+    "@id": "https://nakamura196.github.io/lod/suiko/json/data.json",
+    "@type": "cr:Curation",
+    "label": "Curating list",
+    "selections": [
+        {
+            "@id": "https://nakamura196.github.io/lod/suiko/json/data.json/range1",
+            "@type": "sc:Range",
+            "label": "Manual curation by IIIF Curation Viewer",
+            "members": [
+                {
+                    "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/192218/canvas/p17#xywh=987,1170,2373,2936",
+                    "@type": "sc:Canvas",
+                    "label": "1a",
+                    "metadata": [
+                        {
+                            "label": "位置",
+                            "value": "1a上"
+                        },
+                        {
+                            "label": "120回本で対応する回目",
+                            "value": "1a"
+                        },
+                        {
+                            "label": "描かれる人物",
+                            "value": "洪信，張天師"
+                        },
+                        {
+                            "label": "図題",
+                            "value": "張天師祈禳瘟疫"
+                        }
+                    ]
+                },
+                {
+                    "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/192218/canvas/p17#xywh=1000,2818,2412,1817",
+                    "@type": "sc:Canvas",
+                    "label": "2a",
+                    "metadata": [
+                        {
+                            "label": "位置",
+                            "value": "1a下"
+                        },
+                        {
+                            "label": "120回本で対応する回目",
+                            "value": "2a"
+                        },
+                        {
+                            "label": "描かれる人物",
+                            "value": "王進，王進の母"
+                        },
+                        {
+                            "label": "図題",
+                            "value": "王教頭私走延安府"
+                        }
+                    ]
+                },
+                {
+                    "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/192218/canvas/p18#xywh=3661,1135,2267,2456",
+                    "@type": "sc:Canvas",
+                    "label": "2b",
+                    "metadata": [
+                        {
+                            "label": "位置",
+                            "value": "1b上"
+                        },
+                        {
+                            "label": "120回本で対応する回目",
+                            "value": "2b"
+                        },
+                        {
+                            "label": "描かれる人物",
+                            "value": "史進，陳達，ほか小者３人"
+                        },
+                        {
+                            "label": "図題",
+                            "value": "九紋龍大闹史家村"
+                        }
+                    ]
+                },
+                {
+                    "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/192218/canvas/p18#xywh=4664,2653,1261,1712",
+                    "@type": "sc:Canvas",
+                    "label": "3a",
+                    "metadata": [
+                        {
+                            "label": "位置",
+                            "value": "1b右下"
+                        },
+                        {
+                            "label": "120回本で対応する回目",
+                            "value": "3a"
+                        },
+                        {
+                            "label": "描かれる人物",
+                            "value": "史進，朱武？（または陳達または楊春）"
+                        },
+                        {
+                            "label": "図題",
+                            "value": "史大郎夜走華陰縣"
+                        }
+                    ]
+                },
+                {
+                    "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/192218/canvas/p18#xywh=3679,3184,1518,1437",
+                    "@type": "sc:Canvas",
+                    "label": "3b",
+                    "metadata": [
+                        {
+                            "label": "位置",
+                            "value": "1b左下"
+                        },
+                        {
+                            "label": "120回本で対応する回目",
+                            "value": "3b"
+                        },
+                        {
+                            "label": "描かれる人物",
+                            "value": "魯智深（＝魯達），鄭屠"
+                        },
+                        {
+                            "label": "図題",
+                            "value": "魯提轄拳打□□□〔鎮関西〕"
+                        }
+                    ]
+                },
+                {
+                    "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/192218/canvas/p18#xywh=1028,1174,2344,1793",
+                    "@type": "sc:Canvas",
+                    "label": "4b",
+                    "metadata": [
+                        {
+                            "label": "位置",
+                            "value": "2a上"
+                        },
+                        {
+                            "label": "120回本で対応する回目",
+                            "value": "4b"
+                        },
+                        {
+                            "label": "描かれる人物",
+                            "value": "魯智深"
+                        },
+                        {
+                            "label": "図題",
+                            "value": "魯智深大閙五台山"
+                        }
+                    ]
+                },
+                {
+                    "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/192218/canvas/p18#xywh=1037,2960,2344,1640",
+                    "@type": "sc:Canvas",
+                    "label": "5a",
+                    "metadata": [
+                        {
+                            "label": "位置",
+                            "value": "2a下"
+                        },
+                        {
+                            "label": "120回本で対応する回目",
+                            "value": "5a"
+                        },
+                        {
+                            "label": "描かれる人物",
+                            "value": "魯智深，周通"
+                        },
+                        {
+                            "label": "図題",
+                            "value": "小覇王醉入銷金帳"
+                        }
+                    ]
+                }
+            ],
+            "within": {
+                "@id": "https://iiif.dl.itc.u-tokyo.ac.jp/repo/iiif/192218/manifest",
+                "@label": "E46386-01",
+                "@type": "sc:Manifest"
+            }
+        }
+    ]
+}
