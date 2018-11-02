@@ -47,10 +47,6 @@
 
   <script>
 
-  var dcterms = "http://purl.org/dc/terms/"
-  var foaf = "http://xmlns.com/foaf/0.1/"
-  var archiveshub = "http://data.archiveshub.ac.uk/def/"
-
   jQuery(document).ready(function() {
 
     var arg  = new Object;
@@ -63,12 +59,7 @@
 
     var resourceUri = arg["curation"] != null ? arg["curation"] : "https://nakamura196.github.io/lod/suiko/json/data.json";
 
-    var q = arg["q"] != null ? arg["q"] : "";
-    $("#q").val(q);
-
-    var locationUri = arg["locationUri"] != null ? arg["locationUri"] : "";
-
-    var year = arg["year"] != null ? arg["year"] : "";
+    get_thumbs(resourceUri)
 
     var array = new Array();
 
@@ -91,6 +82,10 @@
 
         var td = $("<td>");
         tr.append(td)
+
+        td = $("<td>");
+        tr.append(td)
+        td.attr("id", "td_"+i)
 
         metadata = obj["metadata"]
 
@@ -129,12 +124,17 @@
         a.append(img)
         img.attr("src", "http://codh.rois.ac.jp/icp/favicons/icp-logo-32x32.png")
 
+
+
       }
 
       tr = $("<tr>")
       $("#thead").append(tr)
 
       var td = $("<th>")
+      tr.append(td)
+
+      td = $("<th>")
       tr.append(td)
 
       for(var j = 0; j < metadata.length; j++){
@@ -146,6 +146,7 @@
       td = $("<th>")
       tr.append(td)
       td.append("ICV")
+
 
       // DataTable
       var table = $('#table').DataTable({
@@ -176,6 +177,10 @@
       }).draw();
 
 
+
+
+
+
     })
     // Ajaxリクエストが失敗した時発動
     .fail( (data) => {
@@ -186,6 +191,41 @@
       $("#loading").empty()
     });
   })
+
+  function get_thumbs(resourceUri){
+    $.getJSON( resourceUri, function( curation ) {
+      var selection = curation["selections"][0]
+
+      var members = selection["members"]
+
+      var manifestUri = selection["within"]["@id"]
+
+        $.getJSON( manifestUri, function( manifest ) {
+
+          var canvases = manifest["sequences"][0]["canvases"]
+
+          var map = {}
+
+          for(var i = 0; i < canvases.length; i++){
+            var canvas = canvases[i]
+            map[canvas["@id"]] = canvas["images"][0]["resource"]["service"]["@id"]
+          }
+
+          for(var j = 0; j < members.length; j++){
+            var id = members[j]["@id"]
+            id = id.split("#")
+            var canvas_id = id[0]
+            var area = id[1].split("=")[1]
+            var thumb = map[canvas_id]+"/"+area+"/150,/0/default.jpg"
+
+            var img = $("<img>")
+            $("#td_"+j).append(img)
+            img.attr("src", thumb)
+            img.attr("class", "z-depth-1")
+          }
+        });
+    });
+  }
 
 </script>
 </body>
