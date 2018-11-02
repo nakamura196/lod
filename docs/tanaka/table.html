@@ -77,6 +77,11 @@
 
 
   <script>
+
+  var dcterms = "http://purl.org/dc/terms/"
+  var foaf = "http://xmlns.com/foaf/0.1/"
+  var archiveshub = "http://data.archiveshub.ac.uk/def/"
+
   jQuery(document).ready(function() {
 
     var arg  = new Object;
@@ -97,101 +102,94 @@
     var array = new Array();
 
     $.ajax({
-      url:'assets/json/data.json',
-      type:'GET'
+      url:'assets/json/data.json'
     })
-    // Ajaxリクエストが成功した時発動
-    .done( (result) => {
+    .then(
+      // 1つめは通信成功時のコールバック
+      function (result) {
+        var dataSet = []
 
-      var dataSet = []
+        arr = [dcterms+"description", dcterms+"extent", dcterms+"date", dcterms+"coverage", dcterms+"type", dcterms+"format", dcterms+"subject"]
 
-      arr = ["description", "extent", "date", "spatial", "type", "format", "subject"]
+        for (var i = 0; i < result.length; i++) {
 
-      for (var i = 0; i < result.length; i++) {
+          var flg = true
 
-        var flg = true
+          var obj = result[i];
 
-        var obj = result[i];
+          var row = []
 
-        var row = []
-
-        row.push("")
-
-        var img_div = $("<div>");
-        var img = $("<img class='img-fluid z-depth-1' height='90px'>")
-        img_div.append(img)
-        if(obj.thumb){
-          img.attr("src", obj.thumb.replace("/,300/", "/,90/"))
-          img.before("<span style='display : none;'>image,yes,on,true</span>");
-        }　else {
-          img.attr("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIQd_xAOzY_r1Ks1qviqM5J_R3pJK7nDUcCFqWZnzdrM1physC1g")
-        }
-
-        row.push(img_div.prop('outerHTML'))
-
-
-        var a = $("<span>")
-        a.append(obj.title)
-        row.push(a.prop('outerHTML'))
-
-        //----------
-
-        var div = $("<div>")
-
-        var span = $("<span style='display : none;'>")
-        div.append(span)
-        span.append(obj.toc)
-        div.append(obj.id)
-
-
-        row.push(div.prop("outerHTML"))
-
-        //-----------
-
-        for(var j = 0; j < arr.length; j++){
-          e = arr[j]
-          text = ""
-          if(obj[e]){
-            text = obj[e]
-          }
-          if(e == "spatial"){
-            //地名が設定されていた場合
-            if(locationUri != "" && text != locationUri){
-              flg = false
-              break
-            }
-            text = text.replace("http://ja.dbpedia.org/resource/", "")
-          }　else if(e == "date" && year != ""){
-            if(text != year){
-              flg = false;
-              break
-            }
-          }
-          row.push(text)
-        }
-
-        //-----------
-
-        if(obj.relation != null){
-          var a = $("<a>")
-          a.attr("href", "http://codh.rois.ac.jp/software/iiif-curation-viewer/demo/?curation="+obj.relation.replace("#", "&pos="))
-          a.attr("target", "_blank")
-          var img = $("<img>")
-          a.append(img)
-          img.attr("src", "http://codh.rois.ac.jp/icp/favicons/icp-logo-32x32.png")
-          row.push(a.prop('outerHTML'))
-        } else {
           row.push("")
-        }
-        //表示するかの判定
-        if(flg){
-          dataSet.push(row)
-        }
-      }
 
-      // Setup - add a text input to each footer cell
-      /*
-      $('#table thead th').each( function () {
+          var img_div = $("<div>");
+          var img = $("<img class='img-fluid z-depth-1' height='90px'>")
+          img_div.append(img)
+          if(obj[foaf+"thumbnail"]){
+            img.attr("src", obj[foaf+"thumbnail"][0]["@id"].replace("/,300/", "/,90/"))
+            img.before("<span style='display : none;'>image,yes,on,true</span>");
+          }　else {
+            img.attr("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIQd_xAOzY_r1Ks1qviqM5J_R3pJK7nDUcCFqWZnzdrM1physC1g")
+          }
+
+          row.push(img_div.prop('outerHTML'))
+
+
+          var a = $("<span>")
+          a.append(obj[dcterms+"title"][0]["@value"])
+          row.push(a.prop('outerHTML'))
+
+          //----------
+
+          var div = $("<div>")
+
+          var span = $("<span style='display : none;'>")
+          div.append(span)
+          span.append(obj[archiveshub+"note"][0]["@value"])
+          div.append(obj[dcterms+"identifier"][0]["@value"])
+
+          row.push(div.prop("outerHTML"))
+
+          //-----------
+
+          for(var j = 0; j < arr.length; j++){
+            e = arr[j]
+            text = ""
+            if(obj[e]){
+              text = obj[e][0]["@value"]
+              if(e == "date" && year != ""){
+                if(text != year){
+                  flg = false;
+                  break
+                }
+              }
+
+            }
+
+            row.push(text)
+          }
+
+          //-----------
+
+          if(obj[dcterms+"relation"] != null){
+            var a = $("<a>")
+            a.attr("href", "http://codh.rois.ac.jp/software/iiif-curation-viewer/demo/?curation="+obj[dcterms+"relation"][0]["@id"].replace("#", "&pos="))
+            a.attr("target", "_blank")
+            var img = $("<img>")
+            a.append(img)
+            img.attr("src", "http://codh.rois.ac.jp/icp/favicons/icp-logo-32x32.png")
+            row.push(a.prop('outerHTML'))
+          } else {
+            row.push("")
+          }
+          //表示するかの判定
+          if(flg){
+            dataSet.push(row)
+          }
+        }
+
+        // Setup - add a text input to each footer cell
+        /*
+        $('#table thead th').each( function () {
         var title = $(this).text();
         $(this).html( title+'<br/><input type="text" class="form-control"/>' );
       } );
@@ -241,19 +239,17 @@
           cell.innerHTML = i + 1;
         });
       }).draw();
-
-
-    })
-    // Ajaxリクエストが失敗した時発動
-    .fail( (data) => {
+    },
+    // 2つめは通信失敗時のコールバック
+    function () {
       alert(data.statusText);
-    })
-    // Ajaxリクエストが成功・失敗どちらでも発動
-    .always( (data) => {
-      $("#loading").empty()
-    });
-  })
+    }
+  ).always(function() {
+    $("#loading").empty()
+  });
 
-  </script>
+})
+
+</script>
 </body>
 </html>
