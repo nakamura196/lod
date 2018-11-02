@@ -70,105 +70,107 @@
         format : "json"
       }
     })
-    // Ajaxリクエストが成功した時発動
-    .done( (data) => {
-      var result = data.results.bindings;
+    .then(
+      // 1つめは通信成功時のコールバック
+      function (data) {
+        var result = data.results.bindings;
 
-      var markers = L.markerClusterGroup({
-        iconCreateFunction: function(cluster) {
-          var children = cluster.getAllChildMarkers();
-          var sum = 0;
-          for (var i = 0; i < children.length; i++) {
-            sum += children[i].number;
+        var markers = L.markerClusterGroup({
+          iconCreateFunction: function(cluster) {
+            var children = cluster.getAllChildMarkers();
+            var sum = 0;
+            for (var i = 0; i < children.length; i++) {
+              sum += children[i].number;
+            }
+            return new L.AwesomeNumberMarkers({number: sum });
           }
-          return new L.AwesomeNumberMarkers({number: sum });
+        });
+
+        var items = new Array();
+
+        var mlat = 0;
+        var mlong = 0;
+
+        var set = new Array()
+
+        for (var i = 0; i < result.length; i++) {
+          var obj = result[i];
+
+
+          var n = Number(obj.c.value)
+
+          var title = obj.label.value
+          var marker = L.marker(new L.LatLng(obj.lat.value, obj.long.value), { title: title, icon:   new L.AwesomeNumberMarkers({number: n}) });
+          marker.number = n
+
+          mlat += Number(obj.lat.value);
+          mlong += Number(obj.long.value);
+
+          var thumb = "";
+          if(obj.thumb){
+            thumb = obj.thumb.value
+          }
+
+          url = obj.location.value;
+
+          if(set.indexOf(url) == -1){
+
+            var contents = '<div style="width : 180px">'
+            /*
+            contents += '<figure class="figure">';
+            contents += '<img style="height : 90px" src="'+thumb+'" class="figure-img img-fluid rounded">';
+            contents += '<figcaption class="figure-caption">'+title+'<br/><a href="'+url+'" target="_blank">View&nbsp;&raquo;</a></figcaption>';
+            contents += '</figure>'*/
+            contents += '</div>';
+
+            var link = "table.html?locationUri="+obj.location.value
+
+            var contents = '<div><div class="media">';
+            //contents += '<img class="mr-3" style="width : 64px" src="'+thumb+'" alt="Generic placeholder image">';
+            contents += '<div class="media-body">';
+            contents += '<h5 class="mt-0"><a href="'+link+'">'+title+'</a></h5>';
+            //contents += '<p id="p_'+i+'"></p>';
+            contents += '</div>';
+            contents += '</div></div>';
+
+            marker.bindPopup(contents);
+            markers.addLayer(marker);
+
+            set.push(url)
+
+          }
+
+          //get_dbpedia_info(i, obj.location.value)
+
+
         }
-      });
 
-      var items = new Array();
+        mymap.addLayer(markers);
 
-      var mlat = 0;
-      var mlong = 0;
+        var popup = L.popup();
 
-      var set = new Array()
+        function onMapClick(e) {
 
-      for (var i = 0; i < result.length; i++) {
-        var obj = result[i];
-
-
-        var n = Number(obj.c.value)
-
-        var title = obj.label.value
-        var marker = L.marker(new L.LatLng(obj.lat.value, obj.long.value), { title: title, icon:   new L.AwesomeNumberMarkers({number: n}) });
-        marker.number = n
-
-        mlat += Number(obj.lat.value);
-        mlong += Number(obj.long.value);
-
-        var thumb = "";
-        if(obj.thumb){
-          thumb = obj.thumb.value
+          popup
+          .setLatLng(e.latlng)
+          .setContent("You clicked the map at " + e.latlng.toString())
+          .openOn(mymap);
         }
 
-        url = obj.location.value;
+        mymap.on('click', onMapClick);
 
-        if(set.indexOf(url) == -1){
-
-          var contents = '<div style="width : 180px">'
-          /*
-          contents += '<figure class="figure">';
-          contents += '<img style="height : 90px" src="'+thumb+'" class="figure-img img-fluid rounded">';
-          contents += '<figcaption class="figure-caption">'+title+'<br/><a href="'+url+'" target="_blank">View&nbsp;&raquo;</a></figcaption>';
-          contents += '</figure>'*/
-          contents += '</div>';
-
-          var link = "table.html?locationUri="+obj.location.value
-
-          var contents = '<div><div class="media">';
-          //contents += '<img class="mr-3" style="width : 64px" src="'+thumb+'" alt="Generic placeholder image">';
-          contents += '<div class="media-body">';
-          contents += '<h5 class="mt-0"><a href="'+link+'">'+title+'</a></h5>';
-          //contents += '<p id="p_'+i+'"></p>';
-          contents += '</div>';
-          contents += '</div></div>';
-
-          marker.bindPopup(contents);
-          markers.addLayer(marker);
-
-          set.push(url)
-
-        }
-
-        //get_dbpedia_info(i, obj.location.value)
-
-
+        mymap.panTo(new L.LatLng(mlat / result.length, mlong / result.length));
+      },
+      // 2つめは通信失敗時のコールバック
+      function () {
+        alert(data.statusText);
       }
-
-      mymap.addLayer(markers);
-
-      var popup = L.popup();
-
-      function onMapClick(e) {
-
-        popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(mymap);
-      }
-
-      mymap.on('click', onMapClick);
-
-      mymap.panTo(new L.LatLng(mlat / result.length, mlong / result.length));
-
-    })
-    // Ajaxリクエストが失敗した時発動
-    .fail( (data) => {
-      alert(data.statusText);
-    })
-    // Ajaxリクエストが成功・失敗どちらでも発動
-    .always( (data) => {
+    ).always(function() {
       $("#loading").empty()
     });
+
+
+
   })
 
   function get_dbpedia_info(id, locationUri){

@@ -117,74 +117,85 @@
 
           var obj = result[i];
 
-          var row = []
 
-          row.push("")
-
-          var img_div = $("<div>");
-          var img = $("<img class='img-fluid z-depth-1' height='90px'>")
-          img_div.append(img)
-          if(obj[foaf+"thumbnail"]){
-            img.attr("src", obj[foaf+"thumbnail"][0]["@id"].replace("/,300/", "/,90/"))
-            img.before("<span style='display : none;'>image,yes,on,true</span>");
-          }　else {
-            img.attr("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIQd_xAOzY_r1Ks1qviqM5J_R3pJK7nDUcCFqWZnzdrM1physC1g")
+          if(!obj[dcterms+"spatial"] || (locationUri != "" && obj[dcterms+"spatial"] && obj[dcterms+"spatial"][0]["@id"] != locationUri)){
+            flg = false;
           }
 
-          row.push(img_div.prop('outerHTML'))
+
+          if(!obj[dcterms+"date"] || (year != "" && obj[dcterms+"date"] && obj[dcterms+"date"][0]["@value"] != year)){
+            flg = false;
+          }
 
 
-          var a = $("<span>")
-          a.append(obj[dcterms+"title"][0]["@value"])
-          row.push(a.prop('outerHTML'))
+          if(flg){
 
-          //----------
+            var row = []
 
-          var div = $("<div>")
+            row.push("")
 
-          var span = $("<span style='display : none;'>")
-          div.append(span)
-          span.append(obj[archiveshub+"note"][0]["@value"])
-          div.append(obj[dcterms+"identifier"][0]["@value"])
-
-          row.push(div.prop("outerHTML"))
-
-          //-----------
-
-          for(var j = 0; j < arr.length; j++){
-            e = arr[j]
-            text = ""
-            if(obj[e]){
-              text = obj[e][0]["@value"]
-              if(e == "date" && year != ""){
-                if(text != year){
-                  flg = false;
-                  break
-                }
-              }
-
+            var img_div = $("<div>");
+            var img = $("<img class='img-fluid z-depth-1' height='90px'>")
+            img_div.append(img)
+            if(obj[foaf+"thumbnail"]){
+              img.attr("src", obj[foaf+"thumbnail"][0]["@id"].replace("/,300/", "/,90/"))
+              img.before("<span style='display : none;'>image,yes,on,true</span>");
+            }　else {
+              img.attr("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIQd_xAOzY_r1Ks1qviqM5J_R3pJK7nDUcCFqWZnzdrM1physC1g")
             }
 
-            row.push(text)
-          }
+            row.push(img_div.prop('outerHTML'))
 
-          //-----------
 
-          if(obj[dcterms+"relation"] != null){
-            var a = $("<a>")
-            a.attr("href", "http://codh.rois.ac.jp/software/iiif-curation-viewer/demo/?curation="+obj[dcterms+"relation"][0]["@id"].replace("#", "&pos="))
-            a.attr("target", "_blank")
-            var img = $("<img>")
-            a.append(img)
-            img.attr("src", "http://codh.rois.ac.jp/icp/favicons/icp-logo-32x32.png")
+            var a = $("<span>")
+
+            if(obj[dcterms+"title"] == null){
+              console.log(obj[dcterms+"title"])
+            }
+
+
+            a.append(obj[dcterms+"title"][0]["@value"])
             row.push(a.prop('outerHTML'))
-          } else {
-            row.push("")
-          }
-          //表示するかの判定
-          if(flg){
+
+            //----------
+
+            var div = $("<div>")
+
+            var span = $("<span style='display : none;'>")
+            div.append(span)
+            span.append(obj[archiveshub+"note"][0]["@value"])
+            div.append(obj[dcterms+"identifier"][0]["@value"])
+
+            row.push(div.prop("outerHTML"))
+
+            for(var j = 0; j < arr.length; j++){
+              e = arr[j]
+              text = ""
+              if(obj[e]){
+                text = obj[e][0]["@value"]
+              }
+
+              row.push(text)
+            }
+
+            //-----------
+
+            if(obj[dcterms+"relation"] != null){
+              var a = $("<a>")
+              a.attr("href", "http://codh.rois.ac.jp/software/iiif-curation-viewer/demo/?curation="+obj[dcterms+"relation"][0]["@id"].replace("#", "&pos="))
+              a.attr("target", "cr")
+              var img = $("<img>")
+              a.append(img)
+              img.attr("src", "http://codh.rois.ac.jp/icp/favicons/icp-logo-32x32.png")
+              row.push(a.prop('outerHTML'))
+            } else {
+              row.push("")
+            }
+            //表示するかの判定
             dataSet.push(row)
+
           }
+
         }
 
         // Setup - add a text input to each footer cell

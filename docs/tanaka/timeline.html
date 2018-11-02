@@ -41,7 +41,7 @@
       <p id=group></p>
     </div>
     <div id="container3"></div>
-    <p class="text-center"><a class="btn btn-primary" id="portal-link" target="_blank">View</a> <a class="popup-modal-dismiss btn btn-sm btn-mdb-color" href="#">Close</a></p>
+    <p class="text-center"><a class="btn btn-primary" id="portal-link">View</a> <a class="popup-modal-dismiss btn btn-sm btn-mdb-color" href="#">Close</a></p>
   </div>
 
   <script type="text/javascript">
@@ -71,7 +71,7 @@
 
   var groupUri = "http://purl.org/dc/terms/spatial";
 
-  var width = arg["width"] != null ? arg["width"] : 5;
+  var width = arg["width"] != null ? arg["width"] : 20;
 
   jQuery(document).ready(function() {
 
@@ -95,38 +95,21 @@
     return arg
   }
 
+  var dcterms = "http://purl.org/dc/terms/"
+
   function search() {
 
-    var query = " SELECT * ";
-    query += " where { ";
-
-    query += " ?s ?v ?o . ";
-    query += " filter ( ?v = <"+predicateUri+">) ";
-    query += " } "
-    if(limit != -1){
-      query += " limit "+limit
-    }
-
     $.ajax({
-      url:endpoint,
-      type:'POST',
-      data:{
-        query : query,
-        format : "json"
-      }
+      url:'assets/json/data.json',
+      type:'GET'
     })
     // Ajaxリクエストが成功した時発動
-    .done( (data) => {
-      var result = data.results.bindings;
+    .done( (result) => {
 
       for (var i = 0; i < result.length; i++) {
         var obj = result[i];
 
-        var s = obj.s.value;
-        var v = obj.v.value;
-        var o = obj.o.value;
-
-        //console.log(o)
+        var o = obj[dcterms+"date"][0]["@value"]
 
         o = arrangeDate(o)
 
@@ -178,9 +161,9 @@
 
       displayTimeline(items, groups)
 
-    })
-    // Ajaxリクエストが失敗した時発動
-    .fail( (data) => {
+
+
+    }).fail( (data) => {
       alert(data.statusText);
     })
     // Ajaxリクエストが成功・失敗どちらでも発動
