@@ -28,6 +28,8 @@
       <img src="https://img.buzzfeed.com/buzzfeed-static/static/enhanced/web05/2012/4/24/16/anigif_enhanced-buzz-10731-1335299292-14.gif" class="img-fluid"/>
     </div>
 
+    <div id="timeline" class="mt-5 mx-5"></div>
+
     <div id="visualization" class="my-5 mx-5"></div>
 
   </div>
@@ -60,11 +62,6 @@
 
   var arg = getParam()
 
-  var endpoint = "https://dydra.com/ut-digital-archives/tanaka/sparql";
-  //endpoint = "https://dydra.com/ut-digital-archives/diplomatic/sparql"
-
-  var limit = arg["limit"] != null ? Number(arg["limit"]) : -1;
-
   var dateType = arg["dateType"] != null ? arg["dateType"] : "year";
 
   var predicateUri = "http://purl.org/dc/terms/date";
@@ -72,6 +69,8 @@
   var groupUri = "http://purl.org/dc/terms/spatial";
 
   var width = arg["width"] != null ? arg["width"] : 20;
+
+  var dateUrl = "assets/json/timeline.json"
 
   jQuery(document).ready(function() {
 
@@ -103,71 +102,69 @@
       url:'assets/json/data.json',
       type:'GET'
     })
-    // Ajaxリクエストが成功した時発動
-    .done( (result) => {
+    .then(
+      // 1つめは通信成功時のコールバック
+      function (result) {
+        for (var i = 0; i < result.length; i++) {
+          var obj = result[i];
 
-      for (var i = 0; i < result.length; i++) {
-        var obj = result[i];
+          var o = obj[dcterms+"date"][0]["@value"]
 
-        var o = obj[dcterms+"date"][0]["@value"]
+          o = arrangeDate(o)
 
-        o = arrangeDate(o)
+          if(o == null){
+            continue
+          }
 
-        if(o == null){
-          continue
+          //var group = obj.group.value;
+          var group = "item"
+
+          if(!map[group]){
+            map[group] = {}
+          }
+
+          tmp = map[group]
+
+          if(!tmp[o]){
+            tmp[o] = 0
+          }
+          tmp[o] = tmp[o] + 1
+
+
         }
 
-        //var group = obj.group.value;
-        var group = "item"
+        var groups = new vis.DataSet();
 
-        if(!map[group]){
-          map[group] = {}
+        var items = []
+
+        for(group in map){
+
+          var total = 0
+
+          obj = map[group]
+          for(key in obj){
+            var tmp = {}
+            tmp.x = key
+            tmp.y = obj[key]
+            tmp.group = group
+            items.push(tmp)
+
+            total += tmp.y
+          }
+
+          groups.add({
+            id: group,
+            content: group+"："+total
+          })
         }
 
-        tmp = map[group]
-
-        if(!tmp[o]){
-          tmp[o] = 0
-        }
-        tmp[o] = tmp[o] + 1
-
-
+        displayTimeline(items, groups)
+      },
+      // 2つめは通信失敗時のコールバック
+      function () {
+        alert(data.statusText);
       }
-
-      var groups = new vis.DataSet();
-
-      var items = []
-
-      for(group in map){
-
-        var total = 0
-
-        obj = map[group]
-        for(key in obj){
-          var tmp = {}
-          tmp.x = key
-          tmp.y = obj[key]
-          tmp.group = group
-          items.push(tmp)
-
-          total += tmp.y
-        }
-
-        groups.add({
-          id: group,
-          content: group+"："+total
-        })
-      }
-
-      displayTimeline(items, groups)
-
-
-
-    }).fail( (data) => {
-      alert(data.statusText);
-    })
-    // Ajaxリクエストが成功・失敗どちらでも発動
-    .always( (data) => {
+    ).always(function() {
       $("#loading").empty()
     });
   }
@@ -224,8 +221,18 @@
     graph2d = new vis.Graph2d(container, items, groups, options);
     graph2d.on('doubleClick', onClick);
 
+    graph2d.on('rangechanged', onChange);
+
     $("#visualization").append('<p class="text-center grey-text mt-3">ヒストグラムをダブルクリックで詳細を表示</p>')
 
+    if(dateUrl != null){
+      getTimeline()
+
+      //move to center
+      range = graph2d.getWindow()
+      center = Math.round(range.start.getFullYear() + (range.end.getFullYear() - range.start.getFullYear()) / 2)
+      graph2d.moveTo(String(center))
+    }
 
   }
 
@@ -308,6 +315,63 @@
     });
   }
 
+  function getTimeline() {
+
+    var ical = "http://www.w3.org/2002/12/cal/icaltzd#"
+
+    $.getJSON(dateUrl , function(data) {
+
+      arr = []
+
+      for(i = 0; i < data.length; i++){
+        var obj = data[i]
+
+        var obj2 = {}
+
+        obj2.content = obj[ical+"summary"][0]["@value"]
+        obj2.start = obj[ical+"dtstart"][0]["@value"]+"-01-01"
+        obj2.group = "1"
+        arr.push(obj2)
+      }
+
+      // Create a DataSet (allows two way data-binding)
+      var items = new vis.DataSet(arr);
+
+      // DOM element where the Timeline will be attached
+      var container = document.getElementById('timeline');
+
+      // Configuration for the Timeline
+      var options = {
+        maxHeight : "400px"
+      };
+
+      // Create a Timeline
+      timeline = new vis.Timeline(container, items, options);
+      var groups = new vis.DataSet();
+      groups.add({
+        id: "1",
+        content: "Timeline"
+      })
+      timeline.setGroups(groups);
+
+      timeline.on('select', function(properties) {
+        var selection = timeline.getSelection();
+        timeline.focus(selection);
+      });
+
+      // add event listener
+      timeline.on('rangechanged', onChange);
+
+    })
+
+  }
+
+  function onChange(properties) {
+    if(dateUrl != null){
+      timeline.setWindow(properties.start, properties.end);
+    }
+    graph2d.setWindow(properties.start, properties.end);
+  }
 </script>
 </body>
 </html>
