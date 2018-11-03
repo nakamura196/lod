@@ -102,26 +102,24 @@
         format : "json"
       }
     })
-    // Ajaxリクエストが成功した時発動
-    .done( (data) => {
-      var result = data.results.bindings;
+    .then(
+      // 1つめは通信成功時のコールバック
+      function (result) {
+        var result = data.results.bindings;
 
-      if(result.length > 0){
-        var obj = result[0]
+        if(result.length > 0){
+          var obj = result[0]
 
-        $("#p_"+id).append(obj.comment.value)
+          $("#p_"+id).append(obj.comment.value)
+        }
+      },
+      // 2つめは通信失敗時のコールバック
+      function () {
+        alert(data.statusText);
       }
-
-    })
-    // Ajaxリクエストが失敗した時発動
-    .fail( (data) => {
-      console.log(data.statusText);
-    })
-    // Ajaxリクエストが成功・失敗どちらでも発動
-    .always( (data) => {
-      //$("#loading").empty()
+    ).always(function() {
+      $("#loading").empty()
     });
-
 
   }
 
