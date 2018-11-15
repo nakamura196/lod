@@ -14,7 +14,7 @@
   <title>IIIF Curation</title>
 
   <script src="./assets/js/main.js"></script>
-
+  
 
   <script>asset('./');</script>
 
@@ -29,8 +29,9 @@
       <h2 id="title"></h2>
     </div>
 
-    <div class="my-2">
-      <button id="compareBtn" class="btn btn-primary">比較・Compare with Mirador</button>
+    <div class="mt-2">
+      <button id="compareBtn" class="btn btn-primary mb-2">Compare</button>
+      <a id="compare_a" class="btn btn-primary mb-2">Compare 2</a>
     </div>
 
     <div class="table-responsive my-5">
@@ -56,7 +57,7 @@
   var id_map = {}
 
   jQuery(document).ready(function() {
-    
+
     $.ajaxSetup({ async: false });
 
     var arg  = new Object;
@@ -68,6 +69,8 @@
     }
 
     var resourceUri = arg["curation"] != null ? arg["curation"] : "https://mp.ex.nii.ac.jp/api/curation/json/528810d2-4e28-4a46-910c-c9b517f86943";
+
+    $("#compare_a").attr("href", "compare2.html?curation="+resourceUri);
 
     if(resourceUri == ""){
       $("#loading").empty()
