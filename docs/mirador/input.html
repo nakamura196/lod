@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="stylesheet" type="text/css" href="mirador/css/mirador-combined.css">
+  <link rel="stylesheet" type="text/css" href="mirador/plugins/mirador-dragndrop-link-plugin/dragndrop-link.css">
+  <link rel="stylesheet" type="text/css" href="CETEI/css/CETEIcean.css">
+  <link rel="stylesheet" type="text/css" href="CETEI/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+
+  <title>TEI & IIIF Viewer</title>
+
+</head>
+<body style="background-color: #eee;">
+
+  <header>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light white scrolling-navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand">TEI & IIIF Viewer</a>
+      </div>
+    </nav>
+    <!--/.Navbar-->
+
+  </header>
+
+  <div class="container my-5">
+    <!-- Default form login -->
+    <div class="text-center p-5">
+
+      <p class="h4 mb-4">Enter URL of TEI/XML file</p>
+
+      <!-- Email -->
+      <input type="text" id="resourceUri" class="form-control mb-4" value="https://utda.github.io/text/xml/d507a810-cff7-4168-bc10-70a32a55920f.xml">
+
+      <!-- Sign in button -->
+      <button class="btn btn-primary mb-4" id="btn_mirador">View with Mirador&raquo;</button>
+
+      <button class="btn btn-primary mb-4" id="btn_osd">View with OpenSeadragon&raquo;</button>
+
+    </div>
+    <!-- Default form login -->
+
+    <h3 class="mt-5 mb-4 text-center">Example</h3>
+
+
+
+    <!--Second row-->
+    <div class="row">
+
+      <!--Third columnn-->
+      <div class="col-lg-3 mb-4">
+        <!--Card-->
+        <div class="card wow fadeIn" data-wow-delay="0.2s">
+
+          <!--Card content-->
+          <div class="card-body text-center">
+            <!--Title-->
+            <h4 class="card-title">
+              鍾伯敬先生批評水滸伝一百巻一百回
+            </h4>
+            <a href="./osd.html?resourceUri=https://utda.github.io/text/xml/uparl/suiko/A006267.xml" class="btn btn-primary btn-md">View with OpenSeadragon&raquo;</a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!--Third columnn-->
+      <div class="col-lg-3 mb-4">
+        <!--Card-->
+        <div class="card wow fadeIn" data-wow-delay="0.2s">
+
+          <!--Card content-->
+          <div class="card-body text-center">
+            <!--Title-->
+            <h4 class="card-title">
+              新刻全像忠義水滸誌伝二十五巻一百十五回
+            </h4>
+            <a href="./osd.html?resourceUri=https://utda.github.io/text/xml/uparl/suiko/A006371.xml" class="btn btn-primary btn-md">View with OpenSeadragon&raquo;</a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!--Third columnn-->
+      <div class="col-lg-3 mb-4">
+        <!--Card-->
+        <div class="card wow fadeIn" data-wow-delay="0.2s">
+
+          <!--Card content-->
+          <div class="card-body text-center">
+            <!--Title-->
+            <h4 class="card-title">
+              御前落居記録
+            </h4>
+            <a href="./?resourceUri=https://utda.github.io/text/xml/d507a810-cff7-4168-bc10-70a32a55920f.xml" class="btn btn-primary btn-md">View with Mirador&raquo;</a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!--Third columnn-->
+      <div class="col-lg-3 mb-4">
+        <!--Card-->
+        <div class="card wow fadeIn" data-wow-delay="0.2s">
+
+          <!--Card content-->
+          <div class="card-body text-center">
+            <!--Title-->
+            <h4 class="card-title">
+              御前落居奉書
+            </h4>
+            <a href="./?resourceUri=https://utda.github.io/text/xml/4791f609-8567-48cd-96a2-9eb8157aac11.xml" class="btn btn-primary btn-md">View with Mirador&raquo;</a>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <!--Footer-->
+  <footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn">
+
+    <!--Copyright-->
+    <div class="footer-copyright py-5">
+      <a href="https://researchmap.jp/nakamura.satoru/?lang=english">Satoru Nakamura</a>. <a href="https://creativecommons.org/licenses/by/4.0/">CC BY</a>.<br/>
+      Reference:<br/>Nicholas Laiacona, Ben Brumfield, Naoki Kokaze, Kiyonori Nagasaki, Makoto Goto：Connecting TEI and IIIF, 2018 IIIF Conference
+      <br/>
+      GitHub - TEIC/CETEIcean: TEI in HTML5 Custom Elements, <a href="https://github.com/TEIC/CETEIcean">https://github.com/TEIC/CETEIcean</a>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+
+  <script
+  src="//code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  <script src="mirador/mirador.min.js"></script>
+
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
+
+  <script>
+  $(function() {
+    // ボタンクリックで時刻を更新
+    $('#btn_osd').click(function(e) {
+      location.href = "osd.html?resourceUri="+$("#resourceUri").val();
+    });
+
+    $('#btn_mirador').click(function(e) {
+      location.href = "./?resourceUri="+$("#resourceUri").val();
+    });
+  });
+</script>
+
+</body>
+</html>
