@@ -87,10 +87,7 @@
 
     <!--Copyright-->
     <div class="footer-copyright py-5">
-      <a href="https://researchmap.jp/nakamura.satoru/?lang=english">Satoru Nakamura</a>. <a href="https://creativecommons.org/licenses/by/4.0/">CC BY</a>.<br/><br/>
-      Reference:<br/>Nicholas Laiacona, Ben Brumfield, Naoki Kokaze, Kiyonori Nagasaki, Makoto Goto：Connecting TEI and IIIF, 2018 IIIF Conference
-      <br/>
-      GitHub - TEIC/CETEIcean: TEI in HTML5 Custom Elements, <a href="https://github.com/TEIC/CETEIcean">https://github.com/TEIC/CETEIcean</a>
+      <a href="https://researchmap.jp/nakamura.satoru/?lang=english">Satoru Nakamura</a>. <a href="https://creativecommons.org/licenses/by/4.0/">CC BY</a>.
     </div>
     <!--/.Copyright-->
 
@@ -150,7 +147,7 @@
           image_index_map[image_api] = tileSources.length
           tileSources.push(image_api)
 
-          lb.innerHTML = "<br/><p class='fas fa-camera text-default' onclick='move(\""+image_api+"\")'></p>" + lb.innerHTML
+          lb.innerHTML = "<br/><p class='fas fa-camera text-default' onclick='move(\""+image_api+"\")' id='"+image_api+"'></p>" + lb.innerHTML
 
         }
       })
@@ -164,6 +161,13 @@
         defaultZoomLevel:   1,
         sequenceMode:       true,
         tileSources: tileSources
+      });
+
+      viewer.addHandler('page', function() {
+        viewer.addOnceHandler('open', function() {
+          //右に移動
+          location.href = "#" + viewer.world.getItemAt(0).source["@id"]+"/info.json";
+        });
       });
 
       //右に移動
