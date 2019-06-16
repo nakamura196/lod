@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>IIIF Converter</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="convert.html">IIIF Converter</a>
+    </nav>
+
+    <div class="container mt-5">
+
+        <div class="row">
+            <div class="col-sm-6">
+
+                <div class="card mb-5">
+                    <h3 class="card-header">
+                        IIIF Manifest -> Curation
+                    </h3>
+                    <div class="card-body">
+                        <form class="mb-5" action="convert2curaiton.html">
+
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="manifest" placeholder="Manifest URI">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <ul class="list-group">
+                            <li class="list-group-item" id="li">Example</li>
+                            <li class="list-group-item"><a
+                                    href="convert2curation.html?manifest=https://dzkimgs.l.u-tokyo.ac.jp/iiif/zuzoubu/04/manifest.json">大正新脩大藏經図像部第4巻</a>（SAT大正蔵図像DB）
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+
+                <div class="card">
+                    <h3 class="card-header">
+                        IIIF Curation -> Manifest
+                    </h3>
+                    <div class="card-body">
+                        <form class="mb-5" action="convert2manifest.html">
+
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="curation" placeholder="Curation URI">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <ul class="list-group">
+                            <li class="list-group-item" id="li">Example</li>
+                            <li class="list-group-item"><a
+                                    href="convert2manifest.html?curation=https://mp.ex.nii.ac.jp/api/curation/json/31db6328-4469-4537-a280-e7bebc970407">『IIIFで見る画中画
+                                    東西を横断して』</a>（CODH編集）
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr />
+
+        <footer class="container">
+            <p>Satoru Nakamura</p>
+        </footer>
+
+
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
