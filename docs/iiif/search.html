@@ -25,13 +25,13 @@
 
   <div class="container py-2 my-5">
 
-    <div class="pricing-header mx-auto text-center">
+    <div class="pricing-header mx-auto text-center mb-5">
       <h2 id="title"></h2>
     </div>
 
     <div class="mt-2">
       <button id="compareBtn" class="btn btn-primary mb-2">Compare</button>
-      <a id="compare_a" class="btn btn-primary mb-2">Compare 2</a>
+      <a id="compare_a" class="btn btn-primary mb-2">Compare All</a>
     </div>
 
     <div class="table-responsive my-5">
@@ -337,7 +337,7 @@ function get_thumb(manifestUri, members){
       }
       var canvas_id = ids[0]
       var area = ids[1].split("=")[1]
-      var thumb = canvas_img_map[canvas_id]+"/"+area+"/90,90/0/default.jpg"
+      var thumb = canvas_img_map[canvas_id]+"/"+area+"/90,/0/default.jpg"
 
       var id = $.md5(curationUri)
 

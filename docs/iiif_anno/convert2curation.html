@@ -42,7 +42,7 @@
         <ul class="list-group mb-5">
           <li class="list-group-item list-group-item-secondary" id="li">IIIF Curation</li>
           <li class="list-group-item"><a style="color: #000;" class="iiif-drag-and-drop-link" id="curation"
-              target="_blank"><img alt="IIIF Drag-n-drop" src="https://iiif.dl.itc.u-tokyo.ac.jp/images/icp.png"
+              target="_blank"><img alt="IIIF Drag-n-drop" src="https://json-ld.org/images/json-ld-data-32.png"
                 width="34px">&nbsp;&nbsp;<span>IIIF Curation</span></a>
           </li>
         </ul>
@@ -51,10 +51,14 @@
         <ul class="list-group mb-5">
           <li class="list-group-item list-group-item-secondary">Viewer</li>
           <li class="list-group-item"><a style="color: #000;" id="icv" target="_blank"><img
-                src="https://iiif.dl.itc.u-tokyo.ac.jp/images/icp.png">&nbsp;&nbsp;<span>ICViwerで閲覧する</span></a>
+                src="https://iiif.dl.itc.u-tokyo.ac.jp/images/icp.png">&nbsp;&nbsp;<span>ICViwerで閲覧する</span></a>（CODH）
           </li>
           <li class="list-group-item"><a style="color: #000;" id="icp" target="_blank"><img
-                src="https://iiif.dl.itc.u-tokyo.ac.jp/images/icp.png">&nbsp;&nbsp;<span>ICPlayerで閲覧する</span></a></li>
+                src="https://iiif.dl.itc.u-tokyo.ac.jp/images/icp.png">&nbsp;&nbsp;<span>ICPlayerで閲覧する</span></a>（CODH）
+          </li>
+          <li class="list-group-item"><a style="color: #000;" id="icc" target="_blank"><img
+                src="https://iiif.dl.itc.u-tokyo.ac.jp/images/mirador.png">&nbsp;&nbsp;<span>IIIF Curation Comparison
+                Toolで閲覧する</span></a>（中村覚作成）</li>
         </ul>
       </div>
 
@@ -113,6 +117,7 @@
       $("#curation").attr("href", curation_uri)
       $("#icv").attr("href", "http://codh.rois.ac.jp/software/iiif-curation-viewer/demo/?curation=" + curation_uri)
       $("#icp").attr("href", "http://codh.rois.ac.jp/software/iiif-curation-player/demo/?curation=" + curation_uri)
+      $("#icc").attr("href", "http://diyhistory.org/iiif/search.html?curation=" + curation_uri)
 
       $("#row").show()
       $("#loading").hide()

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>LOD Applications</title>
+
+  <link rel="stylesheet" type="text/css"
+    href="https://ncsu-libraries.github.io/iiif-annotation/dist/iiif-annotation.css">
+
+</head>
+
+<body>
+
+  <h1>iiif-annotation storyboard</h1>
+
+  <iiif-storyboard id="story"></iiif-storyboard>
+
+  <h1>iiif-annotation image viewer</h1>
+
+  <iiif-annotation id="image"></iiif-annotation>
+
+  <script>
+
+    var getUrlVars = function () {
+      var vars = {};
+      var param = location.search.substring(1).split('&');
+      for (var i = 0; i < param.length; i++) {
+        var keySearch = param[i].search(/=/);
+        var key = '';
+        if (keySearch != -1) key = param[i].slice(0, keySearch);
+        var val = param[i].slice(param[i].indexOf('=', 0) + 1);
+        if (key != '') vars[key] = decodeURI(val);
+      }
+      return vars;
+    }
+
+    var vars = getUrlVars();
+    var annotationlist = vars["annotationlist"] ? vars["annotationlist"] : "https://iiif.dl.itc.u-tokyo.ac.jp/omekac/oa/items/748/annolist.json";
+
+    document.getElementById("story").annotationlist = annotationlist;
+    document.getElementById("image").annotationlist = annotationlist;
+
+    var script = document.createElement('script');
+    script.src = 'https://ncsu-libraries.github.io/iiif-annotation/dist/iiif-annotation.js';
+    document.body.appendChild(script);
+
+  </script>
+
+</body>
+
+</html>
