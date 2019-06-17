@@ -263,7 +263,7 @@
             var curation = curation_list[j]
             var text = JSON.stringify(curation.metadata)
             if (text == null) {
-              text = ""
+              text = "Curation ["+(j+1)+"]"
             }
             var xywh = curation.xywh
             var anno_id = annolist_id + "#" + j
