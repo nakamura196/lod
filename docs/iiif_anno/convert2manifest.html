@@ -23,7 +23,7 @@
 
   <div class="container mt-5">
 
-    <h3 class="mb-5">Convert IIIF Curaion to Manifest</h3>
+    <h3 class="mb-5">Convert IIIF Curation to Manifest</h3>
 
     <form class="mb-5">
 
@@ -232,7 +232,16 @@
 
         console.log(manifest)
 
+        if (manifest.indexOf("http://") != -1) {
+          manifest = manifest.replace("http://", "https://")
+        }
+
         var data_manifest = get_data(manifest)
+
+        if (data_manifest == null) {
+          console.log("Error: " + manifest)
+          continue
+        }
 
         var new_manifest = create({})
 
