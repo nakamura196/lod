@@ -40,8 +40,8 @@
     <div class="row" id="row" style="display : none;">
       <div class="col-sm-6">
         <ul class="list-group mb-5">
-          <li class="list-group-item list-group-item-secondary" id="li">IIIF Manifest</li>
-          <li class="list-group-item"><a style="color: #000;" class="iiif-drag-and-drop-link" id="collection"
+          <li class="list-group-item list-group-item-secondary">IIIF Manifest</li>
+          <li class="list-group-item" id="li"><a style="color: #000;" class="iiif-drag-and-drop-link" id="collection"
               target="_blank"><img alt="IIIF Drag-n-drop" src="https://iiif.cloud/images/icons-512.png"
                 width="34px">&nbsp;&nbsp;<span>IIIF Collection</span></a>
           </li>
@@ -62,8 +62,9 @@
 
     <hr />
 
-    <footer class="container">
-      <p>Satoru Nakamura</p>
+    <footer>
+      <p>Developed by <a href="https://researchmap.jp/nakamura.satoru/">Satoru Nakamura</a> &amp; <a
+          href="https://researchmap.jp/knagasaki/">Kiyonori Nagasaki</a></p>
     </footer>
 
 
@@ -263,7 +264,7 @@
             var curation = curation_list[j]
             var text = JSON.stringify(curation.metadata)
             if (text == null) {
-              text = "Curation ["+(j+1)+"]"
+              text = "Curation [" + (j + 1) + "]"
             }
             var xywh = curation.xywh
             var anno_id = annolist_id + "#" + j
