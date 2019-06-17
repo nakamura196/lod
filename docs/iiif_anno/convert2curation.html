@@ -185,6 +185,11 @@
           for (var j = 0; j < resources.length; j++) {
             var resource = resources[j]
             var on = resource.on
+
+            if ($.isArray(on)) {
+              on = on[0]["full"] + "#" + on[0]["selector"]["default"]["value"]
+            }
+
             var text = resource.resource.chars
 
             anno_count += 1
