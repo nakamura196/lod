@@ -13,3 +13,8 @@ This software is released under the MIT License, see LICENSE.
 ## Copyright
 
 * Copyright Satoru Nakamura, 2018
+
+## 依存サービス
+
+* https://dydra.com/ut-digital-archives/koumin/sparql
+* https://dydra.com/ut-digital-archives/diplomatic/sparql
